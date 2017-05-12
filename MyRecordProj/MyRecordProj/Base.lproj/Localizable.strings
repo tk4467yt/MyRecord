@@ -1,2 +1,5 @@
 "tabbar_title_records"="Record";
 "tabbar_title_settings"="Setting";
+"nav_title_records"="All Records";
+"nav_title_settings"="My Settings";
+"record_empty_desc"="No Record";

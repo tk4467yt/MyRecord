@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 
 @interface SecondViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tbSettings;
 
 @end
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.title=NSLocalizedString(@"nav_title_settings", @"");
 }
 
 
