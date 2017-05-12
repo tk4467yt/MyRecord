@@ -19,6 +19,7 @@
 		2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2510E90C1EC0B79F00EC59E7 /* InfoPlist.strings */; };
 		2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2510E9101EC0B7BB00EC59E7 /* Localizable.strings */; };
 		2510E9141EC0B86D00EC59E7 /* MyIosFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E9131EC0B86D00EC59E7 /* MyIosFramework.framework */; };
+		2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		2510E90F1EC0B7BB00EC59E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2510E9111EC0B7BD00EC59E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2510E9131EC0B86D00EC59E7 /* MyIosFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyIosFramework.framework; sourceTree = "<group>"; };
+		2510E9161EC5FF9000EC59E7 /* MyCustomTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabbarViewController.h; sourceTree = "<group>"; };
+		2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabbarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,13 +116,10 @@
 		2510E8CC1EC0B4B300EC59E7 /* MyRecordProj */ = {
 			isa = PBXGroup;
 			children = (
+				2510E9151EC5FF1B00EC59E7 /* vcs */,
 				2510E9121EC0B85B00EC59E7 /* 3rd */,
 				2510E9041EC0B67600EC59E7 /* launch */,
 				2510E9031EC0B66800EC59E7 /* res */,
-				2510E8D31EC0B4B300EC59E7 /* FirstViewController.h */,
-				2510E8D41EC0B4B300EC59E7 /* FirstViewController.m */,
-				2510E8D61EC0B4B300EC59E7 /* SecondViewController.h */,
-				2510E8D71EC0B4B300EC59E7 /* SecondViewController.m */,
 				2510E8CD1EC0B4B300EC59E7 /* Supporting Files */,
 			);
 			path = MyRecordProj;
@@ -179,6 +179,19 @@
 				2510E9131EC0B86D00EC59E7 /* MyIosFramework.framework */,
 			);
 			name = 3rd;
+			sourceTree = "<group>";
+		};
+		2510E9151EC5FF1B00EC59E7 /* vcs */ = {
+			isa = PBXGroup;
+			children = (
+				2510E8D31EC0B4B300EC59E7 /* FirstViewController.h */,
+				2510E8D41EC0B4B300EC59E7 /* FirstViewController.m */,
+				2510E8D61EC0B4B300EC59E7 /* SecondViewController.h */,
+				2510E8D71EC0B4B300EC59E7 /* SecondViewController.m */,
+				2510E9161EC5FF9000EC59E7 /* MyCustomTabbarViewController.h */,
+				2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */,
+			);
+			name = vcs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */,
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
@@ -593,6 +607,7 @@
 				2510E8FC1EC0B4B400EC59E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2510E8FD1EC0B4B400EC59E7 /* Build configuration list for PBXNativeTarget "MyRecordProjTests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +616,7 @@
 				2510E8FF1EC0B4B400EC59E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2510E9001EC0B4B400EC59E7 /* Build configuration list for PBXNativeTarget "MyRecordProjUITests" */ = {
 			isa = XCConfigurationList;
@@ -609,6 +625,7 @@
 				2510E9021EC0B4B400EC59E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
