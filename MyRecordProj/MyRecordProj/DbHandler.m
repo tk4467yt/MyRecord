@@ -30,19 +30,19 @@ static __strong FMDatabase *dbRecords;
     
     if (nil != dbRecords) {
         //record info
-        [dbRecords executeUpdate:@"CREATE TALBE IF NOT EXISTS `record_info`"
+        [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_info`"
          @"(`record_id` char(128) PRIMARY KEY NOT NULL,"
          @"`record_title` varchar(1024) NOT NULL,"
          @"`create_time` integer,"
          @"`category_id` char(128))"];
         //record sections
-        [dbRecords executeUpdate:@"CREATE TALBE IF NOT EXISTS `record_section`"
+        [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_section`"
          @"(`record_id` char(128) NOT NULL,"
          @"`section_id` integer,"
          @"`section_type` char(16),"
          @"PRIMARY KEY (`record_id`,`section_id`))"];
         //record section item
-        [dbRecords executeUpdate:@"CREATE TALBE IF NOT EXISTS `record_section_item`"
+        [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_section_item`"
          @"(`record_id` char(128) NOT NULL,"
          @"`section_id` integer,"
          @"`item_id` integer,"
@@ -51,12 +51,12 @@ static __strong FMDatabase *dbRecords;
          @"`item_img_id` char(128),"
          @"PRIMARY KEY (`record_id`,`section_id`,`item_id`))"];
         //record category
-        [dbRecords executeUpdate:@"CREATE TALBE IF NOT EXISTS `record_category`"
+        [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_category`"
          @"(`category_id` char(128) PRIMARY KEY NOT NULL,"
          @"`category_title` varchar(256) NOT NULL,"
          @"`create_time` integer)"];
         //setting
-        [dbRecords executeUpdate:@"CREATE TALBE IF NOT EXISTS `settings`"
+        [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `settings`"
          @"(`setting_id` char(128) PRIMARY KEY NOT NULL,"
          @"`setting_value` varchar(1024) NOT NULL)"];
     }
