@@ -22,6 +22,8 @@
 		2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */; };
 		2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2510E9221EC8545A00EC59E7 /* CreateRecord.storyboard */; };
 		2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9251EC854AE00EC59E7 /* CreateRecordViewController.m */; };
+		2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9291EC85E4000EC59E7 /* DbHandler.m */; };
+		2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E92B1EC8617F00EC59E7 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		2510E9221EC8545A00EC59E7 /* CreateRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
 		2510E9241EC854AE00EC59E7 /* CreateRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRecordViewController.h; sourceTree = "<group>"; };
 		2510E9251EC854AE00EC59E7 /* CreateRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateRecordViewController.m; sourceTree = "<group>"; };
+		2510E9281EC85E4000EC59E7 /* DbHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbHandler.h; sourceTree = "<group>"; };
+		2510E9291EC85E4000EC59E7 /* DbHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbHandler.m; sourceTree = "<group>"; };
+		2510E92B1EC8617F00EC59E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */,
 				2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +129,7 @@
 		2510E8CC1EC0B4B300EC59E7 /* MyRecordProj */ = {
 			isa = PBXGroup;
 			children = (
+				2510E9271EC85E2900EC59E7 /* models */,
 				2510E9151EC5FF1B00EC59E7 /* vcs */,
 				2510E9121EC0B85B00EC59E7 /* 3rd */,
 				2510E9041EC0B67600EC59E7 /* launch */,
@@ -207,9 +214,19 @@
 		2510E91B1EC7491D00EC59E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2510E92B1EC8617F00EC59E7 /* libsqlite3.tbd */,
 				2510E91C1EC7491D00EC59E7 /* MyIosFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2510E9271EC85E2900EC59E7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2510E9281EC85E4000EC59E7 /* DbHandler.h */,
+				2510E9291EC85E4000EC59E7 /* DbHandler.m */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +374,7 @@
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
+				2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */,
 				2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
