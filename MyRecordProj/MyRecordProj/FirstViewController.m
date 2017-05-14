@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import <MyIosFramework/MyIosFramework.h>
 
 @interface FirstViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;

@@ -18,8 +18,8 @@
 		2510E8F61EC0B4B400EC59E7 /* MyRecordProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8F51EC0B4B400EC59E7 /* MyRecordProjUITests.m */; };
 		2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2510E90C1EC0B79F00EC59E7 /* InfoPlist.strings */; };
 		2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2510E9101EC0B7BB00EC59E7 /* Localizable.strings */; };
-		2510E9141EC0B86D00EC59E7 /* MyIosFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E9131EC0B86D00EC59E7 /* MyIosFramework.framework */; };
 		2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */; };
+		2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +62,10 @@
 		2510E90D1EC0B7A400EC59E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2510E90F1EC0B7BB00EC59E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2510E9111EC0B7BD00EC59E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		2510E9131EC0B86D00EC59E7 /* MyIosFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyIosFramework.framework; sourceTree = "<group>"; };
 		2510E9161EC5FF9000EC59E7 /* MyCustomTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabbarViewController.h; sourceTree = "<group>"; };
 		2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabbarViewController.m; sourceTree = "<group>"; };
+		2510E91C1EC7491D00EC59E7 /* MyIosFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyIosFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/MyIosFramework-gwrexrmbfxgeolayibbihuoqudxj/Build/Products/Debug-iphoneos/MyIosFramework.framework"; sourceTree = "<group>"; };
+		2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyIosFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2510E9141EC0B86D00EC59E7 /* MyIosFramework.framework in Frameworks */,
+				2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +101,7 @@
 				2510E8E91EC0B4B400EC59E7 /* MyRecordProjTests */,
 				2510E8F41EC0B4B400EC59E7 /* MyRecordProjUITests */,
 				2510E8CB1EC0B4B300EC59E7 /* Products */,
+				2510E91B1EC7491D00EC59E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,7 +178,7 @@
 		2510E9121EC0B85B00EC59E7 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
-				2510E9131EC0B86D00EC59E7 /* MyIosFramework.framework */,
+				2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */,
 			);
 			name = 3rd;
 			sourceTree = "<group>";
@@ -192,6 +194,14 @@
 				2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */,
 			);
 			name = vcs;
+			sourceTree = "<group>";
+		};
+		2510E91B1EC7491D00EC59E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2510E91C1EC7491D00EC59E7 /* MyIosFramework.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,11 +518,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 36Y8RN8MDS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MyRecordProj",
+					"$(PROJECT_DIR)/MyRecordProj/**",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MyRecordProj/**";
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -525,11 +537,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 36Y8RN8MDS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MyRecordProj",
+					"$(PROJECT_DIR)/MyRecordProj/**",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MyRecordProj/**";
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
