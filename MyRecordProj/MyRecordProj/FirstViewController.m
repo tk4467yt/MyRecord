@@ -30,7 +30,10 @@
 
 -(void)createNewRecord
 {
-    
+    UIViewController *createRecordVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
+    if (nil != createRecordVC) {
+        [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createRecordVC animated:YES];
+    }
 }
 
 -(void)updateRecordsInfo
