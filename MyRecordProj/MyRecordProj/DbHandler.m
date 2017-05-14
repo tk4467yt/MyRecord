@@ -22,6 +22,10 @@ static __strong FMDatabase *dbRecords;
             dbRecords = nil;
         }
     }
+    
+    if (nil != dbRecords) {
+        //add table create
+    }
 }
 
 +(NSString *)pathOfRecordsDb
