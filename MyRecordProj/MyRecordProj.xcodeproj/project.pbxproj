@@ -83,8 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */,
 				2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */,
+				2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +556,7 @@
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazilybird.app.MyRecordProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -575,6 +576,7 @@
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazilybird.app.MyRecordProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

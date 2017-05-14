@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+extern const NSInteger kDbIdDefaultSize;
+extern const NSInteger kDbIdRecordTitleSize;
+extern const NSInteger kDbIdRecordItemTxtSize;
+extern const NSInteger kDbIdCategoryTitleSize;
+
 @interface DbHandler : NSObject
 +(void)initLocalDatabase;
 +(void)closeLocalDatabase;
