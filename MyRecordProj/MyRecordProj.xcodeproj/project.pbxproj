@@ -24,6 +24,10 @@
 		2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9251EC854AE00EC59E7 /* CreateRecordViewController.m */; };
 		2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9291EC85E4000EC59E7 /* DbHandler.m */; };
 		2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E92B1EC8617F00EC59E7 /* libsqlite3.tbd */; };
+		2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E92E1ECB3B9C00EC59E7 /* CategoryInfo.m */; };
+		2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9311ECB3BAB00EC59E7 /* RecordInfo.m */; };
+		2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9341ECB477C00EC59E7 /* RecordSection.m */; };
+		2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,14 @@
 		2510E9281EC85E4000EC59E7 /* DbHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbHandler.h; sourceTree = "<group>"; };
 		2510E9291EC85E4000EC59E7 /* DbHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbHandler.m; sourceTree = "<group>"; };
 		2510E92B1EC8617F00EC59E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2510E92D1ECB3B9C00EC59E7 /* CategoryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryInfo.h; sourceTree = "<group>"; };
+		2510E92E1ECB3B9C00EC59E7 /* CategoryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryInfo.m; sourceTree = "<group>"; };
+		2510E9301ECB3BAB00EC59E7 /* RecordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordInfo.h; sourceTree = "<group>"; };
+		2510E9311ECB3BAB00EC59E7 /* RecordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordInfo.m; sourceTree = "<group>"; };
+		2510E9331ECB477C00EC59E7 /* RecordSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSection.h; sourceTree = "<group>"; };
+		2510E9341ECB477C00EC59E7 /* RecordSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSection.m; sourceTree = "<group>"; };
+		2510E9361ECB478A00EC59E7 /* RecordSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSectionItem.h; sourceTree = "<group>"; };
+		2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSectionItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +237,14 @@
 			children = (
 				2510E9281EC85E4000EC59E7 /* DbHandler.h */,
 				2510E9291EC85E4000EC59E7 /* DbHandler.m */,
+				2510E92D1ECB3B9C00EC59E7 /* CategoryInfo.h */,
+				2510E92E1ECB3B9C00EC59E7 /* CategoryInfo.m */,
+				2510E9301ECB3BAB00EC59E7 /* RecordInfo.h */,
+				2510E9311ECB3BAB00EC59E7 /* RecordInfo.m */,
+				2510E9331ECB477C00EC59E7 /* RecordSection.h */,
+				2510E9341ECB477C00EC59E7 /* RecordSection.m */,
+				2510E9361ECB478A00EC59E7 /* RecordSectionItem.h */,
+				2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -371,9 +391,13 @@
 			files = (
 				2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */,
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
+				2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */,
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
+				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
+				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
+				2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */,
 				2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */,
 				2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */,
 			);

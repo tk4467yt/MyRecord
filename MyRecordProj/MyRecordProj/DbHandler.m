@@ -8,6 +8,10 @@
 
 #import "DbHandler.h"
 #import <MyIosFramework/MyIosFramework.h>
+#import "CategoryInfo.h"
+#import "RecordInfo.h"
+#import "RecordSection.h"
+#import "RecordSectionItem.h"
 
 const NSInteger kDbIdDefaultSize = 128;
 const NSInteger kDbIdRecordTitleSize = 1024;
@@ -76,5 +80,110 @@ static __strong FMDatabase *dbRecords;
     [dbRecords close];
     
     dbRecords=nil;
+}
+
++(NSArray *)getAllCategoryInfo
+{
+    NSMutableArray *arr2ret=[NSMutableArray new];
+    
+    FMResultSet *s = [dbRecords executeQuery:@"SELECT * FROM `record_category` ORDER BY `create_time` DESC"];
+    while ([s next]) {
+        CategoryInfo *aCategory=[CategoryInfo new];
+        
+        aCategory.categoryId=[s stringForColumn:@"category_id"];
+        aCategory.categoryTitle=[s stringForColumn:@"category_title"];
+        aCategory.createTime=[s longLongIntForColumn:@"create_time"];
+        
+        [arr2ret addObject:aCategory];
+    }
+    
+    return arr2ret;
+}
+
++(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId
+{
+    NSMutableArray *arr2ret=[NSMutableArray new];
+    
+    FMResultSet *s = [dbRecords executeQuery:@"SELECT * FROM `record_info` WHERE `category_id` = ? ORDER BY `create_time` DESC",categoryId];
+    while ([s next]) {
+        RecordInfo *aRecord=[RecordInfo new];
+        
+        aRecord.recordId=[s stringForColumn:@"record_id"];
+        aRecord.recordTitle=[s stringForColumn:@"record_title"];
+        aRecord.createTime=[s longLongIntForColumn:@"create_time"];
+        aRecord.categoryId=[s stringForColumn:@"category_id"];
+        
+        aRecord.sectionArr=[DbHandler getRecordSectionWithRecordId:aRecord.recordId];
+        
+        [arr2ret addObject:aRecord];
+    }
+    
+    return arr2ret;
+}
+
++(NSArray *)getRecordSectionWithRecordId:(NSString *)recordId
+{
+    NSMutableArray *arr2ret=[NSMutableArray new];
+    
+    FMResultSet *s = [dbRecords executeQuery:@"SELECT * FROM `record_section` WHERE `record_id` = ? ORDER BY `section_id`",recordId];
+    while ([s next]) {
+        RecordSection *aRecordSection=[RecordSection new];
+        
+        aRecordSection.recordId=[s stringForColumn:@"record_id"];
+        aRecordSection.sectionId=[s longLongIntForColumn:@"section_id"];
+        aRecordSection.sectionType=[s stringForColumn:@"section_type"];
+        
+        aRecordSection.sectionItemArr=[DbHandler getRecordSectionItemWithRecordId:aRecordSection.recordId andSectionId:aRecordSection.sectionId];
+        
+        [arr2ret addObject:aRecordSection];
+    }
+    
+    return arr2ret;
+}
+
++(NSArray *)getRecordSectionItemWithRecordId:(NSString *)recordId andSectionId:(UInt64)sectionId
+{
+    NSMutableArray *arr2ret=[NSMutableArray new];
+    
+    FMResultSet *s = [dbRecords executeQuery:@"SELECT * FROM `record_section_item` WHERE `record_id` = ? AND `section_id` = ? ORDER BY `item_id`",recordId,[NSString stringWithFormat:@"%lld",sectionId]];
+    while ([s next]) {
+        RecordSectionItem *aRecord=[RecordSectionItem new];
+        
+        aRecord.recordId=[s stringForColumn:@"record_id"];
+        aRecord.sectionId=[s longLongIntForColumn:@"section_id"];
+        aRecord.itemId=[s longLongIntForColumn:@"item_id"];
+        aRecord.itemTxt=[s stringForColumn:@"item_txt"];
+        aRecord.imgThumbId=[s stringForColumn:@"item_img_thumb_id"];
+        aRecord.imgId=[s stringForColumn:@"item_img_id"];
+        
+        [arr2ret addObject:aRecord];
+    }
+    
+    return arr2ret;
+}
+
++(NSString *)getStrSettingWithKey:(NSString *)key andDefValue:(NSString *)defStr
+{
+    NSString *str2ret=defStr;
+    
+    if (![MyUtility isStringNilOrZeroLength:key]) {
+        FMResultSet *s = [dbRecords executeQuery:@"SELECT `setting_value` FROM `settings` WHERE `setting_id` = ?",key];
+        if (s && [s next]) {
+            str2ret=[s stringForColumn:@"setting_value"];
+        }
+    }
+    
+    return str2ret;
+}
++(NSInteger)getIntSettingWithKey:(NSString *)key andDefValue:(NSInteger)defInt
+{
+    NSInteger int2ret=defInt;
+    
+    NSString *strValue=[DbHandler getStrSettingWithKey:key andDefValue:nil];
+    if (![MyUtility isStringNilOrZeroLength:strValue]) {
+        int2ret=[strValue integerValue];
+    }
+    
+    return int2ret;
 }
 @end

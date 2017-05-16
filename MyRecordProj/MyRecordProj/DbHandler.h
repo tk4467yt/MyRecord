@@ -16,4 +16,10 @@ extern const NSInteger kDbIdCategoryTitleSize;
 @interface DbHandler : NSObject
 +(void)initLocalDatabase;
 +(void)closeLocalDatabase;
+
++(NSArray *)getAllCategoryInfo;
++(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId;
+
++(NSString *)getStrSettingWithKey:(NSString *)key andDefValue:(NSString *)defStr;
++(NSInteger)getIntSettingWithKey:(NSString *)key andDefValue:(NSInteger)defInt;
 @end
