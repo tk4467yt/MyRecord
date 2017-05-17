@@ -4,3 +4,7 @@
 "nav_title_settings"="My Settings";
 "record_empty_desc"="No Record";
 "nav_title_record_create"="Create";
+"alert_create_record"="Create New Record";
+"alert_create_category"="Create New Category";
+"cancel"="Cancel";
+"ok"="OK";

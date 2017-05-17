@@ -24,17 +24,40 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.navigationItem.title=NSLocalizedString(@"nav_title_records", @"");
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewRecord)];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(action2create)];
     
     [self updateRecordsInfo];
 }
 
--(void)createNewRecord
+-(void)action2create
 {
-    UIViewController *createRecordVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
-    if (nil != createRecordVC) {
-        [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createRecordVC animated:YES];
-    }
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *createRecordAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"alert_create_record", @"")
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction *action){
+                                                                 UIViewController *createRecordVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
+                                                                 if (nil != createRecordVC) {
+                                                                     [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createRecordVC animated:YES];
+                                                                 }
+                                                             }];
+    UIAlertAction *createCategoryAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"alert_create_category", @"")
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction *action){
+                                                                 
+                                                             }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                                 style:UIAlertActionStyleCancel
+                                                               handler:^(UIAlertAction *action){
+                                                                   
+                                                               }];
+    
+    [alertVC addAction:createRecordAction];
+    [alertVC addAction:createCategoryAction];
+    [alertVC addAction:cancelAction];
+    
+    alertVC.popoverPresentationController.barButtonItem=self.navigationItem.rightBarButtonItem;
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 -(void)updateRecordsInfo
