@@ -30,6 +30,7 @@
 		2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
+		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
+		25D960451ECC99D0006E067E /* CategoryCreateTFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCreateTFTableViewCell.h; sourceTree = "<group>"; };
+		25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCreateTFTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 		2510E8CC1EC0B4B300EC59E7 /* MyRecordProj */ = {
 			isa = PBXGroup;
 			children = (
+				25D960441ECC99A2006E067E /* cell_prototype */,
 				25D9603E1ECC8D59006E067E /* db_upgrade */,
 				2510E9271EC85E2900EC59E7 /* models */,
 				2510E9151EC5FF1B00EC59E7 /* vcs */,
@@ -263,6 +267,15 @@
 			children = (
 			);
 			name = db_upgrade;
+			sourceTree = "<group>";
+		};
+		25D960441ECC99A2006E067E /* cell_prototype */ = {
+			isa = PBXGroup;
+			children = (
+				25D960451ECC99D0006E067E /* CategoryCreateTFTableViewCell.h */,
+				25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */,
+			);
+			name = cell_prototype;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +423,7 @@
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
 				2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */,
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
+				25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */,
 				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,

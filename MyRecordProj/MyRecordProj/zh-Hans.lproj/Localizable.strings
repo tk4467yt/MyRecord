@@ -8,3 +8,4 @@
 "alert_create_category"="新建分组";
 "cancel"="取消";
 "ok"="确定";
+"title_for_category_name"="分组名:";
