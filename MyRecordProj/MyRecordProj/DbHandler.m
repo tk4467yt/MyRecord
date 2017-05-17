@@ -64,6 +64,19 @@ static __strong FMDatabase *dbRecords;
          @"(`setting_id` char(128) PRIMARY KEY NOT NULL,"
          @"`setting_value` varchar(1024) NOT NULL)"];
     }
+    
+    [DbHandler migrateDb];
+}
+
++(void)migrateDb
+{
+    FMDBMigrationManager * manager=[FMDBMigrationManager managerWithDatabase:dbRecords migrationsBundle:[NSBundle mainBundle]];
+    BOOL resultState=NO;
+    NSError * error=nil;
+    if (!manager.hasMigrationsTable) {
+        resultState=[manager createMigrationsTable:&error];
+    }
+    resultState=[manager migrateDatabaseToVersion:UINT64_MAX progress:nil error:&error];
 }
 
 +(NSString *)pathOfRecordsDb

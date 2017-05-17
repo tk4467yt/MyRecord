@@ -8,12 +8,13 @@
 
 #import "FirstViewController.h"
 #import <MyIosFramework/MyIosFramework.h>
+#import "DbHandler.h"
 
 @interface FirstViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmptyContent;
 
-@property (strong, nonatomic) NSArray *recordsArr;
+@property (strong, nonatomic) NSArray *categoryArr;
 @end
 
 @implementation FirstViewController
@@ -38,10 +39,10 @@
 
 -(void)updateRecordsInfo
 {
-    self.recordsArr=[NSMutableArray new];
+    self.categoryArr=[DbHandler getAllCategoryInfo];
     
     self.lblEmptyContent.text=NSLocalizedString(@"record_empty_desc", @"");
-    if (self.recordsArr.count <= 0) {
+    if (self.categoryArr.count <= 0) {
         self.lblEmptyContent.hidden=false;
     } else {
         self.lblEmptyContent.hidden=true;
