@@ -43,7 +43,10 @@
     UIAlertAction *createCategoryAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"alert_create_category", @"")
                                                                style:UIAlertActionStyleDefault
                                                              handler:^(UIAlertAction *action){
-                                                                 
+                                                                 UIViewController *createCategoryVC=[MyUtility getInitViewControllerFromSB:@"CreateCategory" withBundle:nil];
+                                                                 if (nil != createCategoryVC) {
+                                                                     [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createCategoryVC animated:YES];
+                                                                 }
                                                              }];
     UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
                                                                  style:UIAlertActionStyleCancel

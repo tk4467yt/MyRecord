@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MyIosFramework/MyIosFramework.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : MyRootViewController
 
 
 @end

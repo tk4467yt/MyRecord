@@ -28,6 +28,8 @@
 		2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9311ECB3BAB00EC59E7 /* RecordInfo.m */; };
 		2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9341ECB477C00EC59E7 /* RecordSection.m */; };
 		2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */; };
+		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
+		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		2510E9341ECB477C00EC59E7 /* RecordSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSection.m; sourceTree = "<group>"; };
 		2510E9361ECB478A00EC59E7 /* RecordSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSectionItem.h; sourceTree = "<group>"; };
 		2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSectionItem.m; sourceTree = "<group>"; };
+		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
+		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
+		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +225,9 @@
 				2510E9221EC8545A00EC59E7 /* CreateRecord.storyboard */,
 				2510E9241EC854AE00EC59E7 /* CreateRecordViewController.h */,
 				2510E9251EC854AE00EC59E7 /* CreateRecordViewController.m */,
+				25D9603F1ECC947C006E067E /* CreateCategory.storyboard */,
+				25D960411ECC949F006E067E /* CreateCategoryViewController.h */,
+				25D960421ECC949F006E067E /* CreateCategoryViewController.m */,
 			);
 			name = vcs;
 			sourceTree = "<group>";
@@ -372,6 +380,7 @@
 				2510E8E01EC0B4B400EC59E7 /* LaunchScreen.storyboard in Resources */,
 				2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */,
 				2510E8DD1EC0B4B400EC59E7 /* Assets.xcassets in Resources */,
+				25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */,
 				2510E8DB1EC0B4B400EC59E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +412,7 @@
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
+				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
 				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
 				2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */,
