@@ -8,10 +8,13 @@
 
 #import "CreateCategoryViewController.h"
 #import "CategoryCreateTFTableViewCell.h"
+#import "CategoryInfo.h"
+#import "DbHandler.h"
 
 @interface CreateCategoryViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreateCategory;
 
+@property (weak, nonatomic) UITextField *tfInput;
 @end
 
 @implementation CreateCategoryViewController
@@ -21,6 +24,20 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title=NSLocalizedString(@"alert_create_category", @"");
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didAddCategory)];
+}
+
+-(void)didAddCategory
+{
+    NSString *title=self.tfInput.text;
+    if (![MyUtility isStringNilOrZeroLength:title]) {
+        CategoryInfo *info=[CategoryInfo new];
+        info.categoryTitle=title;
+        info.categoryId=nil;
+        info.createTime=[[NSDate date] timeIntervalSince1970];
+        
+        [DbHandler addCategoryInfo:info];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CategoryCreateTFTableViewCell *tfCell=[tableView dequeueReusableCellWithIdentifier:@"category_create_tf_cell_id" forIndexPath:indexPath];
-    
+    self.tfInput=tfCell.tfInput;
     
     return tfCell;
 }

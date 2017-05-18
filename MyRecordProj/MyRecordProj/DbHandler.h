@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CategoryInfo.h"
+#import "RecordInfo.h"
 
 extern const NSInteger kDbIdDefaultSize;
 extern const NSInteger kDbIdRecordTitleSize;
@@ -18,6 +20,9 @@ extern const NSInteger kDbIdCategoryTitleSize;
 +(void)closeLocalDatabase;
 
 +(NSArray *)getAllCategoryInfo;
++(void)addCategoryInfo:(CategoryInfo *)info;
+
+
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId;
 
 +(NSString *)getStrSettingWithKey:(NSString *)key andDefValue:(NSString *)defStr;

@@ -8,8 +8,6 @@
 
 #import "DbHandler.h"
 #import <MyIosFramework/MyIosFramework.h>
-#import "CategoryInfo.h"
-#import "RecordInfo.h"
 #import "RecordSection.h"
 #import "RecordSectionItem.h"
 
@@ -111,6 +109,18 @@ static __strong FMDatabase *dbRecords;
     }
     
     return arr2ret;
+}
+
++(void)addCategoryInfo:(CategoryInfo *)info
+{
+    if ([MyUtility isStringNilOrZeroLength:info.categoryId] ||
+        [MyUtility isStringNilOrZeroLength:info.categoryTitle]) {
+        return;
+    }
+    [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `record_category` (`category_id`,`category_title`,`create_time`) VALUES (?,?,?)",
+     info.categoryId,
+     info.categoryTitle,
+     [NSString stringWithFormat:@"%lld",info.createTime]];
 }
 
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId
