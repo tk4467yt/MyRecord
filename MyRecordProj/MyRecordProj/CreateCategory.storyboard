@@ -60,9 +60,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="boB-ie-3Lq" firstAttribute="leading" secondItem="u5K-YR-ruo" secondAttribute="leadingMargin" id="BFf-al-1hT"/>
+                            <constraint firstItem="boB-ie-3Lq" firstAttribute="top" secondItem="u5K-YR-ruo" secondAttribute="topMargin" constant="20" id="Dcl-UT-Qnu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="boB-ie-3Lq" secondAttribute="trailing" id="VMo-Hz-FnQ"/>
-                            <constraint firstItem="boB-ie-3Lq" firstAttribute="top" secondItem="TmG-tX-jj4" secondAttribute="bottom" id="VhE-Ly-0Lg"/>
-                            <constraint firstItem="aFS-OZ-w4F" firstAttribute="top" secondItem="boB-ie-3Lq" secondAttribute="bottom" id="him-xp-rSW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="boB-ie-3Lq" secondAttribute="bottom" id="eDD-UI-oCa"/>
                         </constraints>
                     </view>
                     <connections>
