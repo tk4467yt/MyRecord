@@ -6,7 +6,7 @@
 //  Copyright © 2017年  qin. All rights reserved.
 //
 
-#import <MyIosFramework/MyIosFramework.h>
+#import "MyCommonHeaders.h"
 
 @interface CreateCategoryViewController : MyRootViewController
 

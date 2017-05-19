@@ -7,7 +7,7 @@
 //
 
 #import "DbHandler.h"
-#import <MyIosFramework/MyIosFramework.h>
+#import "MyCommonHeaders.h"
 #import "RecordSection.h"
 #import "RecordSectionItem.h"
 

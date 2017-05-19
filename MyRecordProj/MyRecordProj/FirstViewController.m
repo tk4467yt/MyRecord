@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-#import <MyIosFramework/MyIosFramework.h>
+#import "MyCommonHeaders.h"
 #import "DbHandler.h"
 
 @interface FirstViewController () <UITableViewDelegate,UITableViewDataSource>

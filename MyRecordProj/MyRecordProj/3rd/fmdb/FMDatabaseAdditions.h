@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MyIosFramework/FMDatabase.h>
+#import "FMDatabase.h"
 
 
 /** Category of additions for `<FMDatabase>` class.

@@ -1,6 +1,5 @@
 //
 //  MyColor.h
-//  MyIosFramework
 //
 //  Created by  qin on 2017/5/1.
 //  Copyright © 2017年  qin. All rights reserved.

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MyIosFramework/MyIosFramework.h>
+#import "MyCommonHeaders.h"
 
 @interface SecondViewController : MyRootViewController
 

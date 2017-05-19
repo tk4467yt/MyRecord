@@ -18,8 +18,8 @@
 //  limitations under the License.
 //
 
-#import <MyIosFramework/FMDatabase.h>
-#import <MyIosFramework/FMDatabaseQueue.h>
+#import "FMDatabase.h"
+#import "FMDatabaseQueue.h"
 
 @protocol FMDBMigrating;
 

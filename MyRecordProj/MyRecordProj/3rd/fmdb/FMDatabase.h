@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <MyIosFramework/FMResultSet.h>
-#import <MyIosFramework/FMDatabasePool.h>
+#import "FMResultSet.h"
+#import "FMDatabasePool.h"
 
 
 #if ! __has_feature(objc_arc)

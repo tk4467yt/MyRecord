@@ -19,7 +19,6 @@
 		2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2510E90C1EC0B79F00EC59E7 /* InfoPlist.strings */; };
 		2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2510E9101EC0B7BB00EC59E7 /* Localizable.strings */; };
 		2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */; };
-		2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */; };
 		2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2510E9221EC8545A00EC59E7 /* CreateRecord.storyboard */; };
 		2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9251EC854AE00EC59E7 /* CreateRecordViewController.m */; };
 		2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9291EC85E4000EC59E7 /* DbHandler.m */; };
@@ -31,6 +30,17 @@
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
+		25D9605C1ECF3B6D006E067E /* MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960541ECF3B6D006E067E /* MyColor.m */; };
+		25D9605D1ECF3B6D006E067E /* MyRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960561ECF3B6D006E067E /* MyRootViewController.m */; };
+		25D9605E1ECF3B6D006E067E /* MyUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960581ECF3B6D006E067E /* MyUtility.m */; };
+		25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9605A1ECF3B6D006E067E /* TextContentCollectionReusableView.m */; };
+		25D960601ECF3B6D006E067E /* TextContentCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D9605B1ECF3B6D006E067E /* TextContentCollectionReusableView.xib */; };
+		25D960701ECF3B90006E067E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960641ECF3B90006E067E /* FMDatabase.m */; };
+		25D960711ECF3B90006E067E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960661ECF3B90006E067E /* FMDatabaseAdditions.m */; };
+		25D960721ECF3B90006E067E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960681ECF3B90006E067E /* FMDatabasePool.m */; };
+		25D960731ECF3B90006E067E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9606A1ECF3B90006E067E /* FMDatabaseQueue.m */; };
+		25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9606D1ECF3B90006E067E /* FMDBMigrationManager.m */; };
+		25D960751ECF3B90006E067E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9606F1ECF3B90006E067E /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +86,6 @@
 		2510E9161EC5FF9000EC59E7 /* MyCustomTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabbarViewController.h; sourceTree = "<group>"; };
 		2510E9171EC5FF9000EC59E7 /* MyCustomTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabbarViewController.m; sourceTree = "<group>"; };
 		2510E91C1EC7491D00EC59E7 /* MyIosFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyIosFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/MyIosFramework-gwrexrmbfxgeolayibbihuoqudxj/Build/Products/Debug-iphoneos/MyIosFramework.framework"; sourceTree = "<group>"; };
-		2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyIosFramework.framework; sourceTree = "<group>"; };
 		2510E9221EC8545A00EC59E7 /* CreateRecord.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRecord.storyboard; sourceTree = "<group>"; };
 		2510E9241EC854AE00EC59E7 /* CreateRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRecordViewController.h; sourceTree = "<group>"; };
 		2510E9251EC854AE00EC59E7 /* CreateRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateRecordViewController.m; sourceTree = "<group>"; };
@@ -96,6 +105,29 @@
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
 		25D960451ECC99D0006E067E /* CategoryCreateTFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCreateTFTableViewCell.h; sourceTree = "<group>"; };
 		25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCreateTFTableViewCell.m; sourceTree = "<group>"; };
+		25D9604C1ECF3956006E067E /* MyCommonHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommonHeaders.h; sourceTree = "<group>"; };
+		25D960531ECF3B6D006E067E /* MyColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyColor.h; sourceTree = "<group>"; };
+		25D960541ECF3B6D006E067E /* MyColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyColor.m; sourceTree = "<group>"; };
+		25D960551ECF3B6D006E067E /* MyRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRootViewController.h; sourceTree = "<group>"; };
+		25D960561ECF3B6D006E067E /* MyRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRootViewController.m; sourceTree = "<group>"; };
+		25D960571ECF3B6D006E067E /* MyUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtility.h; sourceTree = "<group>"; };
+		25D960581ECF3B6D006E067E /* MyUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtility.m; sourceTree = "<group>"; };
+		25D960591ECF3B6D006E067E /* TextContentCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextContentCollectionReusableView.h; sourceTree = "<group>"; };
+		25D9605A1ECF3B6D006E067E /* TextContentCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextContentCollectionReusableView.m; sourceTree = "<group>"; };
+		25D9605B1ECF3B6D006E067E /* TextContentCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextContentCollectionReusableView.xib; sourceTree = "<group>"; };
+		25D960631ECF3B90006E067E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		25D960641ECF3B90006E067E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		25D960651ECF3B90006E067E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		25D960661ECF3B90006E067E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		25D960671ECF3B90006E067E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		25D960681ECF3B90006E067E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		25D960691ECF3B90006E067E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		25D9606A1ECF3B90006E067E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		25D9606B1ECF3B90006E067E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		25D9606C1ECF3B90006E067E /* FMDBMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBMigrationManager.h; sourceTree = "<group>"; };
+		25D9606D1ECF3B90006E067E /* FMDBMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBMigrationManager.m; sourceTree = "<group>"; };
+		25D9606E1ECF3B90006E067E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		25D9606F1ECF3B90006E067E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2510E91F1EC7494300EC59E7 /* MyIosFramework.framework in Frameworks */,
 				2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,11 +180,12 @@
 		2510E8CC1EC0B4B300EC59E7 /* MyRecordProj */ = {
 			isa = PBXGroup;
 			children = (
+				25D960611ECF3B90006E067E /* 3rd */,
+				25D960521ECF3B6D006E067E /* common */,
 				25D960441ECC99A2006E067E /* cell_prototype */,
 				25D9603E1ECC8D59006E067E /* db_upgrade */,
 				2510E9271EC85E2900EC59E7 /* models */,
 				2510E9151EC5FF1B00EC59E7 /* vcs */,
-				2510E9121EC0B85B00EC59E7 /* 3rd */,
 				2510E9041EC0B67600EC59E7 /* launch */,
 				2510E9031EC0B66800EC59E7 /* res */,
 				2510E8CD1EC0B4B300EC59E7 /* Supporting Files */,
@@ -205,16 +237,9 @@
 				2510E8D91EC0B4B400EC59E7 /* Main.storyboard */,
 				2510E8D01EC0B4B300EC59E7 /* AppDelegate.h */,
 				2510E8D11EC0B4B300EC59E7 /* AppDelegate.m */,
+				25D9604C1ECF3956006E067E /* MyCommonHeaders.h */,
 			);
 			name = launch;
-			sourceTree = "<group>";
-		};
-		2510E9121EC0B85B00EC59E7 /* 3rd */ = {
-			isa = PBXGroup;
-			children = (
-				2510E91E1EC7494300EC59E7 /* MyIosFramework.framework */,
-			);
-			name = 3rd;
 			sourceTree = "<group>";
 		};
 		2510E9151EC5FF1B00EC59E7 /* vcs */ = {
@@ -276,6 +301,50 @@
 				25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */,
 			);
 			name = cell_prototype;
+			sourceTree = "<group>";
+		};
+		25D960521ECF3B6D006E067E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				25D960531ECF3B6D006E067E /* MyColor.h */,
+				25D960541ECF3B6D006E067E /* MyColor.m */,
+				25D960551ECF3B6D006E067E /* MyRootViewController.h */,
+				25D960561ECF3B6D006E067E /* MyRootViewController.m */,
+				25D960571ECF3B6D006E067E /* MyUtility.h */,
+				25D960581ECF3B6D006E067E /* MyUtility.m */,
+				25D960591ECF3B6D006E067E /* TextContentCollectionReusableView.h */,
+				25D9605A1ECF3B6D006E067E /* TextContentCollectionReusableView.m */,
+				25D9605B1ECF3B6D006E067E /* TextContentCollectionReusableView.xib */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		25D960611ECF3B90006E067E /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				25D960621ECF3B90006E067E /* fmdb */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		25D960621ECF3B90006E067E /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				25D960631ECF3B90006E067E /* FMDatabase.h */,
+				25D960641ECF3B90006E067E /* FMDatabase.m */,
+				25D960651ECF3B90006E067E /* FMDatabaseAdditions.h */,
+				25D960661ECF3B90006E067E /* FMDatabaseAdditions.m */,
+				25D960671ECF3B90006E067E /* FMDatabasePool.h */,
+				25D960681ECF3B90006E067E /* FMDatabasePool.m */,
+				25D960691ECF3B90006E067E /* FMDatabaseQueue.h */,
+				25D9606A1ECF3B90006E067E /* FMDatabaseQueue.m */,
+				25D9606B1ECF3B90006E067E /* FMDB.h */,
+				25D9606C1ECF3B90006E067E /* FMDBMigrationManager.h */,
+				25D9606D1ECF3B90006E067E /* FMDBMigrationManager.m */,
+				25D9606E1ECF3B90006E067E /* FMResultSet.h */,
+				25D9606F1ECF3B90006E067E /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D960601ECF3B6D006E067E /* TextContentCollectionReusableView.xib in Resources */,
 				2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */,
 				2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */,
 				2510E8E01EC0B4B400EC59E7 /* LaunchScreen.storyboard in Resources */,
@@ -419,19 +489,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D9605E1ECF3B6D006E067E /* MyUtility.m in Sources */,
 				2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */,
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
+				25D960701ECF3B90006E067E /* FMDatabase.m in Sources */,
 				2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */,
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */,
+				25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */,
 				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
 				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
 				2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */,
+				25D9605C1ECF3B6D006E067E /* MyColor.m in Sources */,
+				25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */,
+				25D960711ECF3B90006E067E /* FMDatabaseAdditions.m in Sources */,
+				25D960751ECF3B90006E067E /* FMResultSet.m in Sources */,
 				2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */,
+				25D960731ECF3B90006E067E /* FMDatabaseQueue.m in Sources */,
+				25D960721ECF3B90006E067E /* FMDatabasePool.m in Sources */,
 				2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */,
+				25D9605D1ECF3B6D006E067E /* MyRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +692,7 @@
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazilybird.app.MyRecordProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";

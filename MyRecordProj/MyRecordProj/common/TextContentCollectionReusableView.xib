@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="text_content_cv_reusable_cell_id" id="U6b-Vx-4bR" customClass="TextContentCollectionReusableView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVZ-BK-Sj8" userLabel="lblContent">
+                    <rect key="frame" x="8" y="8" width="304" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="KVZ-BK-Sj8" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="topMargin" id="5TG-0a-PDc"/>
+                <constraint firstAttribute="trailingMargin" secondItem="KVZ-BK-Sj8" secondAttribute="trailing" id="KsN-IH-bqx"/>
+                <constraint firstItem="KVZ-BK-Sj8" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leadingMargin" id="TXA-3n-TNE"/>
+                <constraint firstAttribute="bottomMargin" secondItem="KVZ-BK-Sj8" secondAttribute="bottom" id="d32-7X-deI"/>
+            </constraints>
+            <connections>
+                <outlet property="lblContent" destination="KVZ-BK-Sj8" id="qge-Ud-iZ7"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>
