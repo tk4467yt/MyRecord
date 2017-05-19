@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmptyContent;
 
-@property (strong, nonatomic) NSArray *categoryArr;
+@property (strong, nonatomic) NSMutableArray *categoryArr;
 @end
 
 @implementation FirstViewController
@@ -66,6 +66,10 @@
 -(void)updateRecordsInfo
 {
     self.categoryArr=[DbHandler getAllCategoryInfo];
+    UInt64 recordCount=[DbHandler getAllRecordInfoCount];
+    if (recordCount > 0) {
+        [self.categoryArr insertObject:[CategoryInfo getDefaultCategoryInfo] atIndex:0];
+    }
     
     self.lblEmptyContent.text=NSLocalizedString(@"record_empty_desc", @"");
     if (self.categoryArr.count <= 0) {
@@ -73,6 +77,8 @@
     } else {
         self.lblEmptyContent.hidden=true;
     }
+    
+    [self.tbAllRecords reloadData];
 }
 
 #pragma mark memoryWarning
@@ -104,6 +110,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return self.categoryArr.count;
 }
 @end

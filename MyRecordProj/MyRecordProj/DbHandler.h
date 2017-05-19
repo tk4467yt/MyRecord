@@ -19,12 +19,13 @@ extern const NSInteger kDbIdCategoryTitleSize;
 +(void)initLocalDatabase;
 +(void)closeLocalDatabase;
 
-+(NSArray *)getAllCategoryInfo;
++(NSMutableArray *)getAllCategoryInfo;
 +(void)addCategoryInfo:(CategoryInfo *)info;
 
 
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId;
++(UInt64)getAllRecordInfoCount;
 
 +(NSString *)getStrSettingWithKey:(NSString *)key andDefValue:(NSString *)defStr;
-+(NSInteger)getIntSettingWithKey:(NSString *)key andDefValue:(NSInteger)defInt;
++(UInt64)getIntSettingWithKey:(NSString *)key andDefValue:(UInt64)defInt;
 @end

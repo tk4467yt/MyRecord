@@ -93,7 +93,7 @@ static __strong FMDatabase *dbRecords;
     dbRecords=nil;
 }
 
-+(NSArray *)getAllCategoryInfo
++(NSMutableArray *)getAllCategoryInfo
 {
     NSMutableArray *arr2ret=[NSMutableArray new];
     
@@ -142,6 +142,17 @@ static __strong FMDatabase *dbRecords;
     }
     
     return arr2ret;
+}
+
++(UInt64)getAllRecordInfoCount
+{
+    UInt64 count2ret=0;
+    
+    FMResultSet *s = [dbRecords executeQuery:@"SELECT COUNT(*) FROM `record_info`"];
+    if (s && [s next]) {
+        count2ret=[s longLongIntForColumnIndex:0];
+    }
+    return count2ret;
 }
 
 +(NSArray *)getRecordSectionWithRecordId:(NSString *)recordId
@@ -198,13 +209,13 @@ static __strong FMDatabase *dbRecords;
     
     return str2ret;
 }
-+(NSInteger)getIntSettingWithKey:(NSString *)key andDefValue:(NSInteger)defInt
++(UInt64)getIntSettingWithKey:(NSString *)key andDefValue:(UInt64)defInt
 {
-    NSInteger int2ret=defInt;
+    UInt64 int2ret=defInt;
     
     NSString *strValue=[DbHandler getStrSettingWithKey:key andDefValue:nil];
     if (![MyUtility isStringNilOrZeroLength:strValue]) {
-        int2ret=[strValue integerValue];
+        int2ret=[strValue longLongValue];
     }
     
     return int2ret;

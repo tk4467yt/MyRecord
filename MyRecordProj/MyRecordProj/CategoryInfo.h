@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *kDefaultCategoryId;
+
 @interface CategoryInfo : NSObject
 @property (nonatomic,copy) NSString *categoryId;
 @property (nonatomic,copy) NSString *categoryTitle;
 @property (nonatomic,assign) UInt64 createTime;
+
++(CategoryInfo *)getDefaultCategoryInfo;
 @end

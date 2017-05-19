@@ -8,6 +8,16 @@
 
 #import "CategoryInfo.h"
 
-@implementation CategoryInfo
+NSString *kDefaultCategoryId=@"def_category_id";
 
+@implementation CategoryInfo
++(CategoryInfo *)getDefaultCategoryInfo
+{
+    CategoryInfo *info2ret=[CategoryInfo new];
+    info2ret.categoryId=kDefaultCategoryId;
+    info2ret.categoryTitle=NSLocalizedString(@"def_category_name", @"");
+    info2ret.createTime=0;
+    
+    return info2ret;
+}
 @end
