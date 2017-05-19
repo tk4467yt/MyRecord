@@ -33,10 +33,12 @@
     if (![MyUtility isStringNilOrZeroLength:title]) {
         CategoryInfo *info=[CategoryInfo new];
         info.categoryTitle=title;
-        info.categoryId=nil;
+        info.categoryId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
         info.createTime=[[NSDate date] timeIntervalSince1970];
         
         [DbHandler addCategoryInfo:info];
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

@@ -26,4 +26,5 @@
 
 +(UIViewController *)getInitViewControllerFromSB:(NSString *)storyBoard withBundle:(NSBundle *)bundle;
 
++(NSString *)makeUniqueIdWithMaxLength:(NSInteger)maxLen;
 @end
