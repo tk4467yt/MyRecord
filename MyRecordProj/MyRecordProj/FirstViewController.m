@@ -71,7 +71,7 @@
 {
     self.categoryArr=[DbHandler getAllCategoryInfo];
     UInt64 recordCount=[DbHandler getAllRecordInfoCount];
-    if (recordCount > 0) {
+    if (self.categoryArr.count > 0 || recordCount > 0) {
         [self.categoryArr insertObject:[CategoryInfo getDefaultCategoryInfo] atIndex:0];
     }
     
@@ -95,7 +95,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (0 == indexPath.row) {
-        return 40;
+        return 50;
     }
     return 0;
 }
