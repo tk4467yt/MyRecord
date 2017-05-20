@@ -28,6 +28,13 @@
 		2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9341ECB477C00EC59E7 /* RecordSection.m */; };
 		2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */; };
 		2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */; };
+		2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */; };
+		255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */; };
+		255397321ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255397301ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib */; };
+		255397361ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397341ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.m */; };
+		255397371ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255397351ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib */; };
+		2553973B1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397391ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m */; };
+		2553973C1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2553973A1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -106,6 +113,17 @@
 		2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSectionItem.m; sourceTree = "<group>"; };
 		255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNotificationObserver.h; sourceTree = "<group>"; };
 		255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomNotificationObserver.m; sourceTree = "<group>"; };
+		2553972B1ED07DF300F6EC45 /* RecordCreateSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateSectionInfo.h; sourceTree = "<group>"; };
+		2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordCreateSectionInfo.m; sourceTree = "<group>"; };
+		2553972E1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionTitleTableViewCell.h; sourceTree = "<group>"; };
+		2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionTitleTableViewCell.m; sourceTree = "<group>"; };
+		255397301ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionTitleTableViewCell.xib; sourceTree = "<group>"; };
+		255397331ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionTxtTableViewCell.h; sourceTree = "<group>"; };
+		255397341ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionTxtTableViewCell.m; sourceTree = "<group>"; };
+		255397351ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionTxtTableViewCell.xib; sourceTree = "<group>"; };
+		255397381ED081CF00F6EC45 /* CreateSectionImgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionImgTableViewCell.h; sourceTree = "<group>"; };
+		255397391ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionImgTableViewCell.m; sourceTree = "<group>"; };
+		2553973A1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionImgTableViewCell.xib; sourceTree = "<group>"; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -294,6 +312,8 @@
 				2510E9341ECB477C00EC59E7 /* RecordSection.m */,
 				2510E9361ECB478A00EC59E7 /* RecordSectionItem.h */,
 				2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */,
+				2553972B1ED07DF300F6EC45 /* RecordCreateSectionInfo.h */,
+				2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -315,6 +335,15 @@
 				25D960781ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib */,
 				25D9607B1ECFEA04006E067E /* CellIdInfo.h */,
 				25D9607C1ECFEA04006E067E /* CellIdInfo.m */,
+				2553972E1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.h */,
+				2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */,
+				255397301ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib */,
+				255397331ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.h */,
+				255397341ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.m */,
+				255397351ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib */,
+				255397381ED081CF00F6EC45 /* CreateSectionImgTableViewCell.h */,
+				255397391ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m */,
+				2553973A1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -480,9 +509,12 @@
 				2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */,
 				2510E8E01EC0B4B400EC59E7 /* LaunchScreen.storyboard in Resources */,
 				2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */,
+				2553973C1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib in Resources */,
 				2510E8DD1EC0B4B400EC59E7 /* Assets.xcassets in Resources */,
 				25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */,
+				255397371ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib in Resources */,
 				2510E8DB1EC0B4B400EC59E7 /* Main.storyboard in Resources */,
+				255397321ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib in Resources */,
 				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,13 +552,17 @@
 				25D9607D1ECFEA04006E067E /* CellIdInfo.m in Sources */,
 				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
+				2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
+				255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */,
 				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
+				2553973B1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m in Sources */,
 				2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */,
 				25D9605C1ECF3B6D006E067E /* MyColor.m in Sources */,
 				25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */,
 				25D960711ECF3B90006E067E /* FMDatabaseAdditions.m in Sources */,
+				255397361ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.m in Sources */,
 				25D960751ECF3B90006E067E /* FMResultSet.m in Sources */,
 				25D960791ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m in Sources */,
 				2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */,

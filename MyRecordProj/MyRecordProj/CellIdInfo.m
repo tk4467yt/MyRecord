@@ -13,4 +13,17 @@
 {
     return @"record_brief_cat_info_cell_id";
 }
+
++(NSString *)cellIdForCreateSectionTitle
+{
+    return @"create_section_title_cell_id";
+}
++(NSString *)cellIdForCreateSectionTxt
+{
+    return @"create_section_txt_cell_id";
+}
++(NSString *)cellIdForCreateSectionImg
+{
+    return @"create_section_img_cell_id";
+}
 @end

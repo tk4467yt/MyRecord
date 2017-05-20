@@ -10,4 +10,8 @@
 
 @interface CellIdInfo : NSObject
 +(NSString *)cellIdForRecordTopCategoryInfo;
+
++(NSString *)cellIdForCreateSectionTitle;
++(NSString *)cellIdForCreateSectionTxt;
++(NSString *)cellIdForCreateSectionImg;
 @end

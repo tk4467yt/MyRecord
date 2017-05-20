@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MyCommonHeaders.h"
+#import "RecordInfo.h"
 
 @interface CreateRecordViewController : MyRootViewController
 
