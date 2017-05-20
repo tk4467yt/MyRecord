@@ -21,8 +21,12 @@
     for (UITabBarItem *aItem in self.tabBar.items) {
         if (1 == aItem.tag) {
             aItem.title=NSLocalizedString(@"tabbar_title_records", @"");
+            aItem.image=[UIImage imageNamed:@"nav_edit"];
+            aItem.selectedImage=[UIImage imageNamed:@"nav_edit_p"];
         } else if (2 == aItem.tag) {
             aItem.title=NSLocalizedString(@"tabbar_title_settings", @"");
+            aItem.image=[UIImage imageNamed:@"nav_settings"];
+            aItem.selectedImage=[UIImage imageNamed:@"nav_settings_p"];
         }
     }
 }

@@ -19,23 +19,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-uX-okk" userLabel="lblCategoryName">
-                        <rect key="frame" x="8" y="8" width="42" height="27.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="8" y="8" width="49" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-wI-fK9" userLabel="ivActionInd">
-                        <rect key="frame" x="55" y="11" width="20" height="20"/>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-wI-fK9" userLabel="ivActionInd">
+                        <rect key="frame" x="57" y="12" width="20" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="3ab-Hs-pf3"/>
-                            <constraint firstAttribute="height" constant="20" id="XAo-4S-nOQ"/>
+                            <constraint firstAttribute="height" constant="18" id="XAo-4S-nOQ"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="9gf-uX-okk" secondAttribute="bottom" id="98b-Nt-bK6"/>
                     <constraint firstItem="9gf-uX-okk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DBM-w8-0p6"/>
-                    <constraint firstItem="Xty-wI-fK9" firstAttribute="leading" secondItem="9gf-uX-okk" secondAttribute="trailing" constant="5" id="WMi-pa-LGJ"/>
+                    <constraint firstItem="Xty-wI-fK9" firstAttribute="leading" secondItem="9gf-uX-okk" secondAttribute="trailing" id="WMi-pa-LGJ"/>
                     <constraint firstItem="9gf-uX-okk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ZCB-Za-gnu"/>
                     <constraint firstItem="Xty-wI-fK9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kRf-Ro-43Q"/>
                 </constraints>
@@ -46,4 +46,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="navbar_arrow" width="10" height="9"/>
+    </resources>
 </document>
