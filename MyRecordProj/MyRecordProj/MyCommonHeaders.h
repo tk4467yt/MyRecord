@@ -16,5 +16,6 @@
 #import "FMDB.h"
 #import "FMDBMigrationManager.h"
 #import "CellIdInfo.h"
+#import "MyCustomNotificationObserver.h"
 
 #endif /* MyCommonHeaders_h */

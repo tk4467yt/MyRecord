@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCustomNotificationObserver.h"
 
-@interface MyRootViewController : UIViewController
+@interface MyRootViewController : UIViewController <MyCustomNotificationActionDelegate>
 -(void)screenOrientationChangedHandle;
 @end

@@ -27,6 +27,7 @@
 		2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9311ECB3BAB00EC59E7 /* RecordInfo.m */; };
 		2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9341ECB477C00EC59E7 /* RecordSection.m */; };
 		2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */; };
+		2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -103,6 +104,8 @@
 		2510E9341ECB477C00EC59E7 /* RecordSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSection.m; sourceTree = "<group>"; };
 		2510E9361ECB478A00EC59E7 /* RecordSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSectionItem.h; sourceTree = "<group>"; };
 		2510E9371ECB478A00EC59E7 /* RecordSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSectionItem.m; sourceTree = "<group>"; };
+		255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNotificationObserver.h; sourceTree = "<group>"; };
+		255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomNotificationObserver.m; sourceTree = "<group>"; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -328,6 +331,8 @@
 				25D960591ECF3B6D006E067E /* TextContentCollectionReusableView.h */,
 				25D9605A1ECF3B6D006E067E /* TextContentCollectionReusableView.m */,
 				25D9605B1ECF3B6D006E067E /* TextContentCollectionReusableView.xib */,
+				255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */,
+				255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				25D9605E1ECF3B6D006E067E /* MyUtility.m in Sources */,
 				2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */,
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
+				2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */,
 				25D960701ECF3B90006E067E /* FMDatabase.m in Sources */,
 				2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */,
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,

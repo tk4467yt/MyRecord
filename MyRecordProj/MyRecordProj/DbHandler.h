@@ -15,6 +15,9 @@ extern const NSInteger kDbIdRecordTitleSize;
 extern const NSInteger kDbIdRecordItemTxtSize;
 extern const NSInteger kDbIdCategoryTitleSize;
 
+#define CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE @"custom_notification_for_db_category_info_update"
+#define CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE @"custom_notification_for_db_record_info_update"
+
 @interface DbHandler : NSObject
 +(void)initLocalDatabase;
 +(void)closeLocalDatabase;

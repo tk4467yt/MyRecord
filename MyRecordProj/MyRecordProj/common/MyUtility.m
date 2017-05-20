@@ -97,4 +97,13 @@
     return str2ret;
 }
 
++(BOOL)isObjectAnString:(id)obj2check
+{
+    if ([obj2check isKindOfClass:NSString.class] || [obj2check isKindOfClass:NSMutableString.class]) {
+        return true;
+    }
+    
+    return false;
+}
+
 @end

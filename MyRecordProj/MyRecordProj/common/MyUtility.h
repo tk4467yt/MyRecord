@@ -27,4 +27,6 @@
 +(UIViewController *)getInitViewControllerFromSB:(NSString *)storyBoard withBundle:(NSBundle *)bundle;
 
 +(NSString *)makeUniqueIdWithMaxLength:(NSInteger)maxLen;
+
++(BOOL)isObjectAnString:(id)obj2check;
 @end

@@ -121,6 +121,8 @@ static __strong FMDatabase *dbRecords;
      info.categoryId,
      info.categoryTitle,
      [NSString stringWithFormat:@"%lld",info.createTime]];
+    
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE andContent:@""];
 }
 
 +(void)deleteCategoryWithId:(NSString *)categoryId
@@ -130,6 +132,8 @@ static __strong FMDatabase *dbRecords;
     }
     [dbRecords executeUpdate:@"DELETE FROM `record_category` WHERE `category_id` = ?",
      categoryId];
+    
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE andContent:@""];
 }
 
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId

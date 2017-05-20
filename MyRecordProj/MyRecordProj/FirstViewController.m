@@ -31,6 +31,14 @@
     [self.tbAllRecords registerNib:[UINib nibWithNibName:@"RecordsTopCategoryInfoTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordTopCategoryInfo]];
     
     [self updateRecordsInfo];
+    
+    [self addObserverInfo];
+}
+
+-(void)addObserverInfo
+{
+    [[MyCustomNotificationObserver sharedObserver] addCustomOvserverWithDelegate:self andKey:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE];
+    [[MyCustomNotificationObserver sharedObserver] addCustomOvserverWithDelegate:self andKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE];
 }
 
 -(void)action2create
@@ -94,6 +102,22 @@
     }
     
     return nil;
+}
+
+#pragma mark MyCustomNotificationActionDelegate
+-(void)didReceivecMyCustomNotification:(NSDictionary *)notificationDict
+{
+    if (nil == notificationDict) {
+        return;
+    }
+    NSString *key2check=notificationDict[MyCustomNotificationContent_key];
+    if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE]) {
+        [self updateRecordsInfo];
+    } else if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE]) {
+        [self updateRecordsInfo];
+    } else {
+        [super didReceivecMyCustomNotification:notificationDict];
+    }
 }
 
 #pragma mark memoryWarning
