@@ -31,17 +31,21 @@
 {
     NSString *title=self.tfInput.text;
     if (![MyUtility isStringNilOrZeroLength:title]) {
-        CategoryInfo *info=[CategoryInfo new];
-        info.categoryTitle=title;
-        if (nil != self.origInfo) {
-            info.categoryId=self.origInfo.categoryId;
-            info.createTime=self.origInfo.createTime;
+        if (nil != self.origInfo && [title isEqualToString:self.origInfo.categoryTitle]) {
+            //no handle
         } else {
-            info.categoryId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
-            info.createTime=[[NSDate date] timeIntervalSince1970];
+            CategoryInfo *info=[CategoryInfo new];
+            info.categoryTitle=title;
+            if (nil != self.origInfo) {
+                info.categoryId=self.origInfo.categoryId;
+                info.createTime=self.origInfo.createTime;
+            } else {
+                info.categoryId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+                info.createTime=[[NSDate date] timeIntervalSince1970];
+            }
+            
+            [DbHandler addOrUpdateCategoryInfo:info];
         }
-        
-        [DbHandler addOrUpdateCategoryInfo:info];
         
         [self.navigationController popViewControllerAnimated:YES];
     }
