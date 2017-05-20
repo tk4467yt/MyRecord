@@ -7,7 +7,8 @@
 //
 
 #import "MyCommonHeaders.h"
+#import "CategoryInfo.h"
 
 @interface CreateCategoryViewController : MyRootViewController
-
+@property (retain, nonatomic) CategoryInfo *origInfo;
 @end

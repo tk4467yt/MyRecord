@@ -111,7 +111,7 @@ static __strong FMDatabase *dbRecords;
     return arr2ret;
 }
 
-+(void)addCategoryInfo:(CategoryInfo *)info
++(void)addOrUpdateCategoryInfo:(CategoryInfo *)info
 {
     if ([MyUtility isStringNilOrZeroLength:info.categoryId] ||
         [MyUtility isStringNilOrZeroLength:info.categoryTitle]) {
@@ -121,6 +121,15 @@ static __strong FMDatabase *dbRecords;
      info.categoryId,
      info.categoryTitle,
      [NSString stringWithFormat:@"%lld",info.createTime]];
+}
+
++(void)deleteCategoryWithId:(NSString *)categoryId
+{
+    if ([MyUtility isStringNilOrZeroLength:categoryId]) {
+        return;
+    }
+    [dbRecords executeUpdate:@"DELETE FROM `record_category` WHERE `category_id` = ?",
+     categoryId];
 }
 
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId

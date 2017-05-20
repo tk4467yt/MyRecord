@@ -10,9 +10,9 @@
 #import "MyCommonHeaders.h"
 #import "DbHandler.h"
 #import "RecordsTopCategoryInfoTableViewCell.h"
+#import "CreateCategoryViewController.h"
 
-
-@interface FirstViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface FirstViewController () <UITableViewDelegate,UITableViewDataSource,RecordTopCatInfoActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmptyContent;
 
@@ -85,6 +85,17 @@
     [self.tbAllRecords reloadData];
 }
 
+-(CategoryInfo *)getCategoryInfoWithId:(NSString *)catId
+{
+    for (CategoryInfo *aInfo in self.categoryArr) {
+        if ([aInfo.categoryId isEqualToString:catId]) {
+            return aInfo;
+        }
+    }
+    
+    return nil;
+}
+
 #pragma mark memoryWarning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -103,6 +114,10 @@
 {
     return 10;
 }
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -118,6 +133,14 @@
     if (0 == indexPath.row) {
         RecordsTopCategoryInfoTableViewCell *topCatInfoCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordTopCategoryInfo] forIndexPath:indexPath];
         topCatInfoCell.lblCategoryName.text=curCategory.categoryTitle;
+        topCatInfoCell.categoryId=curCategory.categoryId;
+        topCatInfoCell.actionDelegate=self;
+        
+        if ([curCategory.categoryId isEqualToString:kDefaultCategoryId]) {
+            topCatInfoCell.isDefaultCategory=true;
+        } else {
+            topCatInfoCell.isDefaultCategory=false;
+        }
         
         cell2ret=topCatInfoCell;
     }
@@ -129,5 +152,40 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.categoryArr.count;
+}
+
+#pragma mark RecordTopCatInfoActionDelegate
+-(void)recordTopCategoryInfoDidTapWithCategoryId:(NSString *)catId fromSourceView:(UIView *)sourceView
+{
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *changeNameAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"change_name", @"")
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction *action){
+                                                                 CreateCategoryViewController *createCategoryVC=(CreateCategoryViewController *)[MyUtility getInitViewControllerFromSB:@"CreateCategory" withBundle:nil];
+                                                                 if (nil != createCategoryVC) {
+                                                                     CategoryInfo *info2use=[self getCategoryInfoWithId:catId];
+                                                                     createCategoryVC.origInfo=info2use;
+                                                                     [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createCategoryVC animated:YES];
+                                                                 }
+                                                             }];
+    UIAlertAction *deleteAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"delete", @"")
+                                                                 style:UIAlertActionStyleDestructive
+                                                               handler:^(UIAlertAction *action){
+                                                                   [DbHandler deleteCategoryWithId:catId];
+                                                               }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    
+    [alertVC addAction:changeNameAction];
+    [alertVC addAction:deleteAction];
+    [alertVC addAction:cancelAction];
+    
+    alertVC.popoverPresentationController.sourceView=sourceView;
+    alertVC.popoverPresentationController.sourceRect=sourceView.frame;
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 @end

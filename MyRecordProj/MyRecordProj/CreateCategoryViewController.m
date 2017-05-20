@@ -8,13 +8,13 @@
 
 #import "CreateCategoryViewController.h"
 #import "CategoryCreateTFTableViewCell.h"
-#import "CategoryInfo.h"
 #import "DbHandler.h"
 
 @interface CreateCategoryViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreateCategory;
 
 @property (weak, nonatomic) UITextField *tfInput;
+@property (assign, nonatomic) BOOL isInitTitleSet;
 @end
 
 @implementation CreateCategoryViewController
@@ -33,10 +33,15 @@
     if (![MyUtility isStringNilOrZeroLength:title]) {
         CategoryInfo *info=[CategoryInfo new];
         info.categoryTitle=title;
-        info.categoryId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+        if (nil != self.origInfo) {
+            info.categoryId=self.origInfo.categoryId;
+        } else {
+            info.categoryId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+        }
+        
         info.createTime=[[NSDate date] timeIntervalSince1970];
         
-        [DbHandler addCategoryInfo:info];
+        [DbHandler addOrUpdateCategoryInfo:info];
         
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -78,6 +83,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CategoryCreateTFTableViewCell *tfCell=[tableView dequeueReusableCellWithIdentifier:@"category_create_tf_cell_id" forIndexPath:indexPath];
+    if (nil != self.origInfo && !self.isInitTitleSet) {
+        tfCell.tfInput.text=self.origInfo.categoryTitle;
+        self.isInitTitleSet=true;
+    }
     self.tfInput=tfCell.tfInput;
     
     return tfCell;

@@ -15,12 +15,36 @@
     // Initialization code
     
     self.contentView.backgroundColor=[UIColor lightGrayColor];
+    
+    UITapGestureRecognizer *tapGestureLabel=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionForCategoryTap:)];
+    [self.lblCategoryName addGestureRecognizer:tapGestureLabel];
+    
+    UITapGestureRecognizer *tapGestureImg=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionForCategoryTap:)];
+    [self.ivActionInd addGestureRecognizer:tapGestureImg];
+}
+
+-(void)actionForCategoryTap:(UITapGestureRecognizer *)tapGesture
+{
+    if (!self.isDefaultCategory && nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(recordTopCategoryInfoDidTapWithCategoryId:fromSourceView:)]) {
+        [self.actionDelegate recordTopCategoryInfoDidTapWithCategoryId:self.categoryId fromSourceView:self.ivActionInd];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    if (self.isDefaultCategory) {
+        self.ivActionInd.hidden=true;
+    } else {
+        self.ivActionInd.hidden=false;
+    }
 }
 
 @end
