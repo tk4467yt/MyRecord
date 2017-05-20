@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 #import "MyCommonHeaders.h"
 #import "DbHandler.h"
+#import "RecordsTopCategoryInfoTableViewCell.h"
+
 
 @interface FirstViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
@@ -25,6 +27,8 @@
     
     self.navigationItem.title=NSLocalizedString(@"nav_title_records", @"");
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(action2create)];
+    
+    [self.tbAllRecords registerNib:[UINib nibWithNibName:@"RecordsTopCategoryInfoTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordTopCategoryInfo]];
     
     [self updateRecordsInfo];
 }
@@ -90,22 +94,32 @@
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 0;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+    if (0 == indexPath.row) {
+        return 40;
+    }
     return 0;
 }
 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell2ret=nil;
+    
+    CategoryInfo *curCategory=self.categoryArr[indexPath.section];
+    if (0 == indexPath.row) {
+        RecordsTopCategoryInfoTableViewCell *topCatInfoCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordTopCategoryInfo] forIndexPath:indexPath];
+        topCatInfoCell.lblCategoryName.text=curCategory.categoryTitle;
+        
+        cell2ret=topCatInfoCell;
+    }
+    
+    [cell2ret setNeedsLayout];
+    return cell2ret;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

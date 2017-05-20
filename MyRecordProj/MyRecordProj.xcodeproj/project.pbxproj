@@ -41,6 +41,9 @@
 		25D960731ECF3B90006E067E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9606A1ECF3B90006E067E /* FMDatabaseQueue.m */; };
 		25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9606D1ECF3B90006E067E /* FMDBMigrationManager.m */; };
 		25D960751ECF3B90006E067E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9606F1ECF3B90006E067E /* FMResultSet.m */; };
+		25D960791ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960771ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m */; };
+		25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D960781ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib */; };
+		25D9607D1ECFEA04006E067E /* CellIdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9607C1ECFEA04006E067E /* CellIdInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,11 @@
 		25D9606D1ECF3B90006E067E /* FMDBMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBMigrationManager.m; sourceTree = "<group>"; };
 		25D9606E1ECF3B90006E067E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		25D9606F1ECF3B90006E067E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		25D960761ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsTopCategoryInfoTableViewCell.h; sourceTree = "<group>"; };
+		25D960771ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsTopCategoryInfoTableViewCell.m; sourceTree = "<group>"; };
+		25D960781ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordsTopCategoryInfoTableViewCell.xib; sourceTree = "<group>"; };
+		25D9607B1ECFEA04006E067E /* CellIdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellIdInfo.h; sourceTree = "<group>"; };
+		25D9607C1ECFEA04006E067E /* CellIdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellIdInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +307,11 @@
 			children = (
 				25D960451ECC99D0006E067E /* CategoryCreateTFTableViewCell.h */,
 				25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */,
+				25D960761ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.h */,
+				25D960771ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m */,
+				25D960781ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib */,
+				25D9607B1ECFEA04006E067E /* CellIdInfo.h */,
+				25D9607C1ECFEA04006E067E /* CellIdInfo.m */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -465,6 +478,7 @@
 				2510E8DD1EC0B4B400EC59E7 /* Assets.xcassets in Resources */,
 				25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */,
 				2510E8DB1EC0B4B400EC59E7 /* Main.storyboard in Resources */,
+				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +511,7 @@
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */,
 				25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */,
+				25D9607D1ECFEA04006E067E /* CellIdInfo.m in Sources */,
 				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
@@ -507,6 +522,7 @@
 				25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */,
 				25D960711ECF3B90006E067E /* FMDatabaseAdditions.m in Sources */,
 				25D960751ECF3B90006E067E /* FMResultSet.m in Sources */,
+				25D960791ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m in Sources */,
 				2510E92A1EC85E4000EC59E7 /* DbHandler.m in Sources */,
 				25D960731ECF3B90006E067E /* FMDatabaseQueue.m in Sources */,
 				25D960721ECF3B90006E067E /* FMDatabasePool.m in Sources */,

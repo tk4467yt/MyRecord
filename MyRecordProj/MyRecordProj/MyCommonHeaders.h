@@ -15,5 +15,6 @@
 #import "TextContentCollectionReusableView.h"
 #import "FMDB.h"
 #import "FMDBMigrationManager.h"
+#import "CellIdInfo.h"
 
 #endif /* MyCommonHeaders_h */
