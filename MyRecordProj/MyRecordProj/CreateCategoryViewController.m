@@ -35,11 +35,11 @@
         info.categoryTitle=title;
         if (nil != self.origInfo) {
             info.categoryId=self.origInfo.categoryId;
+            info.createTime=self.origInfo.createTime;
         } else {
             info.categoryId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+            info.createTime=[[NSDate date] timeIntervalSince1970];
         }
-        
-        info.createTime=[[NSDate date] timeIntervalSince1970];
         
         [DbHandler addOrUpdateCategoryInfo:info];
         
