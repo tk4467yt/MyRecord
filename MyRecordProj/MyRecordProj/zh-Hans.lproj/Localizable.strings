@@ -4,7 +4,7 @@
 "nav_title_settings"="我的设置";
 "record_empty_desc"="没有记录";
 "nav_title_record_create"="新建";
-"alert_create_record"="新建记录";
+"title_create_record"="新建记录";
 "alert_create_category"="新建分组";
 "cancel"="取消";
 "ok"="确定";

@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title=NSLocalizedString(@"alert_create_record", @"");
+    self.navigationItem.title=NSLocalizedString(@"title_create_record", @"");
 }
 
 - (void)didReceiveMemoryWarning {

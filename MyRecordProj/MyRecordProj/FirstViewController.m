@@ -44,7 +44,7 @@
 -(void)action2create
 {
     UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *createRecordAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"alert_create_record", @"")
+    UIAlertAction *createRecordAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"title_create_record", @"")
                                                                style:UIAlertActionStyleDefault
                                                              handler:^(UIAlertAction *action){
                                                                  UIViewController *createRecordVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
