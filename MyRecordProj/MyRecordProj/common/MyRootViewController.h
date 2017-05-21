@@ -11,4 +11,8 @@
 
 @interface MyRootViewController : UIViewController <MyCustomNotificationActionDelegate>
 -(void)screenOrientationChangedHandle;
+
+- (void)keyboardWillShow:(NSNotification *)notification;
+- (void)keyboardWillHide:(NSNotification *)info;
+- (void)actionForKeyboardHeightDidChange;
 @end

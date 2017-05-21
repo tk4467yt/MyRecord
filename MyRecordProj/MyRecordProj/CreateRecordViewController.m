@@ -211,6 +211,12 @@
     }
 }
 
+#pragma mark override
+- (void)actionForKeyboardHeightDidChange
+{
+    [super actionForKeyboardHeightDidChange];
+}
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
