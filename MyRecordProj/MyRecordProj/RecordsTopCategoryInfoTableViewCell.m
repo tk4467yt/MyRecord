@@ -7,6 +7,7 @@
 //
 
 #import "RecordsTopCategoryInfoTableViewCell.h"
+#import "MyCommonHeaders.h"
 
 @implementation RecordsTopCategoryInfoTableViewCell
 
@@ -14,7 +15,7 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.contentView.backgroundColor=[UIColor lightGrayColor];
+    self.contentView.backgroundColor=[MyColor defBackgroundColor];
     
     UITapGestureRecognizer *tapGestureLabel=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionForCategoryTap:)];
     [self.lblCategoryName addGestureRecognizer:tapGestureLabel];

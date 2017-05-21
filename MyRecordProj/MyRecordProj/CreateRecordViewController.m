@@ -25,6 +25,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title=NSLocalizedString(@"title_create_record", @"");
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(navActionForCreate)];
     
     [self.tbCreate registerNib:[UINib nibWithNibName:@"CreateSectionTitleTableViewCell" bundle:[NSBundle mainBundle]]
         forCellReuseIdentifier:[CellIdInfo cellIdForCreateSectionTitle]];
@@ -44,6 +45,11 @@
     [self.createSectionArr addObject:[RecordCreateSectionInfo infoForImage]];
     
     [self.tbCreate reloadData];
+}
+
+-(void)navActionForCreate
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
