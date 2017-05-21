@@ -7,12 +7,18 @@
 //
 
 #import "CreateSectionTxtTableViewCell.h"
+#import "MyCommonHeaders.h"
 
 @implementation CreateSectionTxtTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.tvTxtContent.layer.masksToBounds=true;
+    self.tvTxtContent.layer.cornerRadius=5.0;
+    self.tvTxtContent.layer.borderWidth=1;
+    self.tvTxtContent.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

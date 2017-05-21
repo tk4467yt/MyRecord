@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CreateSectionTxtTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblTxtDesc;
+@property (weak, nonatomic) IBOutlet UITextView *tvTxtContent;
 
 @end

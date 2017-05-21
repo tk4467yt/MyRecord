@@ -12,3 +12,6 @@
 "def_category_name"="默认分组";
 "change_name"="改名";
 "delete"="删除";
+"create_record_title_desc"="标题:";
+"create_record_txt_desc"="文本:";
+"create_record_img_desc"="图片:";

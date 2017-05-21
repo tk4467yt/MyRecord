@@ -57,13 +57,13 @@
     RecordCreateSectionInfo *sectionInfo=self.createSectionArr[indexPath.row];
     switch (sectionInfo.type) {
         case SectionTypeTitle:
-            return 50;
+            return 100;
             break;
         case SectionTypeTxt:
-            return 80;
+            return 120;
             break;
         case SectionTypeImg:
-            return 80;
+            return 120;
             break;
         default:
             break;
@@ -88,16 +88,19 @@
     if (SectionTypeTitle == sectionInfo.type) {
         CreateSectionTitleTableViewCell *titleCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionTitle]
                                                                                    forIndexPath:indexPath];
+        titleCell.lblTitleDesc.text=NSLocalizedString(@"create_record_title_desc", @"");
         
         cell2ret=titleCell;
     } else if (SectionTypeTxt == sectionInfo.type) {
         CreateSectionTxtTableViewCell *txtCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionTxt]
                                                                                    forIndexPath:indexPath];
+        txtCell.lblTxtDesc.text=NSLocalizedString(@"create_record_txt_desc", @"");
         
         cell2ret=txtCell;
     } else if (SectionTypeImg == sectionInfo.type) {
         CreateSectionImgTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionImg]
                                                                                    forIndexPath:indexPath];
+        imgCell.lblImgDesc.text=NSLocalizedString(@"create_record_img_desc", @"");
         
         cell2ret=imgCell;
     }

@@ -12,3 +12,6 @@
 "def_category_name"="Default Category";
 "change_name"="Change Name";
 "delete"="Delete";
+"create_record_title_desc"="Title:";
+"create_record_txt_desc"="Text:";
+"create_record_img_desc"="Image:";

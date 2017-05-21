@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CreateSectionTitleTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblTitleDesc;
+@property (weak, nonatomic) IBOutlet UITextView *tvTitle;
 
 @end

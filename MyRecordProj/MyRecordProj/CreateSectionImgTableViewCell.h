@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CreateSectionImgTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblImgDesc;
+@property (weak, nonatomic) IBOutlet UICollectionView *cvImgs;
 
 @end

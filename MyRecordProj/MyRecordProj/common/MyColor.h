@@ -17,4 +17,6 @@
 +(UIColor *)blueColor;
 +(UIColor *)purpleColor;
 +(UIColor *)pinkColor;
+
++(UIColor *)defBackgroundColor;
 @end

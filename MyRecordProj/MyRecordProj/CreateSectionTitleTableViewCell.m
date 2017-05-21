@@ -7,12 +7,18 @@
 //
 
 #import "CreateSectionTitleTableViewCell.h"
+#import "MyCommonHeaders.h"
 
 @implementation CreateSectionTitleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.tvTitle.layer.masksToBounds=true;
+    self.tvTitle.layer.cornerRadius=5.0;
+    self.tvTitle.layer.borderWidth=1;
+    self.tvTitle.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

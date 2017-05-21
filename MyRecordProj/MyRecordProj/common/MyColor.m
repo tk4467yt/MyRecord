@@ -40,4 +40,8 @@
 {
     return [UIColor colorWithRed:255.0/255 green:45.0/255 blue:85.0/255 alpha:1.0];
 }
++(UIColor *)defBackgroundColor
+{
+    return [UIColor colorWithRed:200.0/255 green:200.0/255 blue:200.0/255 alpha:1.0];
+}
 @end
