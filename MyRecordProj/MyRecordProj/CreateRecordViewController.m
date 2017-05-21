@@ -11,9 +11,12 @@
 #import "CreateSectionTitleTableViewCell.h"
 #import "CreateSectionTxtTableViewCell.h"
 #import "CreateSectionImgTableViewCell.h"
+#import "CreateSectionFooterView.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
+
+@property (strong, nonatomic) CreateSectionFooterView *footerView;
 
 @property (strong, nonatomic) NSMutableArray *createSectionArr;
 @end
@@ -57,6 +60,52 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark CreateSectionFooterViewActionDelegate
+-(void)footerButtonDidTappedWithButton:(UIButton *)btnTapped
+{
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *addTxtAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"create_record_add_text", @"")
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction *action){
+                                                                 [self.createSectionArr addObject:[RecordCreateSectionInfo infoForText]];
+                                                                 [self.tbCreate reloadData];
+                                                                 
+                                                                 [self performSelector:@selector(action4scroll2bottom) withObject:nil afterDelay:0.3];
+                                                             }];
+    UIAlertAction *addImageAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"create_record_add_image", @"")
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action){
+                                                                   [self.createSectionArr addObject:[RecordCreateSectionInfo infoForImage]];
+                                                                   [self.tbCreate reloadData];
+                                                                   
+                                                                   [self performSelector:@selector(action4scroll2bottom) withObject:nil afterDelay:0.3];
+                                                               }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    
+    [alertVC addAction:addTxtAction];
+    [alertVC addAction:addImageAction];
+    [alertVC addAction:cancelAction];
+    
+    alertVC.popoverPresentationController.sourceView=btnTapped;
+    alertVC.popoverPresentationController.sourceRect=btnTapped.bounds;
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+-(void)action4scroll2bottom
+{
+    NSInteger countRows=[self.tbCreate numberOfRowsInSection:0];
+    if (countRows > 0) {
+        [self.tbCreate scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:countRows-1 inSection:0]
+                             atScrollPosition:UITableViewScrollPositionBottom
+                                     animated:YES];
+    }
+}
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -75,6 +124,21 @@
             break;
     }
     return 0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 60;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (nil == self.footerView) {
+        self.footerView=[[[NSBundle mainBundle] loadNibNamed:@"CreateSectionFooterView" owner:self options:nil] lastObject];
+        self.footerView.actionDelegate=self;
+        [self.footerView.btnAddSection setTitle:NSLocalizedString(@"create_record_add_more_desc", @"") forState:UIControlStateNormal];
+    }
+    
+    return self.footerView;
 }
 
 #pragma mark UITableViewDataSource

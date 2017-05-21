@@ -15,3 +15,6 @@
 "create_record_title_desc"="Title:";
 "create_record_txt_desc"="Text:";
 "create_record_img_desc"="Image:";
+"create_record_add_more_desc"="Add(Text/Image)";
+"create_record_add_text"="Add Text";
+"create_record_add_image"="Add Image";

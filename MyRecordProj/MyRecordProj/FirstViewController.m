@@ -208,7 +208,7 @@
     [alertVC addAction:cancelAction];
     
     alertVC.popoverPresentationController.sourceView=sourceView;
-    alertVC.popoverPresentationController.sourceRect=sourceView.frame;
+    alertVC.popoverPresentationController.sourceRect=sourceView.bounds;
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }

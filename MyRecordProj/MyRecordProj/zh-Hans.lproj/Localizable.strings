@@ -15,3 +15,6 @@
 "create_record_title_desc"="标题:";
 "create_record_txt_desc"="文本:";
 "create_record_img_desc"="图片:";
+"create_record_add_more_desc"="添加(文本/图片)";
+"create_record_add_text"="添加文本";
+"create_record_add_image"="添加图片";

@@ -35,6 +35,8 @@
 		255397371ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255397351ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib */; };
 		2553973B1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397391ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m */; };
 		2553973C1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2553973A1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib */; };
+		2553973E1ED13C3500F6EC45 /* CreateSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2553973D1ED13C3500F6EC45 /* CreateSectionFooterView.xib */; };
+		255397411ED13C4F00F6EC45 /* CreateSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397401ED13C4F00F6EC45 /* CreateSectionFooterView.m */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -124,6 +126,9 @@
 		255397381ED081CF00F6EC45 /* CreateSectionImgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionImgTableViewCell.h; sourceTree = "<group>"; };
 		255397391ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionImgTableViewCell.m; sourceTree = "<group>"; };
 		2553973A1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionImgTableViewCell.xib; sourceTree = "<group>"; };
+		2553973D1ED13C3500F6EC45 /* CreateSectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionFooterView.xib; sourceTree = "<group>"; };
+		2553973F1ED13C4F00F6EC45 /* CreateSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionFooterView.h; sourceTree = "<group>"; };
+		255397401ED13C4F00F6EC45 /* CreateSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionFooterView.m; sourceTree = "<group>"; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -344,6 +349,9 @@
 				255397381ED081CF00F6EC45 /* CreateSectionImgTableViewCell.h */,
 				255397391ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m */,
 				2553973A1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib */,
+				2553973D1ED13C3500F6EC45 /* CreateSectionFooterView.xib */,
+				2553973F1ED13C4F00F6EC45 /* CreateSectionFooterView.h */,
+				255397401ED13C4F00F6EC45 /* CreateSectionFooterView.m */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -515,6 +523,7 @@
 				255397371ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib in Resources */,
 				2510E8DB1EC0B4B400EC59E7 /* Main.storyboard in Resources */,
 				255397321ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib in Resources */,
+				2553973E1ED13C3500F6EC45 /* CreateSectionFooterView.xib in Resources */,
 				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +568,7 @@
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
 				2553973B1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m in Sources */,
 				2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */,
+				255397411ED13C4F00F6EC45 /* CreateSectionFooterView.m in Sources */,
 				25D9605C1ECF3B6D006E067E /* MyColor.m in Sources */,
 				25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */,
 				25D960711ECF3B90006E067E /* FMDatabaseAdditions.m in Sources */,
