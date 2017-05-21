@@ -108,6 +108,46 @@
 }
 
 #pragma mark UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    BOOL retFlag=true;
+    
+    NSInteger tvIdx=textView.tag;
+    if (tvIdx >= self.createSectionArr.count) {
+        return retFlag;
+    }
+    
+    NSInteger maxLimit=NSIntegerMax;
+    RecordCreateSectionInfo *sectionInfo=self.createSectionArr[tvIdx];
+    switch (sectionInfo.type) {
+        case SectionTypeTitle:
+            maxLimit=kDbIdRecordTitleSize;
+            break;
+        case SectionTypeTxt:
+            maxLimit=kDbIdRecordItemTxtSize;
+            break;
+        case SectionTypeImg:
+            break;
+        default:
+            break;
+    }
+    
+    if (textView.text.length + text.length > maxLimit) {
+        retFlag=false;
+        UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil
+                                                                       message:[NSString stringWithFormat:NSLocalizedString(@"max text can be input %d", @""),(int)maxLimit]
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                             style:UIAlertActionStyleCancel
+                                                           handler:^(UIAlertAction *action){
+                                                               
+                                                           }];
+        [alertVC addAction:cancelAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
+    }
+    
+    return retFlag;
+}
 - (void)textViewDidChange:(UITextView *)textView
 {
     NSInteger tvIdx=textView.tag;

@@ -18,3 +18,4 @@
 "create_record_add_more_desc"="添加(文本/图片)";
 "create_record_add_text"="添加文本";
 "create_record_add_image"="添加图片";
+"max text can be input %d"="最多能输入 %d 文字";
