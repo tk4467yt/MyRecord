@@ -12,8 +12,9 @@
 #import "CreateSectionTxtTableViewCell.h"
 #import "CreateSectionImgTableViewCell.h"
 #import "CreateSectionFooterView.h"
+#import "MyCommonHeaders.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
@@ -106,6 +107,70 @@
     }
 }
 
+#pragma mark UITextViewDelegate
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSInteger tvIdx=textView.tag;
+    if (tvIdx >= self.createSectionArr.count) {
+        return;
+    }
+    
+    RecordCreateSectionInfo *sectionInfo=self.createSectionArr[tvIdx];
+    NSString *txt2use=textView.text;
+    switch (sectionInfo.type) {
+        case SectionTypeTitle:
+            if (txt2use.length > kDbIdRecordTitleSize) {
+                txt2use=[txt2use substringToIndex:kDbIdRecordTitleSize];
+            }
+            break;
+        case SectionTypeTxt:
+            if (txt2use.length > kDbIdRecordItemTxtSize) {
+                txt2use=[txt2use substringToIndex:kDbIdRecordItemTxtSize];
+            }
+            break;
+        case SectionTypeImg:
+            break;
+        default:
+            break;
+    }
+    
+    sectionInfo.txtContent=txt2use;
+    
+    [self updateTxtInfoForCell:[self.tbCreate cellForRowAtIndexPath:[NSIndexPath indexPathForRow:tvIdx inSection:0]] andSectionInfo:sectionInfo];
+}
+
+-(void)updateTxtInfoForCell:(UITableViewCell *)cell2update andSectionInfo:(RecordCreateSectionInfo *)sectionInfo
+{
+    if (nil == cell2update || nil == sectionInfo) {
+        return;
+    }
+    switch (sectionInfo.type) {
+        case SectionTypeTitle:
+        {
+            CreateSectionTitleTableViewCell *titleCell=(CreateSectionTitleTableViewCell *)cell2update;
+            if ([titleCell isKindOfClass:CreateSectionTitleTableViewCell.class]) {
+                titleCell.tvTitle.text=sectionInfo.txtContent;
+                titleCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordTitleSize];
+            }
+            break;
+        }
+        case SectionTypeTxt:
+        {
+            CreateSectionTxtTableViewCell *titleCell=(CreateSectionTxtTableViewCell *)cell2update;
+            if ([titleCell isKindOfClass:CreateSectionTxtTableViewCell.class]) {
+                titleCell.tvTxtContent.text=sectionInfo.txtContent;
+                titleCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordItemTxtSize];
+            }
+            break;
+        }
+            break;
+        case SectionTypeImg:
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -163,13 +228,19 @@
         CreateSectionTitleTableViewCell *titleCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionTitle]
                                                                                    forIndexPath:indexPath];
         titleCell.lblTitleDesc.text=NSLocalizedString(@"create_record_title_desc", @"");
+        titleCell.tvTitle.delegate=self;
+        titleCell.tvTitle.tag=indexPath.row;
         
+        [self updateTxtInfoForCell:titleCell andSectionInfo:sectionInfo];
         cell2ret=titleCell;
     } else if (SectionTypeTxt == sectionInfo.type) {
         CreateSectionTxtTableViewCell *txtCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionTxt]
                                                                                    forIndexPath:indexPath];
         txtCell.lblTxtDesc.text=NSLocalizedString(@"create_record_txt_desc", @"");
+        txtCell.tvTxtContent.delegate=self;
+        txtCell.tvTxtContent.tag=indexPath.row;
         
+        [self updateTxtInfoForCell:txtCell andSectionInfo:sectionInfo];
         cell2ret=txtCell;
     } else if (SectionTypeImg == sectionInfo.type) {
         CreateSectionImgTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionImg]

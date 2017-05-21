@@ -11,5 +11,6 @@
 @interface CreateSectionTitleTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleDesc;
 @property (weak, nonatomic) IBOutlet UITextView *tvTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblLimit;
 
 @end
