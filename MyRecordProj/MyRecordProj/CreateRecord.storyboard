@@ -35,7 +35,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NJ7-JX-QLe" secondAttribute="trailing" id="2EU-hO-Wte"/>
                             <constraint firstItem="NJ7-JX-QLe" firstAttribute="leading" secondItem="AnQ-a3-5Ms" secondAttribute="leadingMargin" id="E7q-RM-hbf"/>
                             <constraint firstItem="NJ7-JX-QLe" firstAttribute="top" secondItem="AnQ-a3-5Ms" secondAttribute="topMargin" id="iAu-ix-qTO"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="NJ7-JX-QLe" secondAttribute="bottom" id="jr8-nD-XZm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="NJ7-JX-QLe" secondAttribute="bottom" identifier="bottom_constraint_id" id="jr8-nD-XZm"/>
                         </constraints>
                     </view>
                     <connections>

@@ -20,6 +20,7 @@
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
 
 @property (strong, nonatomic) NSMutableArray *createSectionArr;
+@property (assign, nonatomic) NSInteger curEditingTVIdx;
 @end
 
 @implementation CreateRecordViewController
@@ -108,6 +109,18 @@
 }
 
 #pragma mark UITextViewDelegate
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    NSInteger tvIdx=textView.tag;
+    if (tvIdx >= self.createSectionArr.count) {
+        self.curEditingTVIdx=-1;
+        return;
+    }
+    
+    self.curEditingTVIdx=tvIdx;
+    
+    [self performSelector:@selector(scrollEditingTextView2visible) withObject:nil afterDelay:0.3];
+}
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     BOOL retFlag=true;
@@ -203,7 +216,6 @@
             }
             break;
         }
-            break;
         case SectionTypeImg:
             break;
         default:
@@ -215,6 +227,23 @@
 - (void)actionForKeyboardHeightDidChange
 {
     [super actionForKeyboardHeightDidChange];
+    
+    for (NSLayoutConstraint *aConstraint in self.view.constraints) {
+        if ([aConstraint.identifier isEqualToString:@"bottom_constraint_id"]) {
+            aConstraint.constant=self.kbHeight;
+        }
+    }
+    
+    [self performSelector:@selector(scrollEditingTextView2visible) withObject:nil afterDelay:0.3];
+}
+
+-(void)scrollEditingTextView2visible
+{
+    if (self.kbHeight > 0) {
+        if (self.curEditingTVIdx >= 0 && self.curEditingTVIdx < self.createSectionArr.count) {
+            [self.tbCreate scrollRectToVisible:[self.tbCreate rectForRowAtIndexPath:[NSIndexPath indexPathForRow:self.curEditingTVIdx inSection:0]] animated:YES];
+        }
+    }
 }
 
 #pragma mark UITableViewDelegate

@@ -9,7 +9,7 @@
 #import "MyRootViewController.h"
 
 @interface MyRootViewController ()
-@property (nonatomic,assign) CGFloat kbHeight;
+
 @end
 
 @implementation MyRootViewController

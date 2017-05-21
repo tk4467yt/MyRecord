@@ -10,6 +10,8 @@
 #import "MyCustomNotificationObserver.h"
 
 @interface MyRootViewController : UIViewController <MyCustomNotificationActionDelegate>
+@property (nonatomic,assign) CGFloat kbHeight;
+
 -(void)screenOrientationChangedHandle;
 
 - (void)keyboardWillShow:(NSNotification *)notification;
