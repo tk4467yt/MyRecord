@@ -18,7 +18,10 @@
     self.tvTitle.layer.masksToBounds=true;
     self.tvTitle.layer.cornerRadius=5.0;
     self.tvTitle.layer.borderWidth=1;
-    self.tvTitle.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
+    self.tvTitle.layer.borderColor=[[MyColor blueColor] CGColor];
+    
+    self.lblTitleDesc.textColor=[MyColor blueColor];
+    self.tvTitle.textColor=[MyColor blueColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
