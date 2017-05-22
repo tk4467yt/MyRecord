@@ -35,6 +35,7 @@
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="9gf-uX-okk" secondAttribute="bottom" id="98b-Nt-bK6"/>
                     <constraint firstItem="9gf-uX-okk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DBM-w8-0p6"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xty-wI-fK9" secondAttribute="trailing" id="PLJ-h9-01N"/>
                     <constraint firstItem="Xty-wI-fK9" firstAttribute="leading" secondItem="9gf-uX-okk" secondAttribute="trailing" id="WMi-pa-LGJ"/>
                     <constraint firstItem="9gf-uX-okk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ZCB-Za-gnu"/>
                     <constraint firstItem="Xty-wI-fK9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kRf-Ro-43Q"/>

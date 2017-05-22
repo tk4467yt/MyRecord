@@ -10,7 +10,7 @@
 #import "CategoryCreateTFTableViewCell.h"
 #import "DbHandler.h"
 
-@interface CreateCategoryViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface CreateCategoryViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreateCategory;
 
 @property (weak, nonatomic) UITextField *tfInput;
@@ -61,7 +61,7 @@
 {
     if (0 == indexPath.section) {
         if (0 == indexPath.row) {
-            return 50;
+            return 70;
         }
     }
     return 0;
@@ -92,6 +92,9 @@
         self.isInitTitleSet=true;
     }
     self.tfInput=tfCell.tfInput;
+    self.tfInput.delegate=self;
+    
+    tfCell.lblCountInd.text=[NSString stringWithFormat:@"%d/%d",(int)self.tfInput.text.length,(int)kDbIdCategoryTitleSize];
     
     return tfCell;
 }
@@ -108,6 +111,25 @@
     }
     
     return nil;
+}
+
+#pragma mark UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField.text.length+string.length > kDbIdCategoryTitleSize) {
+        return NO;
+    }
+    
+//    [UIView cancelPreviousPerformRequestsWithTarget:self selector:@selector(actionForUpdateCountLimit) object:nil];
+    [self performSelector:@selector(actionForUpdateCountLimit) withObject:nil afterDelay:0.3];
+    
+    return YES;
+}
+
+-(void)actionForUpdateCountLimit
+{
+    CategoryCreateTFTableViewCell *tfCell=[self.tbCreateCategory cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    tfCell.lblCountInd.text=[NSString stringWithFormat:@"%d/%d",(int)self.tfInput.text.length,(int)kDbIdCategoryTitleSize];
 }
 
 @end

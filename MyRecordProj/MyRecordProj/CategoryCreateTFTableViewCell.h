@@ -10,5 +10,6 @@
 
 @interface CategoryCreateTFTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *tfInput;
+@property (weak, nonatomic) IBOutlet UILabel *lblCountInd;
 
 @end

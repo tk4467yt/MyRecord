@@ -21,32 +21,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boB-ie-3Lq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boB-ie-3Lq">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="category_create_tf_cell_id" id="Kz6-Or-DLW" customClass="CategoryCreateTFTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="category_create_tf_cell_id" rowHeight="66" id="Kz6-Or-DLW" customClass="CategoryCreateTFTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kz6-Or-DLW" id="WNa-J1-poR">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8af-lb-pwB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwr-SF-Ubb" userLabel="lblCountInd">
+                                                    <rect key="frame" x="310" y="50" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gwr-SF-Ubb" secondAttribute="bottom" id="157-Yh-x7L"/>
                                                 <constraint firstItem="8af-lb-pwB" firstAttribute="top" secondItem="WNa-J1-poR" secondAttribute="top" id="Bys-vA-CMK"/>
+                                                <constraint firstItem="gwr-SF-Ubb" firstAttribute="trailing" secondItem="8af-lb-pwB" secondAttribute="trailing" id="UMy-Hx-HNU"/>
                                                 <constraint firstAttribute="trailing" secondItem="8af-lb-pwB" secondAttribute="trailing" id="W3Y-ia-aVW"/>
-                                                <constraint firstAttribute="bottom" secondItem="8af-lb-pwB" secondAttribute="bottom" id="da5-MP-W70"/>
+                                                <constraint firstItem="gwr-SF-Ubb" firstAttribute="top" secondItem="8af-lb-pwB" secondAttribute="bottom" id="e4M-e9-0Tq"/>
                                                 <constraint firstItem="8af-lb-pwB" firstAttribute="leading" secondItem="WNa-J1-poR" secondAttribute="leading" id="pdK-If-78H"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lblCountInd" destination="gwr-SF-Ubb" id="eXZ-Sc-sHw"/>
                                             <outlet property="tfInput" destination="8af-lb-pwB" id="hK7-LJ-oHg"/>
                                         </connections>
                                     </tableViewCell>
@@ -71,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfI-hi-QVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="134"/>
+            <point key="canvasLocation" x="-138.40000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
