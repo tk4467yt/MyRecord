@@ -26,4 +26,8 @@
 {
     return @"create_section_img_cell_id";
 }
++(NSString *)cellIdForImageCVCellId
+{
+    return @"image_cell_id";
+}
 @end

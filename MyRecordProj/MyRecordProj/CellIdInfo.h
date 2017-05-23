@@ -14,4 +14,5 @@
 +(NSString *)cellIdForCreateSectionTitle;
 +(NSString *)cellIdForCreateSectionTxt;
 +(NSString *)cellIdForCreateSectionImg;
++(NSString *)cellIdForImageCVCellId;
 @end
