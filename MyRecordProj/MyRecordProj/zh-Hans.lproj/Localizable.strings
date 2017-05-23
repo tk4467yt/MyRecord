@@ -19,3 +19,5 @@
 "create_record_add_text"="添加文本";
 "create_record_add_image"="添加图片";
 "max text can be input %d"="最多能输入 %d 文字";
+"add_image_from_library"="相册";
+"add_image_from_camera"="相机";

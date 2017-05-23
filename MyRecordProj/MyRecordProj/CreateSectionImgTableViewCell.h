@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CreateSectionImageActionDelegate <NSObject>
+
+-(void)imageActionForAddImageWithCellIndex:(NSInteger)cellIdx andSourceView:(UIView *)sourceView;
+
+@end
+
 @interface CreateSectionImgTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblImgDesc;
 @property (weak, nonatomic) IBOutlet UICollectionView *cvImgs;
 
+@property (nonatomic,strong) NSMutableArray *imgArr;
+@property (assign, nonatomic) NSInteger cellIndex;
+@property (weak, nonatomic) id<CreateSectionImageActionDelegate> actionDelegate;
 @end

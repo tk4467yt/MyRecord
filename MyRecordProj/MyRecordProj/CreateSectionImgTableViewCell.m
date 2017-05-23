@@ -11,7 +11,7 @@
 #import "ImageCollectionViewCell.h"
 
 @interface CreateSectionImgTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource>
-@property (nonatomic,strong) NSMutableArray *imgArr;
+
 @end
 
 @implementation CreateSectionImgTableViewCell
@@ -51,7 +51,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.item >= self.imgArr.count) {
-        
+        ImageCollectionViewCell *imgCell=(ImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(imageActionForAddImageWithCellIndex:andSourceView:)]) {
+            [self.actionDelegate imageActionForAddImageWithCellIndex:self.cellIndex andSourceView:imgCell.ivImage];
+        }
     } else {
         
     }

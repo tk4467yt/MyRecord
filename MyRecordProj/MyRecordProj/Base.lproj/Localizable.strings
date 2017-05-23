@@ -19,3 +19,5 @@
 "create_record_add_text"="Add Text";
 "create_record_add_image"="Add Image";
 "max text can be input %d"="%d characters can be inputed at most";
+"add_image_from_library"="Photo Library";
+"add_image_from_camera"="Camera";

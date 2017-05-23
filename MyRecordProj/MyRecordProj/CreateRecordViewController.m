@@ -14,13 +14,14 @@
 #import "CreateSectionFooterView.h"
 #import "MyCommonHeaders.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
 
 @property (strong, nonatomic) NSMutableArray *createSectionArr;
 @property (assign, nonatomic) NSInteger curEditingTVIdx;
+@property (assign, nonatomic) NSInteger curAddingImageCellIdx;
 @end
 
 @implementation CreateRecordViewController
@@ -321,6 +322,8 @@
         CreateSectionImgTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionImg]
                                                                                    forIndexPath:indexPath];
         imgCell.lblImgDesc.text=NSLocalizedString(@"create_record_img_desc", @"");
+        imgCell.cellIndex=indexPath.row;
+        imgCell.actionDelegate=self;
         
         cell2ret=imgCell;
     }
@@ -332,6 +335,38 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
+}
+
+#pragma mark CreateSectionImageActionDelegate
+-(void)imageActionForAddImageWithCellIndex:(NSInteger)cellIdx andSourceView:(UIView *)sourceView
+{
+    self.curAddingImageCellIdx=cellIdx;
+    
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *libraryAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"add_image_from_library", @"")
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    UIAlertAction *cameraAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"add_image_from_camera", @"")
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction *action){
+                                                             
+                                                         }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    
+    [alertVC addAction:libraryAction];
+    [alertVC addAction:cameraAction];
+    [alertVC addAction:cancelAction];
+    
+    alertVC.popoverPresentationController.sourceView=sourceView;
+    alertVC.popoverPresentationController.sourceRect=sourceView.bounds;
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 @end
