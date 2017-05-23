@@ -6,3 +6,5 @@
   Copyright © 2017年  qin. All rights reserved.
 */
 CFBundleDisplayName ="My Record";
+NSPhotoLibraryUsageDescription="Select photo to record";
+NSCameraUsageDescription="Capture image with camera to record";

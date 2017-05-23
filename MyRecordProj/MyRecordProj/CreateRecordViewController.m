@@ -13,8 +13,9 @@
 #import "CreateSectionImgTableViewCell.h"
 #import "CreateSectionFooterView.h"
 #import "MyCommonHeaders.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
@@ -346,12 +347,12 @@
     UIAlertAction *libraryAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"add_image_from_library", @"")
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction *action){
-                                                           
+                                                           [self launchImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
                                                        }];
     UIAlertAction *cameraAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"add_image_from_camera", @"")
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction *action){
-                                                             
+                                                             [self launchImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
                                                          }];
     UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
                                                          style:UIAlertActionStyleCancel
@@ -368,5 +369,55 @@
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }
+
+-(void)launchImagePickerWithType:(UIImagePickerControllerSourceType)type
+{
+    if (UIImagePickerControllerSourceTypePhotoLibrary == type) {
+        UIImagePickerController * imagePickerVC = [[UIImagePickerController alloc] init];
+        imagePickerVC.sourceType = type;
+        imagePickerVC.mediaTypes = @[(NSString *)kUTTypeImage];
+
+        imagePickerVC.delegate = self;
+
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    } else if (UIImagePickerControllerSourceTypeCamera == type) {
+        if ([UIImagePickerController isSourceTypeAvailable:type]) {
+            UIImagePickerController * imagePickerVC = [[UIImagePickerController alloc] init];
+            imagePickerVC.sourceType = type;
+
+            imagePickerVC.mediaTypes = @[(NSString *)kUTTypeImage];
+            imagePickerVC.delegate = self;
+            imagePickerVC.allowsEditing = YES;
+            imagePickerVC.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+            imagePickerVC.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+
+            imagePickerVC.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+//            imagePickerVC.showsCameraControls = NO;
+
+            [self presentViewController:imagePickerVC animated:YES completion:nil];
+        }
+    }
+}
+
+#pragma mark UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+//    info中可能包含的key的含义
+//    UIImagePickerControllerCropRect // 编辑裁剪区域
+//    UIImagePickerControllerEditedImage // 编辑后的UIImage
+//    UIImagePickerControllerMediaType // 返回媒体的媒体类型
+//    UIImagePickerControllerOriginalImage // 原始的UIImage
+//    UIImagePickerControllerReferenceURL // 图片地址
+//    NSLog(@"%@", info);
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark UINavigationControllerDelegate
 
 @end
