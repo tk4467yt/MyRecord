@@ -324,6 +324,7 @@
                                                                                    forIndexPath:indexPath];
         imgCell.lblImgDesc.text=NSLocalizedString(@"create_record_img_desc", @"");
         imgCell.cellIndex=indexPath.row;
+        imgCell.imgArr=sectionInfo.imgThumbArr;
         imgCell.actionDelegate=self;
         
         cell2ret=imgCell;
@@ -404,6 +405,20 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 
+    if (self.curAddingImageCellIdx>=0 && self.curAddingImageCellIdx < self.createSectionArr.count) {
+        RecordCreateSectionInfo *sectionInfo=self.createSectionArr[self.curAddingImageCellIdx];
+        if (SectionTypeImg == sectionInfo.type) {
+            UIImage *imgGot=info[UIImagePickerControllerOriginalImage];
+            if (nil != imgGot) {
+                [sectionInfo.imgOrgArr addObject:[MyUtility writeImage:imgGot intoDirectory:IMG_STORE_PATH_IN_DOC]];
+                [sectionInfo.imgThumbArr addObject:[MyUtility writeImageThumb:imgGot intoDirectory:IMG_STORE_PATH_IN_DOC]];
+                
+                [self.tbCreate reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.curAddingImageCellIdx inSection:0]]
+                                     withRowAnimation:UITableViewRowAnimationNone];
+            }
+        }
+    }
+    
 //    info中可能包含的key的含义
 //    UIImagePickerControllerCropRect // 编辑裁剪区域
 //    UIImagePickerControllerEditedImage // 编辑后的UIImage

@@ -106,4 +106,103 @@
     return false;
 }
 
++(NSString *)writeImage:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex:0];
+    
+    NSString *dirPath=[docDir stringByAppendingPathComponent:dirInDoc];
+    
+    NSFileManager *defManager=[NSFileManager defaultManager];
+    if (![defManager fileExistsAtPath:dirPath]) {
+        [defManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    NSString *imgName=[NSString stringWithFormat:@"%@.jpg",[MyUtility makeUniqueIdWithMaxLength:128]];
+    NSData *imgData=UIImageJPEGRepresentation(img2write, 0.75);
+    [imgData writeToFile:[dirPath stringByAppendingPathComponent:imgName] atomically:YES];
+    
+    return imgName;
+}
++(NSString *)writeImageThumb:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc
+{
+    UIImage *imgScaled=[MyUtility scaleImage:img2write toSize:CGSizeMake(200, 200)];
+    return [MyUtility writeImage:imgScaled intoDirectory:dirInDoc];
+}
+
++(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize
+{
+    UIImage *sourceImage = img2scale;
+    UIImage *newImage = nil;
+    
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+    
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+    
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+    
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+    if (!CGSizeEqualToSize(imageSize, targetSize)) {
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        if (widthFactor < heightFactor)
+            scaleFactor = widthFactor;
+        else
+            scaleFactor = heightFactor;
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        
+        if (widthFactor < heightFactor) {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        } else if (widthFactor > heightFactor) {
+            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+        }
+    }
+    
+    
+    // this is actually the interesting part:
+    
+    UIGraphicsBeginImageContext(targetSize);
+    
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+    
+    [sourceImage drawInRect:thumbnailRect];
+    
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    if(newImage == nil) NSLog(@"could not scale image");
+    
+    
+    return newImage ;
+}
+
++(UIImage *)getImageWithName:(NSString *)imgName andDir:(NSString *)dirInDoc
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex:0];
+    
+    NSString *dirPath=[docDir stringByAppendingPathComponent:dirInDoc];
+    
+    NSFileManager *defManager=[NSFileManager defaultManager];
+    if (![defManager fileExistsAtPath:dirPath]) {
+        [defManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    NSString *imgFullName=[dirPath stringByAppendingPathComponent:imgName];
+    
+    return [UIImage imageWithContentsOfFile:imgFullName];
+}
+
 @end

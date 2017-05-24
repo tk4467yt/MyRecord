@@ -72,7 +72,8 @@
     if (indexPath.item >= self.imgArr.count) {
         imgCell.ivImage.image=[UIImage imageNamed:@"timeline_new_pic_add"];
     } else {
-        
+        NSString *imgName=self.imgArr[indexPath.row];
+        imgCell.ivImage.image=[MyUtility getImageWithName:imgName andDir:IMG_STORE_PATH_IN_DOC];
     }
     return imgCell;
 }

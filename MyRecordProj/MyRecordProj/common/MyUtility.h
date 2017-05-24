@@ -29,4 +29,9 @@
 +(NSString *)makeUniqueIdWithMaxLength:(NSInteger)maxLen;
 
 +(BOOL)isObjectAnString:(id)obj2check;
+
++(NSString *)writeImage:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc;
++(NSString *)writeImageThumb:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc;
++(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize;
++(UIImage *)getImageWithName:(NSString *)imgName andDir:(NSString *)dirInDoc;
 @end

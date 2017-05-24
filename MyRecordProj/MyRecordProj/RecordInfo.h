@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define IMG_STORE_PATH_IN_DOC @"images"
+
 @interface RecordInfo : NSObject
 @property (nonatomic,copy) NSString *recordId;
 @property (nonatomic,copy) NSString *recordTitle;
