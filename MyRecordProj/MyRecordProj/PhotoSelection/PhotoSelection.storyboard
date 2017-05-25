@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yof-g0-7jO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Selection Root View Controller-->
+        <scene sceneID="4mg-Wv-MC3">
+            <objects>
+                <viewController id="7e2-SQ-YP0" customClass="PhotoSelectionRootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VeL-KM-z5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="h34-dE-GT6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AhG-SF-o7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Bl-i7-wKj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hks-ze-bKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="1434"/>
+        </scene>
+        <!--Photo Selection Container NavVC-->
+        <scene sceneID="MD4-Fd-rxp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yof-g0-7jO" customClass="PhotoSelectionContainerNavVC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CM5-kW-F1A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7e2-SQ-YP0" kind="relationship" relationship="rootViewController" id="SQ6-tG-VYC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1p-0T-67A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810.39999999999998" y="1434.3328335832084"/>
+        </scene>
+    </scenes>
+</document>

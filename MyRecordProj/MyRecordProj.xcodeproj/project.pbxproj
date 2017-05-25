@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250141521ED7220700C813B5 /* PhotoSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250141511ED7220700C813B5 /* PhotoSelection.storyboard */; };
+		250141551ED7240900C813B5 /* PhotoSelectionContainerNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 250141541ED7240900C813B5 /* PhotoSelectionContainerNavVC.m */; };
+		250141581ED7251000C813B5 /* PhotoSelectionRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 250141571ED7251000C813B5 /* PhotoSelectionRootViewController.m */; };
 		2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8CE1EC0B4B300EC59E7 /* main.m */; };
 		2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8D11EC0B4B300EC59E7 /* AppDelegate.m */; };
 		2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8D41EC0B4B300EC59E7 /* FirstViewController.m */; };
@@ -76,6 +79,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		250141511ED7220700C813B5 /* PhotoSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoSelection.storyboard; sourceTree = "<group>"; };
+		250141531ED7240900C813B5 /* PhotoSelectionContainerNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSelectionContainerNavVC.h; sourceTree = "<group>"; };
+		250141541ED7240900C813B5 /* PhotoSelectionContainerNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSelectionContainerNavVC.m; sourceTree = "<group>"; };
+		250141561ED7251000C813B5 /* PhotoSelectionRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSelectionRootViewController.h; sourceTree = "<group>"; };
+		250141571ED7251000C813B5 /* PhotoSelectionRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSelectionRootViewController.m; sourceTree = "<group>"; };
 		2510E8CA1EC0B4B300EC59E7 /* MyRecordProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecordProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2510E8CE1EC0B4B300EC59E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2510E8D01EC0B4B300EC59E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -195,6 +203,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250141501ED721D700C813B5 /* PhotoSelection */ = {
+			isa = PBXGroup;
+			children = (
+				250141511ED7220700C813B5 /* PhotoSelection.storyboard */,
+				250141531ED7240900C813B5 /* PhotoSelectionContainerNavVC.h */,
+				250141541ED7240900C813B5 /* PhotoSelectionContainerNavVC.m */,
+				250141561ED7251000C813B5 /* PhotoSelectionRootViewController.h */,
+				250141571ED7251000C813B5 /* PhotoSelectionRootViewController.m */,
+			);
+			path = PhotoSelection;
+			sourceTree = "<group>";
+		};
 		2510E8C11EC0B4B300EC59E7 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +239,7 @@
 		2510E8CC1EC0B4B300EC59E7 /* MyRecordProj */ = {
 			isa = PBXGroup;
 			children = (
+				250141501ED721D700C813B5 /* PhotoSelection */,
 				25D960611ECF3B90006E067E /* 3rd */,
 				25D960521ECF3B6D006E067E /* common */,
 				25D960441ECC99A2006E067E /* cell_prototype */,
@@ -524,6 +545,7 @@
 				2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */,
 				2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */,
 				2510E8E01EC0B4B400EC59E7 /* LaunchScreen.storyboard in Resources */,
+				250141521ED7220700C813B5 /* PhotoSelection.storyboard in Resources */,
 				2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */,
 				2553973C1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib in Resources */,
 				2510E8DD1EC0B4B400EC59E7 /* Assets.xcassets in Resources */,
@@ -568,6 +590,7 @@
 				25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */,
 				25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */,
 				25D9607D1ECFEA04006E067E /* CellIdInfo.m in Sources */,
+				250141551ED7240900C813B5 /* PhotoSelectionContainerNavVC.m in Sources */,
 				2510E92F1ECB3B9C00EC59E7 /* CategoryInfo.m in Sources */,
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
 				2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */,
@@ -589,6 +612,7 @@
 				25D960721ECF3B90006E067E /* FMDatabasePool.m in Sources */,
 				2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */,
 				255397451ED478E900F6EC45 /* ImageCollectionViewCell.m in Sources */,
+				250141581ED7251000C813B5 /* PhotoSelectionRootViewController.m in Sources */,
 				25D9605D1ECF3B6D006E067E /* MyRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
