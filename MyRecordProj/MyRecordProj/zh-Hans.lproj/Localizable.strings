@@ -21,3 +21,5 @@
 "max text can be input %d"="最多能输入 %d 文字";
 "add_image_from_library"="相册";
 "add_image_from_camera"="相机";
+"Not have access privileges"="您没有访问权限";
+"Album"="相册";

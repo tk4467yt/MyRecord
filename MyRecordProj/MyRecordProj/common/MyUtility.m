@@ -205,4 +205,110 @@
     return [UIImage imageWithContentsOfFile:imgFullName];
 }
 
++(NSString *)matchedDynamicTypeTextStyleForFontSize:(CGFloat)fontSize
+{
+    NSString *textStyle=UIFontTextStyleHeadline;
+    
+    // be careful: UIFontTextStyleTitle1,UIFontTextStyleTitle2,UIFontTextStyleTitle3,UIFontTextStyleCallout is avaliable on ios9 and later
+    if (fontSize > 17) {
+        if (IS_IOS9) {
+            textStyle = UIFontTextStyleTitle1;
+        } else {
+            textStyle = UIFontTextStyleHeadline;
+        }
+    } else if (17 == fontSize) {
+        textStyle = UIFontTextStyleHeadline;
+    } else if (16 == fontSize) {
+        if (IS_IOS9) {
+            textStyle = UIFontTextStyleCallout;
+        } else {
+            textStyle = UIFontTextStyleSubheadline;
+        }
+    } else if (15 == fontSize) {
+        textStyle = UIFontTextStyleSubheadline;
+    } else if (14 == fontSize) {
+        textStyle = UIFontTextStyleSubheadline;
+    } else if (13 == fontSize) {
+        textStyle = UIFontTextStyleFootnote;
+    } else if (12 == fontSize) {
+        textStyle = UIFontTextStyleCaption1;
+    } else if (fontSize <= 11) {
+        textStyle = UIFontTextStyleCaption2;
+    }
+    
+    return textStyle;
+}
+
++(CGFloat)getFontPointSizeForDynamicTypeTextWithOriginalSize:(CGFloat)originalPointSize
+{
+    NSString *style=[MyUtility matchedDynamicTypeTextStyleForFontSize:originalPointSize];
+    if ([MyUtility isStringNilOrZeroLength:style]) {
+        style = UIFontTextStyleBody;
+    }
+    UIFontDescriptor *bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:style];
+    
+    CGFloat sizeRatio=1;
+    if (originalPointSize < 11) {
+        sizeRatio = originalPointSize/11;
+    }
+    
+    return bodyFontDesciptor.pointSize*sizeRatio;
+}
+
++(void)showAllDynamicTypeFontSize
+{
+    UIFontDescriptor *bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleTitle1];
+    NSLog(@"%@: %f",@"title1",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleTitle2];
+    NSLog(@"%@: %f",@"title2",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleTitle3];
+    NSLog(@"%@: %f",@"title3",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleHeadline];
+    NSLog(@"%@: %f",@"headline",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleSubheadline];
+    NSLog(@"%@: %f",@"subheadline",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+    NSLog(@"%@: %f",@"body",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleCallout];
+    NSLog(@"%@: %f",@"callout",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleFootnote];
+    NSLog(@"%@: %f",@"footnote",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleCaption1];
+    NSLog(@"%@: %f",@"caption1",bodyFontDesciptor.pointSize);
+    
+    bodyFontDesciptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleCaption2];
+    NSLog(@"%@: %f",@"caption2",bodyFontDesciptor.pointSize);
+}
+
++(BOOL)appFollowSystemDynamicType
+{
+    return false;
+}
+
++(CGFloat)pointSizeAdjustForDynamicTypeWithOriginalSize:(CGFloat)originalPointSize
+{
+    CGFloat curDynamicTypeSize=[MyUtility getFontPointSizeForDynamicTypeTextWithOriginalSize:originalPointSize];
+    return (curDynamicTypeSize-originalPointSize);
+}
+
++(void)prensentAlertVCFromSourceVC:(UIViewController *)fromVC withAnim:(BOOL)animation andContent:(NSString *)content
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:content
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+//    alertController.view.frame = [[UIScreen mainScreen] bounds];
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+    
+    [fromVC presentViewController:alertController animated:YES completion:nil];
+}
+
 @end

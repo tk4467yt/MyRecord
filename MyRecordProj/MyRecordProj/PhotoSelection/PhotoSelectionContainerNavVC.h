@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoSelectionContainerNavVC : UINavigationController
+@protocol PhotoSelectionActionDelegate
 
+- (void)photoSelectionFinishWithImageArr:(NSArray *)imgArr;
+- (void)photoSelectionCancel;
+
+@end
+
+@interface PhotoSelectionContainerNavVC : UINavigationController
+@property (nonatomic, weak) id<PhotoSelectionActionDelegate> photoSelectionDelegate;
 @end

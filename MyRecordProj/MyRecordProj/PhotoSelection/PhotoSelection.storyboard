@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,9 +20,34 @@
                     <view key="view" contentMode="scaleToFill" id="AhG-SF-o7Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bnN-F3-fEt">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7e2-SQ-YP0" id="5y2-LY-wDs"/>
+                                    <outlet property="delegate" destination="7e2-SQ-YP0" id="QZ8-Qh-FfN"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-MN-IMv">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bnN-F3-fEt" firstAttribute="top" secondItem="AhG-SF-o7Z" secondAttribute="topMargin" id="3gT-nE-Mjl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bnN-F3-fEt" secondAttribute="trailing" id="3ju-LX-W46"/>
+                            <constraint firstItem="Zd0-MN-IMv" firstAttribute="centerX" secondItem="bnN-F3-fEt" secondAttribute="centerX" id="WgA-tp-Vzs"/>
+                            <constraint firstItem="Zd0-MN-IMv" firstAttribute="centerY" secondItem="bnN-F3-fEt" secondAttribute="centerY" id="jdZ-CP-ttV"/>
+                            <constraint firstItem="bnN-F3-fEt" firstAttribute="leading" secondItem="AhG-SF-o7Z" secondAttribute="leadingMargin" id="ocm-v9-OGK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bnN-F3-fEt" secondAttribute="bottom" id="sos-1n-Val"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Bl-i7-wKj"/>
+                    <connections>
+                        <outlet property="aidLoading" destination="Zd0-MN-IMv" id="aVJ-Jl-p9V"/>
+                        <outlet property="tbAlbums" destination="bnN-F3-fEt" id="Qgz-dx-2LK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hks-ze-bKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

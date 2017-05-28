@@ -21,3 +21,5 @@
 "max text can be input %d"="%d characters can be inputed at most";
 "add_image_from_library"="Photo Library";
 "add_image_from_camera"="Camera";
+"Not have access privileges"="Not have access privileges";
+"Album"="Album";

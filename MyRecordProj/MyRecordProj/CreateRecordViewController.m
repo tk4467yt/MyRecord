@@ -14,8 +14,9 @@
 #import "CreateSectionFooterView.h"
 #import "MyCommonHeaders.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "PhotoSelectionContainerNavVC.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
@@ -374,13 +375,17 @@
 -(void)launchImagePickerWithType:(UIImagePickerControllerSourceType)type
 {
     if (UIImagePickerControllerSourceTypePhotoLibrary == type) {
-        UIImagePickerController * imagePickerVC = [[UIImagePickerController alloc] init];
-        imagePickerVC.sourceType = type;
-        imagePickerVC.mediaTypes = @[(NSString *)kUTTypeImage];
-
-        imagePickerVC.delegate = self;
-
-        [self presentViewController:imagePickerVC animated:YES completion:nil];
+        PhotoSelectionContainerNavVC *photoSelectionContainerVC = [[UIStoryboard storyboardWithName:@"PhotoSelection" bundle:nil] instantiateInitialViewController];
+        photoSelectionContainerVC.photoSelectionDelegate=self;
+        [self presentViewController:photoSelectionContainerVC animated:YES completion:nil];
+        
+//        UIImagePickerController * imagePickerVC = [[UIImagePickerController alloc] init];
+//        imagePickerVC.sourceType = type;
+//        imagePickerVC.mediaTypes = @[(NSString *)kUTTypeImage];
+//
+//        imagePickerVC.delegate = self;
+//
+//        [self presentViewController:imagePickerVC animated:YES completion:nil];
     } else if (UIImagePickerControllerSourceTypeCamera == type) {
         if ([UIImagePickerController isSourceTypeAvailable:type]) {
             UIImagePickerController * imagePickerVC = [[UIImagePickerController alloc] init];
@@ -434,5 +439,47 @@
 }
 
 #pragma mark UINavigationControllerDelegate
+
+#pragma mark PhotoSelectionActionDelegate
+#pragma mark PhotoSelectionActionDelegate
+- (void)photoSelectionFinishWithImageArr:(NSArray *)imgArr
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    if ([self isCompanyFeatureSendPictureDisabled]) {
+//        [self showAlertForCompanyFeatureOff];
+//        return;
+//    }
+//    
+//    if (imgArr.count > 0) {
+//        for (UIImage *aImage in imgArr) {
+//            NSData *imgData=UIImagePNGRepresentation(aImage);
+//            
+//            NSString *dirName=[MULTI_MEDIA_FOLDER_NAME stringByAppendingPathComponent:self.chatTargetId];
+//            NSString *imgPath = [NSFileManager randomRelativeFilePathInDir:dirName ForFileExtension:@"png"];
+//            NSString *thumbPath = [NSFileManager randomRelativeFilePathInDir:dirName ForFileExtension:@"png"];
+//            
+//            [imgData writeToFile:[NSFileManager absolutePathForFileInDocumentFolder:imgPath] atomically:YES];
+//            
+//            CGSize targetSizeThumbnail = [aImage calculateTheScaledSize:CGSizeMake(aImage.size.width, aImage.size.height)
+//                                                            withMaxSize: CGSizeMake(MULTIMEDIACELL_THUMBNAIL_MAX_X, MULTIMEDIACELL_THUMBNAIL_MAX_Y)];
+//            UIImage *thumbnailImage = [aImage resizeToSize:targetSizeThumbnail];
+//            //            UIImage *thumbnailImage = [aImage resizeToSqaureSize:CGSizeMake(MULTIMEDIACELL_THUMBNAIL_MAX_X, MULTIMEDIACELL_THUMBNAIL_MAX_Y)];
+//            NSData *thumbImgData=UIImagePNGRepresentation(thumbnailImage);
+//            [thumbImgData writeToFile:[NSFileManager absolutePathForFileInDocumentFolder:thumbPath] atomically:YES];
+//            
+//            [self sendFileWithMessageType:[ChatMessage MSGTYPE_MULTIMEDIA_PHOTO]
+//                        withThumbnailPath:thumbPath
+//                         withOriginalPath:imgPath
+//                             withDuration:nil];
+//        }
+//        
+//        [self performSelector:@selector(scroll2bottom) withObject:nil afterDelay:1.0];
+//    }
+}
+- (void)photoSelectionCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

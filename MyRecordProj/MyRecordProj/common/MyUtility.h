@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define IS_IOS9 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 9.0)
+#define IS_IOS10 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 10.0)
+
 @interface MyUtility : NSObject
 +(UIImage *)makeMaskImageFroFrame:(UIImage *)img2use;
 
@@ -34,4 +37,10 @@
 +(NSString *)writeImageThumb:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc;
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize;
 +(UIImage *)getImageWithName:(NSString *)imgName andDir:(NSString *)dirInDoc;
+
++(CGFloat)getFontPointSizeForDynamicTypeTextWithOriginalSize:(CGFloat)originalPointSize;
++(BOOL)appFollowSystemDynamicType;
++(CGFloat)pointSizeAdjustForDynamicTypeWithOriginalSize:(CGFloat)originalPointSize;
+
++(void)prensentAlertVCFromSourceVC:(UIViewController *)fromVC withAnim:(BOOL)animation andContent:(NSString *)content;
 @end

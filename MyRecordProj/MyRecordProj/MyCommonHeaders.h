@@ -18,5 +18,6 @@
 #import "CellIdInfo.h"
 #import "MyCustomNotificationObserver.h"
 #import "DbHandler.h"
+#import "AppCoverView.h"
 
 #endif /* MyCommonHeaders_h */
