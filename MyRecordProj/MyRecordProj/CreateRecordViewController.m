@@ -252,7 +252,7 @@
             return 120;
             break;
         case SectionTypeImg:
-            return 120;
+            return 160;
             break;
         default:
             break;
