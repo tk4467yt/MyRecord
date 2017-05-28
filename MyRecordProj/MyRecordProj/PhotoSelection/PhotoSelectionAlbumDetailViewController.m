@@ -10,10 +10,12 @@
 #import "PhotoSelectionItemCollectionViewCell.h"
 #import "PhotoSelectionItemFooterReusableView.h"
 #import "MyCommonHeaders.h"
+#import "PhotoSelectionContainerNavVC.h"
 
 @interface PhotoSelectionAlbumDetailViewController ()
 @property (nonatomic,strong) NSMutableArray *assetsImgArr2use;
-@property (nonatomic,assign) BOOL shoudScrollBottom;
+
+@property (nonatomic,strong) NSMutableArray *selectedImageIndexpathArr;
 @end
 
 @implementation PhotoSelectionAlbumDetailViewController
@@ -28,7 +30,7 @@
          forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"photo_selection_album_detail_footer_id"];
     //    self.cvDetailItems.scrollsToTop=false;
     
-    self.shoudScrollBottom=true;
+    self.selectedImageIndexpathArr=[NSMutableArray new];
     
     self.assetsImgArr2use=[NSMutableArray new];
     PHFetchResult<PHAsset *> *assetsArr = [PHAsset fetchAssetsInAssetCollection:self.assetCollection options:nil];
@@ -45,6 +47,45 @@
 - (void)configNav
 {
     self.navigationItem.title=NSLocalizedString(@"Select",nil);
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionDoneForSelectPhoto)];
+    self.navigationItem.rightBarButtonItem.enabled=false;
+}
+
+- (void)actionDoneForSelectPhoto
+{
+    if (nil != self.rootVC) {
+        NSMutableArray *imgArr=[NSMutableArray new];
+        
+        for (NSIndexPath *indexPath in self.selectedImageIndexpathArr) {
+            [[PHImageManager defaultManager] requestImageForAsset:[self.assetsImgArr2use objectAtIndex:indexPath.item]
+                                                       targetSize:PHImageManagerMaximumSize
+                                                      contentMode:PHImageContentModeDefault
+                                                          options:nil
+                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                        if (nil != result) {
+                                                            UIImage *img2use=[MyUtility scaleImage:result toSize:CGSizeMake(1024, 1024)];
+                                                            if (nil != img2use) {
+                                                                [imgArr addObject:img2use];
+                                                            }
+                                                        } else {
+                                                            //show alert
+                                                        }
+                                                    }];
+        }
+        
+        PhotoSelectionContainerNavVC *containerVC=(PhotoSelectionContainerNavVC *)self.rootVC.parentViewController;
+        [containerVC.photoSelectionDelegate photoSelectionFinishWithImageArr:imgArr];
+    }
+}
+
+- (void)updateRightNavBarStatus
+{
+    if (self.selectedImageIndexpathArr.count > 0) {
+        self.navigationItem.rightBarButtonItem.enabled=true;
+    } else {
+        self.navigationItem.rightBarButtonItem.enabled=false;
+    }
 }
 
 #pragma mark override
@@ -61,33 +102,10 @@
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    PHImageRequestOptions *options = [[[PHImageRequestOptions alloc] init] autorelease];
-    //    options.synchronous = YES;
-    [[PHImageManager defaultManager] requestImageForAsset:[self.assetsImgArr2use objectAtIndex:indexPath.row]
-                                               targetSize:PHImageManagerMaximumSize
-                                              contentMode:PHImageContentModeDefault
-                                                  options:nil
-                                            resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                                                if (nil != result) {
-                                                    [self showImageEditorWithImage:result];
-                                                } else {
-                                                    //show alert
-                                                }
-                                            }];
-}
-
--(void)showImageEditorWithImage:(UIImage *)img2use
-{
-//    if (img2use.size.width > PhotoMaxWidth || img2use.size.height > PhotoMaxHeight) {
-//        CGSize targetSize = [img2use calculateTheScaledSize:CGSizeMake(img2use.size.width, img2use.size.height) withMaxSize: CGSizeMake(PhotoMaxWidth, PhotoMaxHeight)];
-//        img2use = [img2use resizeToSize:targetSize];
-//    }
-//    
-//    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:img2use];
-//    editor.delegate = self;
-//    //                                                            editor.imgIdx2ret=indexPath.row-1;
-//    [PublicFunctions presentViewControllerOnVC:self targetVC:editor animated:YES completion:nil];
-//    [editor release];
+    [self.selectedImageIndexpathArr addObject:indexPath];
+    
+    [self updateRightNavBarStatus];
+    
 }
 
 #pragma mark UICollectionViewDataSource
@@ -103,7 +121,7 @@
     
     PhotoSelectionItemCollectionViewCell *photoCVCell=(PhotoSelectionItemCollectionViewCell *)cell;
     
-    PHAsset *asset2use=[self.assetsImgArr2use objectAtIndex:indexPath.row];
+    PHAsset *asset2use=[self.assetsImgArr2use objectAtIndex:indexPath.item];
     if (asset2use.mediaType == PHAssetMediaTypeVideo) {
         photoCVCell.ivVideoInd.hidden=false;
         photoCVCell.lblVideoDuration.hidden=false;

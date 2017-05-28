@@ -205,75 +205,10 @@
     
     PhotoSelectionAlbumDetailViewController *ablumDetailVC = [[PhotoSelectionAlbumDetailViewController alloc] init];
     ablumDetailVC.assetCollection=[self.albumArr objectAtIndex:indexPath.row];
+    ablumDetailVC.rootVC=self;
     
     [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:ablumDetailVC animated:YES];
 }
-
-//#pragma mark UIImagePickerControllerDelegate
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    
-//    NSString *mediaType = info[UIImagePickerControllerMediaType];
-//    
-//    if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
-//    {
-//        // Media is an image
-//        UIImage *image = info[UIImagePickerControllerOriginalImage];
-//        
-////        [self showImageEditorWithImage:image];
-//    }
-//}
-
-//-(void)showImageEditorWithImage:(UIImage *)img2use
-//{
-//    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:img2use];
-//    editor.delegate = self;
-//    //                                                            editor.imgIdx2ret=indexPath.row-1;
-//    [PublicFunctions presentViewControllerOnVC:self targetVC:editor animated:YES completion:nil];
-//    [editor release];
-//}
-
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-
-//#pragma mark CLImageEditorDelegate
-//- (void)imageEditor:(CLImageEditor*)editor didFinishEdittingWithImage:(UIImage*)image
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    
-//    [[AppCoverView getAppCoverView] showInView:self.view withText:NSLocalizedString(@"Please wait for a while..", nil)];
-//    
-//    //save edited image
-//    __block NSString *assetId = nil;
-//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-//        PHAssetChangeRequest *newAssetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
-//        newAssetRequest.creationDate = [NSDate date];
-//        assetId = newAssetRequest.placeholderForCreatedAsset.localIdentifier;
-//        [assetId retain];
-//    } completionHandler:^(BOOL success, NSError *error) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [[AppCoverView getAppCoverView] hideFromSuperView];
-//            if(success){
-//                if (PRINT_LOG) {
-//                    NSLog(@"save image success");
-//                }
-//                
-//                //call delegate to handle
-//                PhotoSelectionContainerViewController *containerVC=(PhotoSelectionContainerViewController *)self.parentViewController;
-//                [containerVC.photoSelectionDelegate photoSelectionFinishWithImageArr:[NSArray arrayWithObject:image]];
-//            } else {
-//                [[WarningView viewWithString:NSLocalizedString(@"save photo to album fail",nil )] showAlert:nil];
-//            }
-//        });
-//    }];
-//}
-//- (void)imageEditorDidCancel:(CLImageEditor*)editor
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
 
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

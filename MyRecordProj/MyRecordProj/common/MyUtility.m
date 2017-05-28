@@ -132,6 +132,9 @@
 
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize
 {
+    if (targetSize.width >= img2scale.size.width && targetSize.height >= img2scale.size.height) {
+        return img2scale;
+    }
     UIImage *sourceImage = img2scale;
     UIImage *newImage = nil;
     

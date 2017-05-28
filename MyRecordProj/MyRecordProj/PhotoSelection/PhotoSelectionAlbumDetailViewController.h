@@ -12,5 +12,6 @@
 @interface PhotoSelectionAlbumDetailViewController : MyRootViewController <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *cvAlbumItems;
 
+@property (nonatomic, weak)   UIViewController *rootVC;
 @property (nonatomic, strong) PHAssetCollection *assetCollection;
 @end
