@@ -150,16 +150,7 @@
     
     if (textView.text.length + text.length > maxLimit) {
         retFlag=false;
-        UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil
-                                                                       message:[NSString stringWithFormat:NSLocalizedString(@"max text can be input %d", @""),(int)maxLimit]
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
-                                                             style:UIAlertActionStyleCancel
-                                                           handler:^(UIAlertAction *action){
-                                                               
-                                                           }];
-        [alertVC addAction:cancelAction];
-        [self presentViewController:alertVC animated:YES completion:nil];
+        [MyUtility prensentAlertVCFromSourceVC:self withAnim:YES andContent:[NSString stringWithFormat:NSLocalizedString(@"max text can be input %d", @""),(int)maxLimit]];
     }
     
     return retFlag;
