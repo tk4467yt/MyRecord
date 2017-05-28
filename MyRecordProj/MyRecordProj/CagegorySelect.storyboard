@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ohz-Ba-9Zc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cagegory Select View Controller-->
+        <scene sceneID="TQq-X0-QAB">
+            <objects>
+                <viewController id="Ohz-Ba-9Zc" customClass="CagegorySelectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OrH-ix-gHj"/>
+                        <viewControllerLayoutGuide type="bottom" id="5J5-q9-Leh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OAs-pC-m1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GGV-q3-e50">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ohz-Ba-9Zc" id="Ql0-uo-ZpA"/>
+                                    <outlet property="delegate" destination="Ohz-Ba-9Zc" id="II3-VD-1lT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GGV-q3-e50" firstAttribute="leading" secondItem="OAs-pC-m1h" secondAttribute="leadingMargin" id="1Os-qc-haR"/>
+                            <constraint firstItem="GGV-q3-e50" firstAttribute="top" secondItem="OAs-pC-m1h" secondAttribute="topMargin" id="8yg-Ne-jfO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GGV-q3-e50" secondAttribute="trailing" id="Dn9-NW-aME"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="GGV-q3-e50" secondAttribute="bottom" id="So9-f7-loa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tbCategory" destination="GGV-q3-e50" id="UyX-DM-WN1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QW5-Ed-SPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164" y="128"/>
+        </scene>
+    </scenes>
+</document>

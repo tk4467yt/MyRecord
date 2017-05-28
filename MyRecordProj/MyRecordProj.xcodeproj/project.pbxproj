@@ -55,6 +55,8 @@
 		255397461ED478E900F6EC45 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255397441ED478E900F6EC45 /* ImageCollectionViewCell.xib */; };
 		25925D921EDAB958000F6B06 /* CreateSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25925D911EDAB958000F6B06 /* CreateSectionHeaderView.xib */; };
 		25925D951EDAB973000F6B06 /* CreateSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25925D941EDAB973000F6B06 /* CreateSectionHeaderView.m */; };
+		25925D971EDAC215000F6B06 /* CagegorySelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25925D961EDAC215000F6B06 /* CagegorySelect.storyboard */; };
+		25925D9A1EDAC23F000F6B06 /* CagegorySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25925D991EDAC23F000F6B06 /* CagegorySelectViewController.m */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -174,6 +176,9 @@
 		25925D911EDAB958000F6B06 /* CreateSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionHeaderView.xib; sourceTree = "<group>"; };
 		25925D931EDAB973000F6B06 /* CreateSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionHeaderView.h; sourceTree = "<group>"; };
 		25925D941EDAB973000F6B06 /* CreateSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionHeaderView.m; sourceTree = "<group>"; };
+		25925D961EDAC215000F6B06 /* CagegorySelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CagegorySelect.storyboard; sourceTree = "<group>"; };
+		25925D981EDAC23F000F6B06 /* CagegorySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CagegorySelectViewController.h; sourceTree = "<group>"; };
+		25925D991EDAC23F000F6B06 /* CagegorySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CagegorySelectViewController.m; sourceTree = "<group>"; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -362,6 +367,9 @@
 				25D9603F1ECC947C006E067E /* CreateCategory.storyboard */,
 				25D960411ECC949F006E067E /* CreateCategoryViewController.h */,
 				25D960421ECC949F006E067E /* CreateCategoryViewController.m */,
+				25925D961EDAC215000F6B06 /* CagegorySelect.storyboard */,
+				25925D981EDAC23F000F6B06 /* CagegorySelectViewController.h */,
+				25925D991EDAC23F000F6B06 /* CagegorySelectViewController.m */,
 			);
 			name = vcs;
 			sourceTree = "<group>";
@@ -602,6 +610,7 @@
 				250141521ED7220700C813B5 /* PhotoSelection.storyboard in Resources */,
 				2510E90A1EC0B79F00EC59E7 /* InfoPlist.strings in Resources */,
 				2553973C1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.xib in Resources */,
+				25925D971EDAC215000F6B06 /* CagegorySelect.storyboard in Resources */,
 				2510E8DD1EC0B4B400EC59E7 /* Assets.xcassets in Resources */,
 				25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */,
 				255397371ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib in Resources */,
@@ -667,6 +676,7 @@
 				25D9605C1ECF3B6D006E067E /* MyColor.m in Sources */,
 				25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */,
 				25D960711ECF3B90006E067E /* FMDatabaseAdditions.m in Sources */,
+				25925D9A1EDAC23F000F6B06 /* CagegorySelectViewController.m in Sources */,
 				255397361ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.m in Sources */,
 				25D960751ECF3B90006E067E /* FMResultSet.m in Sources */,
 				25D960791ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.m in Sources */,

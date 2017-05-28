@@ -22,7 +22,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUM-29-tke">
-                    <rect key="frame" x="55" y="316.5" width="51" height="33"/>
+                    <rect key="frame" x="55" y="0.0" width="51" height="667"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Button"/>
                     <connections>
@@ -34,7 +34,9 @@
             <constraints>
                 <constraint firstItem="qNY-qG-fjn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="CTn-Nr-tGw"/>
                 <constraint firstItem="OUM-29-tke" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IBn-Jr-U1l"/>
+                <constraint firstItem="OUM-29-tke" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OQY-dY-gjo"/>
                 <constraint firstItem="OUM-29-tke" firstAttribute="leading" secondItem="qNY-qG-fjn" secondAttribute="trailing" constant="5" id="b89-n7-VXu"/>
+                <constraint firstAttribute="bottom" secondItem="OUM-29-tke" secondAttribute="bottom" id="cbB-zx-8qE"/>
                 <constraint firstItem="qNY-qG-fjn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iGU-bg-YrI"/>
                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="OUM-29-tke" secondAttribute="trailing" id="wyD-gt-3Sv"/>
             </constraints>

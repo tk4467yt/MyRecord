@@ -16,8 +16,9 @@
 #import "MyCommonHeaders.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "PhotoSelectionContainerNavVC.h"
+#import "CagegorySelectViewController.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate,CreateSectionHeaderViewActionDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate,CreateSectionHeaderViewActionDelegate,CategorySelectActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
@@ -484,7 +485,16 @@
 #pragma mark CreateSectionHeaderViewActionDelegate
 -(void)headerButtonDidTappedWithButton:(UIButton *)btnTapped
 {
-    
+    CagegorySelectViewController *categorySelectionVC = [[UIStoryboard storyboardWithName:@"CagegorySelect" bundle:nil] instantiateInitialViewController];
+    categorySelectionVC.actionDelegate=self;
+    [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:categorySelectionVC animated:YES];
+}
+
+#pragma mark CategorySelectActionDelegate
+-(void)didSelectCategory:(CategoryInfo *)categoryInfo
+{
+    self.category4record=categoryInfo;
+    [self.headerView.btnCategory setTitle:self.category4record.categoryTitle forState:UIControlStateNormal];
 }
 
 @end
