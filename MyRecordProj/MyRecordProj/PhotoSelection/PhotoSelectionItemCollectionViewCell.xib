@@ -20,6 +20,13 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qW-Su-JCd" userLabel="ivThumb">
                         <rect key="frame" x="0.0" y="0.0" width="142" height="113"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="PKi-4Q-lJ2" userLabel="ivSelect">
+                        <rect key="frame" x="112" y="5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="VO7-P9-1uv"/>
+                            <constraint firstAttribute="height" constant="25" id="bE2-pn-s1l"/>
+                        </constraints>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_new_video_call" translatesAutoresizingMaskIntoConstraints="NO" id="Szs-ca-I6T" userLabel="ivVideoInd">
                         <rect key="frame" x="5" y="93" width="15" height="15"/>
                         <constraints>
@@ -37,6 +44,8 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="7qW-Su-JCd" secondAttribute="bottom" id="F4G-vl-SwC"/>
+                <constraint firstItem="7qW-Su-JCd" firstAttribute="trailing" secondItem="PKi-4Q-lJ2" secondAttribute="trailing" constant="5" id="Fq0-3J-p8e"/>
+                <constraint firstItem="PKi-4Q-lJ2" firstAttribute="top" secondItem="7qW-Su-JCd" secondAttribute="top" constant="5" id="LGt-yr-Grx"/>
                 <constraint firstItem="7qW-Su-JCd" firstAttribute="bottom" secondItem="Szs-ca-I6T" secondAttribute="bottom" constant="5" id="PSI-t5-2jG"/>
                 <constraint firstItem="7qW-Su-JCd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Uk1-cZ-p4u"/>
                 <constraint firstItem="7qW-Su-JCd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b2x-cC-V0C"/>
@@ -47,6 +56,7 @@
             </constraints>
             <size key="customSize" width="142" height="113"/>
             <connections>
+                <outlet property="ivSelect" destination="PKi-4Q-lJ2" id="5iM-XO-Rjc"/>
                 <outlet property="ivThumb" destination="7qW-Su-JCd" id="O6Q-5W-5Dj"/>
                 <outlet property="ivVideoInd" destination="Szs-ca-I6T" id="nPP-l6-c41"/>
                 <outlet property="lblVideoDuration" destination="RfH-K7-huc" id="unx-aC-WXV"/>
@@ -56,5 +66,6 @@
     </objects>
     <resources>
         <image name="call_new_video_call" width="22" height="14"/>
+        <image name="table_unchecked" width="30" height="30"/>
     </resources>
 </document>

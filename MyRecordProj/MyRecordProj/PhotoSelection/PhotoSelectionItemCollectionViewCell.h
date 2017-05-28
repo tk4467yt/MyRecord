@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ivThumb;
 @property (weak, nonatomic) IBOutlet UIImageView *ivVideoInd;
 @property (weak, nonatomic) IBOutlet UILabel *lblVideoDuration;
+@property (weak, nonatomic) IBOutlet UIImageView *ivSelect;
 
 @end

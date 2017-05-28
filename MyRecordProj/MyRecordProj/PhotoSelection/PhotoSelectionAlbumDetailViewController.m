@@ -79,6 +79,20 @@
     }
 }
 
+- (BOOL)isItemSelectedByIndexpath:(NSIndexPath *)indexPath
+{
+    BOOL isExist=false;
+    
+    for (NSIndexPath *aIndexPath in self.selectedImageIndexpathArr) {
+        if (aIndexPath.section == indexPath.section &&
+            aIndexPath.item == indexPath.item) {
+            isExist=true;
+        }
+    }
+    
+    return isExist;
+}
+
 - (void)updateRightNavBarStatus
 {
     if (self.selectedImageIndexpathArr.count > 0) {
@@ -102,10 +116,26 @@
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.selectedImageIndexpathArr addObject:indexPath];
+    if ([self isItemSelectedByIndexpath:indexPath]) {
+        NSIndexPath *indexPaht2del=nil;
+        
+        for (NSIndexPath *aIndexPath in self.selectedImageIndexpathArr) {
+            if (aIndexPath.section == indexPath.section &&
+                aIndexPath.item == indexPath.item) {
+                indexPaht2del=aIndexPath;
+            }
+        }
+        
+        if (nil != indexPaht2del) {
+            [self.selectedImageIndexpathArr removeObject:indexPaht2del];
+        }
+    } else {
+        [self.selectedImageIndexpathArr addObject:indexPath];
+    }
     
     [self updateRightNavBarStatus];
     
+    [self.cvAlbumItems reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 
 #pragma mark UICollectionViewDataSource
@@ -131,6 +161,13 @@
         photoCVCell.ivVideoInd.hidden=true;
         photoCVCell.lblVideoDuration.hidden=true;
     }
+    
+    if ([self isItemSelectedByIndexpath:indexPath]) {
+        photoCVCell.ivSelect.image=[UIImage imageNamed:@"table_checked"];
+    } else {
+        photoCVCell.ivSelect.image=[UIImage imageNamed:@"table_unchecked"];
+    }
+    
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
     options.synchronous = YES;
     [[PHImageManager defaultManager] requestImageForAsset:asset2use
