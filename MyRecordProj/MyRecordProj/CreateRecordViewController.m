@@ -12,18 +12,22 @@
 #import "CreateSectionTxtTableViewCell.h"
 #import "CreateSectionImgTableViewCell.h"
 #import "CreateSectionFooterView.h"
+#import "CreateSectionHeaderView.h"
 #import "MyCommonHeaders.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "PhotoSelectionContainerNavVC.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate,CreateSectionHeaderViewActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
+@property (strong, nonatomic) CreateSectionHeaderView *headerView;
 
 @property (strong, nonatomic) NSMutableArray *createSectionArr;
 @property (assign, nonatomic) NSInteger curEditingTVIdx;
 @property (assign, nonatomic) NSInteger curAddingImageCellIdx;
+
+@property (nonatomic, strong) CategoryInfo *category4record;
 @end
 
 @implementation CreateRecordViewController
@@ -31,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.category4record=[CategoryInfo getDefaultCategoryInfo];
     
     self.navigationItem.title=NSLocalizedString(@"title_create_record", @"");
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(navActionForCreate)];
@@ -263,6 +269,10 @@
 {
     return 60;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
+}
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
@@ -273,6 +283,17 @@
     }
     
     return self.footerView;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (nil == self.headerView) {
+        self.headerView=[[[NSBundle mainBundle] loadNibNamed:@"CreateSectionHeaderView" owner:self options:nil] lastObject];
+        self.headerView.headerActionDelegate=self;
+        self.headerView.lblDesc.text=[NSString stringWithFormat:@"%@:",NSLocalizedString(@"title_for_category", @"")];
+    }
+    
+    [self.headerView.btnCategory setTitle:self.category4record.categoryTitle forState:UIControlStateNormal];
+    return self.headerView;
 }
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -434,7 +455,6 @@
 #pragma mark UINavigationControllerDelegate
 
 #pragma mark PhotoSelectionActionDelegate
-#pragma mark PhotoSelectionActionDelegate
 - (void)photoSelectionFinishWithImageArr:(NSArray *)imgArr
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -459,6 +479,12 @@
 -(void)screenOrientationChangedHandle
 {
     [self.tbCreate reloadData];
+}
+
+#pragma mark CreateSectionHeaderViewActionDelegate
+-(void)headerButtonDidTappedWithButton:(UIButton *)btnTapped
+{
+    
 }
 
 @end

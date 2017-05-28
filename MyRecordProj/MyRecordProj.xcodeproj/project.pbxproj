@@ -53,6 +53,8 @@
 		255397411ED13C4F00F6EC45 /* CreateSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397401ED13C4F00F6EC45 /* CreateSectionFooterView.m */; };
 		255397451ED478E900F6EC45 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397431ED478E900F6EC45 /* ImageCollectionViewCell.m */; };
 		255397461ED478E900F6EC45 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 255397441ED478E900F6EC45 /* ImageCollectionViewCell.xib */; };
+		25925D921EDAB958000F6B06 /* CreateSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25925D911EDAB958000F6B06 /* CreateSectionHeaderView.xib */; };
+		25925D951EDAB973000F6B06 /* CreateSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25925D941EDAB973000F6B06 /* CreateSectionHeaderView.m */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -169,6 +171,9 @@
 		255397421ED478E900F6EC45 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
 		255397431ED478E900F6EC45 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 		255397441ED478E900F6EC45 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		25925D911EDAB958000F6B06 /* CreateSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateSectionHeaderView.xib; sourceTree = "<group>"; };
+		25925D931EDAB973000F6B06 /* CreateSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSectionHeaderView.h; sourceTree = "<group>"; };
+		25925D941EDAB973000F6B06 /* CreateSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSectionHeaderView.m; sourceTree = "<group>"; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -422,6 +427,9 @@
 				255397421ED478E900F6EC45 /* ImageCollectionViewCell.h */,
 				255397431ED478E900F6EC45 /* ImageCollectionViewCell.m */,
 				255397441ED478E900F6EC45 /* ImageCollectionViewCell.xib */,
+				25925D911EDAB958000F6B06 /* CreateSectionHeaderView.xib */,
+				25925D931EDAB973000F6B06 /* CreateSectionHeaderView.h */,
+				25925D941EDAB973000F6B06 /* CreateSectionHeaderView.m */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -605,6 +613,7 @@
 				2553973E1ED13C3500F6EC45 /* CreateSectionFooterView.xib in Resources */,
 				250141701EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib in Resources */,
 				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
+				25925D921EDAB958000F6B06 /* CreateSectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +647,7 @@
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */,
 				25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */,
+				25925D951EDAB973000F6B06 /* CreateSectionHeaderView.m in Sources */,
 				25D9607D1ECFEA04006E067E /* CellIdInfo.m in Sources */,
 				250141551ED7240900C813B5 /* PhotoSelectionContainerNavVC.m in Sources */,
 				250141601ED870AA00C813B5 /* AppCoverView.m in Sources */,
