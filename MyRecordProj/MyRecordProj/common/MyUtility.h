@@ -46,4 +46,5 @@
 +(void)prensentAlertVCFromSourceVC:(UIViewController *)fromVC withAnim:(BOOL)animation andContent:(NSString *)content;
 
 + (NSString *)getTimeDescFromSeconds:(int)seconds;
++(BOOL)isDeviceIpad;
 @end

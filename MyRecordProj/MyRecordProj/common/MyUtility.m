@@ -328,4 +328,9 @@
     return [NSString stringWithFormat:@"%02d : %02d", minute, second];
 }
 
++(BOOL)isDeviceIpad
+{
+    return UIUserInterfaceIdiomPad == [UIDevice currentDevice].userInterfaceIdiom;
+}
+
 @end

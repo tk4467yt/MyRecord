@@ -221,4 +221,14 @@
     return view2ret;
 }
 
+#pragma mark UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([MyUtility isDeviceIpad]) {
+        return CGSizeMake(160, 160);
+    } else {
+        return CGSizeMake(77, 77);
+    }
+}
+
 @end
