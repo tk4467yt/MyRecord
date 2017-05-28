@@ -37,6 +37,7 @@
 +(NSString *)writeImageThumb:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc;
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize;
 +(UIImage *)getImageWithName:(NSString *)imgName andDir:(NSString *)dirInDoc;
++(CGSize)maxSizeOfImage2handle;
 
 +(CGFloat)getFontPointSizeForDynamicTypeTextWithOriginalSize:(CGFloat)originalPointSize;
 +(BOOL)appFollowSystemDynamicType;

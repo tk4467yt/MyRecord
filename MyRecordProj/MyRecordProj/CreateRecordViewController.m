@@ -415,6 +415,8 @@
         if (SectionTypeImg == sectionInfo.type) {
             UIImage *imgGot=info[UIImagePickerControllerOriginalImage];
             if (nil != imgGot) {
+                imgGot=[MyUtility scaleImage:imgGot toSize:[MyUtility maxSizeOfImage2handle]];
+                
                 [sectionInfo.imgOrgArr addObject:[MyUtility writeImage:imgGot intoDirectory:IMG_STORE_PATH_IN_DOC]];
                 [sectionInfo.imgThumbArr addObject:[MyUtility writeImageThumb:imgGot intoDirectory:IMG_STORE_PATH_IN_DOC]];
                 
@@ -446,36 +448,16 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-//    if ([self isCompanyFeatureSendPictureDisabled]) {
-//        [self showAlertForCompanyFeatureOff];
-//        return;
-//    }
-//    
-//    if (imgArr.count > 0) {
-//        for (UIImage *aImage in imgArr) {
-//            NSData *imgData=UIImagePNGRepresentation(aImage);
-//            
-//            NSString *dirName=[MULTI_MEDIA_FOLDER_NAME stringByAppendingPathComponent:self.chatTargetId];
-//            NSString *imgPath = [NSFileManager randomRelativeFilePathInDir:dirName ForFileExtension:@"png"];
-//            NSString *thumbPath = [NSFileManager randomRelativeFilePathInDir:dirName ForFileExtension:@"png"];
-//            
-//            [imgData writeToFile:[NSFileManager absolutePathForFileInDocumentFolder:imgPath] atomically:YES];
-//            
-//            CGSize targetSizeThumbnail = [aImage calculateTheScaledSize:CGSizeMake(aImage.size.width, aImage.size.height)
-//                                                            withMaxSize: CGSizeMake(MULTIMEDIACELL_THUMBNAIL_MAX_X, MULTIMEDIACELL_THUMBNAIL_MAX_Y)];
-//            UIImage *thumbnailImage = [aImage resizeToSize:targetSizeThumbnail];
-//            //            UIImage *thumbnailImage = [aImage resizeToSqaureSize:CGSizeMake(MULTIMEDIACELL_THUMBNAIL_MAX_X, MULTIMEDIACELL_THUMBNAIL_MAX_Y)];
-//            NSData *thumbImgData=UIImagePNGRepresentation(thumbnailImage);
-//            [thumbImgData writeToFile:[NSFileManager absolutePathForFileInDocumentFolder:thumbPath] atomically:YES];
-//            
-//            [self sendFileWithMessageType:[ChatMessage MSGTYPE_MULTIMEDIA_PHOTO]
-//                        withThumbnailPath:thumbPath
-//                         withOriginalPath:imgPath
-//                             withDuration:nil];
-//        }
-//        
-//        [self performSelector:@selector(scroll2bottom) withObject:nil afterDelay:1.0];
-//    }
+    if (imgArr.count > 0) {
+        RecordCreateSectionInfo *sectionInfo=self.createSectionArr[self.curAddingImageCellIdx];
+        for (UIImage *aImage in imgArr) {
+            [sectionInfo.imgOrgArr addObject:[MyUtility writeImage:aImage intoDirectory:IMG_STORE_PATH_IN_DOC]];
+            [sectionInfo.imgThumbArr addObject:[MyUtility writeImageThumb:aImage intoDirectory:IMG_STORE_PATH_IN_DOC]];
+            
+            [self.tbCreate reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.curAddingImageCellIdx inSection:0]]
+                                 withRowAnimation:UITableViewRowAnimationNone];
+        }
+    }
 }
 - (void)photoSelectionCancel
 {

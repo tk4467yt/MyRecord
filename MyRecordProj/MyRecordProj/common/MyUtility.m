@@ -132,7 +132,8 @@
 
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize
 {
-    if (targetSize.width >= img2scale.size.width && targetSize.height >= img2scale.size.height) {
+    if (targetSize.width >= img2scale.size.width &&
+        targetSize.height >= img2scale.size.height) {
         return img2scale;
     }
     UIImage *sourceImage = img2scale;
@@ -206,6 +207,11 @@
     NSString *imgFullName=[dirPath stringByAppendingPathComponent:imgName];
     
     return [UIImage imageWithContentsOfFile:imgFullName];
+}
+
++(CGSize)maxSizeOfImage2handle
+{
+    return CGSizeMake(1024, 1024);
 }
 
 +(NSString *)matchedDynamicTypeTextStyleForFontSize:(CGFloat)fontSize

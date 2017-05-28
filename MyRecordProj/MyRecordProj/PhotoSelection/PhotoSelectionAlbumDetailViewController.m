@@ -57,25 +57,35 @@
     if (nil != self.rootVC) {
         NSMutableArray *imgArr=[NSMutableArray new];
         
-        for (NSIndexPath *indexPath in self.selectedImageIndexpathArr) {
-            [[PHImageManager defaultManager] requestImageForAsset:[self.assetsImgArr2use objectAtIndex:indexPath.item]
-                                                       targetSize:PHImageManagerMaximumSize
-                                                      contentMode:PHImageContentModeDefault
-                                                          options:nil
-                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                                                        if (nil != result) {
-                                                            UIImage *img2use=[MyUtility scaleImage:result toSize:CGSizeMake(1024, 1024)];
-                                                            if (nil != img2use) {
-                                                                [imgArr addObject:img2use];
-                                                            }
-                                                        } else {
-                                                            //show alert
-                                                        }
-                                                    }];
-        }
+        [[AppCoverView getAppCoverView] showInView:self.view withText:NSLocalizedString(@"handling",nil)];
         
-        PhotoSelectionContainerNavVC *containerVC=(PhotoSelectionContainerNavVC *)self.rootVC.parentViewController;
-        [containerVC.photoSelectionDelegate photoSelectionFinishWithImageArr:imgArr];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+            options.synchronous = YES;
+            for (NSIndexPath *indexPath in self.selectedImageIndexpathArr) {
+                [[PHImageManager defaultManager] requestImageForAsset:[self.assetsImgArr2use objectAtIndex:indexPath.item]
+                                                           targetSize:PHImageManagerMaximumSize
+                                                          contentMode:PHImageContentModeDefault
+                                                              options:options
+                                                        resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                                                            if (nil != result) {
+                                                                UIImage *img2use=[MyUtility scaleImage:result toSize:[MyUtility maxSizeOfImage2handle]];
+                                                                if (nil != img2use) {
+                                                                    [imgArr addObject:img2use];
+                                                                }
+                                                            } else {
+                                                                //show alert
+                                                            }
+                                                        }];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppCoverView getAppCoverView] hideFromSuperView];
+                
+                PhotoSelectionContainerNavVC *containerVC=(PhotoSelectionContainerNavVC *)self.rootVC.parentViewController;
+                [containerVC.photoSelectionDelegate photoSelectionFinishWithImageArr:imgArr];
+            });
+        });
     }
 }
 
