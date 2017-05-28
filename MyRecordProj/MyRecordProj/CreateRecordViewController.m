@@ -455,4 +455,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark override
+-(void)screenOrientationChangedHandle
+{
+    [self.tbCreate reloadData];
+}
+
 @end

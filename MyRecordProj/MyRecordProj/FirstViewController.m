@@ -212,4 +212,10 @@
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }
+
+#pragma mark override
+-(void)screenOrientationChangedHandle
+{
+    [self.tbAllRecords reloadData];
+}
 @end

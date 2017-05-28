@@ -132,4 +132,10 @@
     tfCell.lblCountInd.text=[NSString stringWithFormat:@"%d/%d",(int)self.tfInput.text.length,(int)kDbIdCategoryTitleSize];
 }
 
+#pragma mark override
+-(void)screenOrientationChangedHandle
+{
+    [self.tbCreateCategory reloadData];
+}
+
 @end
