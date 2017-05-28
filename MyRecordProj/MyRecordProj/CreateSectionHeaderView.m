@@ -15,6 +15,8 @@
 {
     [super layoutSubviews];
     
+    self.btnCategory.lineBreakMode=NSLineBreakByTruncatingTail;
+    
     self.layer.masksToBounds=true;
     self.layer.cornerRadius=5.0;
     self.layer.borderWidth=1;
