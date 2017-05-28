@@ -311,4 +311,12 @@
     [fromVC presentViewController:alertController animated:YES completion:nil];
 }
 
++ (NSString *)getTimeDescFromSeconds:(int)seconds
+{
+    int minute = seconds/60;
+    int second = seconds - minute *60;
+    
+    return [NSString stringWithFormat:@"%02d : %02d", minute, second];
+}
+
 @end

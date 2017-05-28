@@ -23,3 +23,5 @@
 "add_image_from_camera"="Camera";
 "Not have access privileges"="Not have access privileges";
 "Album"="Album";
+"Select"="Select";
+"photo_selection_status_for_photo_video_count"="%ld Photo, %ld Video";

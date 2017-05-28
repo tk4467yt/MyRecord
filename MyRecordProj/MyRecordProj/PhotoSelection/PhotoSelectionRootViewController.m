@@ -61,6 +61,12 @@
     [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
 }
 
+#pragma mark override
+-(void)screenOrientationChangedHandle
+{
+    [self.tbAlbums reloadData];
+}
+
 #pragma mark PHPhotoLibraryChangeObserver
 - (void)photoLibraryDidChange:(PHChange *)changeInstance
 {

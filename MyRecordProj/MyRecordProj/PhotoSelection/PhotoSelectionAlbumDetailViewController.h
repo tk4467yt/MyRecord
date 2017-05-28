@@ -9,7 +9,8 @@
 #import <Photos/Photos.h>
 #import "MyRootViewController.h"
 
-@interface PhotoSelectionAlbumDetailViewController : MyRootViewController
+@interface PhotoSelectionAlbumDetailViewController : MyRootViewController <UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *cvAlbumItems;
 
 @property (nonatomic, strong) PHAssetCollection *assetCollection;
 @end

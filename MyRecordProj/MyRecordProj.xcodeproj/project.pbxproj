@@ -17,6 +17,10 @@
 		250141661EDA70BF00C813B5 /* PhotoSelectionAlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250141641EDA70BF00C813B5 /* PhotoSelectionAlbumTableViewCell.xib */; };
 		2501416A1EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 250141681EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.m */; };
 		2501416B1EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250141691EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.xib */; };
+		2501416F1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2501416D1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m */; };
+		250141701EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2501416E1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib */; };
+		250141741EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 250141721EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.m */; };
+		250141751EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250141731EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib */; };
 		2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8CE1EC0B4B300EC59E7 /* main.m */; };
 		2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8D11EC0B4B300EC59E7 /* AppDelegate.m */; };
 		2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510E8D41EC0B4B300EC59E7 /* FirstViewController.m */; };
@@ -101,6 +105,12 @@
 		250141671EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSelectionAlbumDetailViewController.h; sourceTree = "<group>"; };
 		250141681EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSelectionAlbumDetailViewController.m; sourceTree = "<group>"; };
 		250141691EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoSelectionAlbumDetailViewController.xib; sourceTree = "<group>"; };
+		2501416C1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSelectionItemCollectionViewCell.h; sourceTree = "<group>"; };
+		2501416D1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSelectionItemCollectionViewCell.m; sourceTree = "<group>"; };
+		2501416E1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoSelectionItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		250141711EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSelectionItemFooterReusableView.h; sourceTree = "<group>"; };
+		250141721EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSelectionItemFooterReusableView.m; sourceTree = "<group>"; };
+		250141731EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoSelectionItemFooterReusableView.xib; sourceTree = "<group>"; };
 		2510E8CA1EC0B4B300EC59E7 /* MyRecordProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecordProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2510E8CE1EC0B4B300EC59E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2510E8D01EC0B4B300EC59E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -235,6 +245,12 @@
 				250141671EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.h */,
 				250141681EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.m */,
 				250141691EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.xib */,
+				2501416C1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.h */,
+				2501416D1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m */,
+				2501416E1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib */,
+				250141711EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.h */,
+				250141721EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.m */,
+				250141731EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib */,
 			);
 			path = PhotoSelection;
 			sourceTree = "<group>";
@@ -570,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D960601ECF3B6D006E067E /* TextContentCollectionReusableView.xib in Resources */,
+				250141751EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib in Resources */,
 				250141661EDA70BF00C813B5 /* PhotoSelectionAlbumTableViewCell.xib in Resources */,
 				2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */,
 				2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */,
@@ -586,6 +603,7 @@
 				255397321ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib in Resources */,
 				2501416B1EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.xib in Resources */,
 				2553973E1ED13C3500F6EC45 /* CreateSectionFooterView.xib in Resources */,
+				250141701EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib in Resources */,
 				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +648,7 @@
 				2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
 				255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */,
+				2501416F1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m in Sources */,
 				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
 				2553973B1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m in Sources */,
@@ -646,6 +665,7 @@
 				25D960721ECF3B90006E067E /* FMDatabasePool.m in Sources */,
 				2510E9261EC854AE00EC59E7 /* CreateRecordViewController.m in Sources */,
 				255397451ED478E900F6EC45 /* ImageCollectionViewCell.m in Sources */,
+				250141741EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.m in Sources */,
 				250141581ED7251000C813B5 /* PhotoSelectionRootViewController.m in Sources */,
 				25D9605D1ECF3B6D006E067E /* MyRootViewController.m in Sources */,
 			);

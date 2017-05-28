@@ -43,4 +43,6 @@
 +(CGFloat)pointSizeAdjustForDynamicTypeWithOriginalSize:(CGFloat)originalPointSize;
 
 +(void)prensentAlertVCFromSourceVC:(UIViewController *)fromVC withAnim:(BOOL)animation andContent:(NSString *)content;
+
++ (NSString *)getTimeDescFromSeconds:(int)seconds;
 @end
