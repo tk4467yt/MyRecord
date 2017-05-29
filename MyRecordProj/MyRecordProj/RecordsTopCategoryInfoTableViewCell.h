@@ -17,6 +17,7 @@
 @interface RecordsTopCategoryInfoTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblCategoryName;
 @property (weak, nonatomic) IBOutlet UIImageView *ivActionInd;
+@property (weak, nonatomic) IBOutlet UILabel *lblCount;
 
 @property (copy, nonatomic) NSString *categoryId;
 @property (weak, nonatomic) id<RecordTopCatInfoActionDelegate> actionDelegate;

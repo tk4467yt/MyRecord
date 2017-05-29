@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-uX-okk" userLabel="lblCategoryName">
@@ -31,19 +31,28 @@
                             <constraint firstAttribute="height" constant="18" id="XAo-4S-nOQ"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDn-1Q-CVm" userLabel="lblCount">
+                        <rect key="frame" x="82" y="11" width="230" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.1312382463" green="0.3420755841" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="9gf-uX-okk" secondAttribute="bottom" id="98b-Nt-bK6"/>
                     <constraint firstItem="9gf-uX-okk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DBM-w8-0p6"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xty-wI-fK9" secondAttribute="trailing" id="PLJ-h9-01N"/>
+                    <constraint firstItem="EDn-1Q-CVm" firstAttribute="leading" secondItem="Xty-wI-fK9" secondAttribute="trailing" constant="5" id="Rlj-zf-FsV"/>
                     <constraint firstItem="Xty-wI-fK9" firstAttribute="leading" secondItem="9gf-uX-okk" secondAttribute="trailing" id="WMi-pa-LGJ"/>
                     <constraint firstItem="9gf-uX-okk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ZCB-Za-gnu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EDn-1Q-CVm" secondAttribute="trailing" id="aT5-F3-yST"/>
                     <constraint firstItem="Xty-wI-fK9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kRf-Ro-43Q"/>
+                    <constraint firstItem="EDn-1Q-CVm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ogn-X4-h9M"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="ivActionInd" destination="Xty-wI-fK9" id="HaL-UN-d8j"/>
                 <outlet property="lblCategoryName" destination="9gf-uX-okk" id="6xz-MS-nks"/>
+                <outlet property="lblCount" destination="EDn-1Q-CVm" id="nJt-UX-pVi"/>
             </connections>
         </tableViewCell>
     </objects>

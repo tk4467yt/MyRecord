@@ -15,5 +15,8 @@ extern NSString *kDefaultCategoryId;
 @property (nonatomic,copy) NSString *categoryTitle;
 @property (nonatomic,assign) UInt64 createTime;
 
+//not in db
+@property (nonatomic,assign) UInt64 recordCount;
+
 +(CategoryInfo *)getDefaultCategoryInfo;
 @end

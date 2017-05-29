@@ -29,6 +29,7 @@ extern const NSInteger kDbIdCategoryTitleSize;
 
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId;
 +(UInt64)getAllRecordInfoCount;
++(UInt64)getRecordInfoCountForCategory:(NSString *)categoryId;
 
 +(void)storeRecordWithInfo:(RecordInfo *)info2store;
 

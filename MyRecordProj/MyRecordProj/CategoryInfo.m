@@ -7,6 +7,7 @@
 //
 
 #import "CategoryInfo.h"
+#import "MyCommonHeaders.h"
 
 NSString *kDefaultCategoryId=@"def_category_id";
 
@@ -17,6 +18,8 @@ NSString *kDefaultCategoryId=@"def_category_id";
     info2ret.categoryId=kDefaultCategoryId;
     info2ret.categoryTitle=NSLocalizedString(@"def_category_name", @"");
     info2ret.createTime=0;
+    
+    info2ret.recordCount=[DbHandler getRecordInfoCountForCategory:info2ret.categoryId];
     
     return info2ret;
 }

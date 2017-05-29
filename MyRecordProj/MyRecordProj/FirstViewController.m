@@ -79,15 +79,14 @@
 {
     self.categoryArr=[DbHandler getAllCategoryInfo];
     UInt64 recordCount=[DbHandler getAllRecordInfoCount];
-    if (self.categoryArr.count > 0 || recordCount > 0) {
-        [self.categoryArr insertObject:[CategoryInfo getDefaultCategoryInfo] atIndex:0];
-    }
+    
+    [self.categoryArr insertObject:[CategoryInfo getDefaultCategoryInfo] atIndex:0];
     
     self.lblEmptyContent.text=NSLocalizedString(@"record_empty_desc", @"");
-    if (self.categoryArr.count <= 0) {
-        self.lblEmptyContent.hidden=false;
-    } else {
+    if (self.categoryArr.count > 1 || recordCount > 0) {
         self.lblEmptyContent.hidden=true;
+    } else {
+        self.lblEmptyContent.hidden=false;
     }
     
     [self.tbAllRecords reloadData];
@@ -158,6 +157,7 @@
         RecordsTopCategoryInfoTableViewCell *topCatInfoCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordTopCategoryInfo] forIndexPath:indexPath];
         topCatInfoCell.lblCategoryName.text=curCategory.categoryTitle;
         topCatInfoCell.categoryId=curCategory.categoryId;
+        topCatInfoCell.lblCount.text=[NSString stringWithFormat:@"%lld",curCategory.recordCount];
         topCatInfoCell.actionDelegate=self;
         
         if ([curCategory.categoryId isEqualToString:kDefaultCategoryId]) {

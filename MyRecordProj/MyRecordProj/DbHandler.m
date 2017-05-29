@@ -105,6 +105,8 @@ static __strong FMDatabase *dbRecords;
         aCategory.categoryTitle=[s stringForColumn:@"category_title"];
         aCategory.createTime=[s longLongIntForColumn:@"create_time"];
         
+        aCategory.recordCount=[DbHandler getRecordInfoCountForCategory:aCategory.categoryId];
+        
         [arr2ret addObject:aCategory];
     }
     
@@ -165,6 +167,20 @@ static __strong FMDatabase *dbRecords;
     if (s && [s next]) {
         count2ret=[s longLongIntForColumnIndex:0];
     }
+    return count2ret;
+}
+
++(UInt64)getRecordInfoCountForCategory:(NSString *)categoryId
+{
+    UInt64 count2ret=0;
+    
+    if (![MyUtility isStringNilOrZeroLength:categoryId]) {
+        FMResultSet *s = [dbRecords executeQuery:@"SELECT COUNT(*) FROM `record_info` WHERE `category_id`=?",categoryId];
+        if (s && [s next]) {
+            count2ret=[s longLongIntForColumnIndex:0];
+        }
+    }
+    
     return count2ret;
 }
 
