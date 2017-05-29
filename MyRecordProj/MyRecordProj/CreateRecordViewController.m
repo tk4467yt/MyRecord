@@ -18,7 +18,7 @@
 #import "PhotoSelectionContainerNavVC.h"
 #import "CagegorySelectViewController.h"
 
-@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate,CreateSectionHeaderViewActionDelegate,CategorySelectActionDelegate>
+@interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate,CreateSectionHeaderViewActionDelegate,CategorySelectActionDelegate,CreateSectionTextActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
 
 @property (strong, nonatomic) CreateSectionFooterView *footerView;
@@ -331,6 +331,9 @@
         txtCell.tvTxtContent.delegate=self;
         txtCell.tvTxtContent.tag=indexPath.row;
         
+        txtCell.cellIndex=indexPath.row;
+        txtCell.actionDelegate=self;
+        
         [self updateTxtInfoForCell:txtCell andSectionInfo:sectionInfo];
         cell2ret=txtCell;
     } else if (SectionTypeImg == sectionInfo.type) {
@@ -418,6 +421,11 @@
     }
 }
 
+-(void)imageActionForDelSectionWithCellIndex:(NSInteger)cellIdx
+{
+    [self action4delSectionWithCellIndex:cellIdx];
+}
+
 #pragma mark UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
@@ -451,6 +459,35 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark CreateSectionTextActionDelegate
+-(void)textActionForDelSectionWithCellIndex:(NSInteger)cellIdx
+{
+    [self action4delSectionWithCellIndex:cellIdx];
+}
+
+-(void)action4delSectionWithCellIndex:(NSInteger)cellIdx
+{
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"Are you sure to delete this section?", @"") preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", @"")
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action){
+                                                       [self.createSectionArr removeObjectAtIndex:cellIdx];
+                                                       
+                                                       [self.tbCreate reloadData];
+                                                   }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    
+    [alertVC addAction:okAction];
+    [alertVC addAction:cancelAction];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 #pragma mark UINavigationControllerDelegate

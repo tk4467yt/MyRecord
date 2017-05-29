@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-jJ-tZ1">
-                        <rect key="frame" x="8" y="29" width="304" height="83.5"/>
+                        <rect key="frame" x="8" y="29" width="285" height="83.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="yM8-xC-ASt">
                             <size key="itemSize" width="80" height="80"/>
@@ -34,21 +34,34 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_delete" translatesAutoresizingMaskIntoConstraints="NO" id="lzL-aw-c03">
+                        <rect key="frame" x="298" y="38" width="22" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="p7s-b6-Hdf"/>
+                            <constraint firstAttribute="height" constant="44" id="vsX-ml-Tgd"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="ilZ-jJ-tZ1" secondAttribute="trailing" id="4nR-It-zdC"/>
                     <constraint firstItem="ilZ-jJ-tZ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="65o-s0-pzA"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ilZ-jJ-tZ1" secondAttribute="bottom" id="G0U-mA-dsF"/>
+                    <constraint firstItem="lzL-aw-c03" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZXP-20-K0a"/>
                     <constraint firstItem="ilZ-jJ-tZ1" firstAttribute="top" secondItem="t40-ZH-s7T" secondAttribute="bottom" id="dM9-Gx-IpM"/>
+                    <constraint firstItem="lzL-aw-c03" firstAttribute="leading" secondItem="ilZ-jJ-tZ1" secondAttribute="trailing" constant="5" id="de9-Lk-8tj"/>
                     <constraint firstItem="t40-ZH-s7T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lwE-Hv-X8t"/>
+                    <constraint firstAttribute="trailing" secondItem="lzL-aw-c03" secondAttribute="trailing" id="slE-UB-0xC"/>
                     <constraint firstItem="t40-ZH-s7T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="x5i-KF-ATi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cvImgs" destination="ilZ-jJ-tZ1" id="iZr-gg-8Oo"/>
+                <outlet property="ivDel" destination="lzL-aw-c03" id="bcC-Q7-OAz"/>
                 <outlet property="lblImgDesc" destination="t40-ZH-s7T" id="OGk-Db-yIi"/>
             </connections>
             <point key="canvasLocation" x="26" y="83.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="table_delete" width="22" height="22"/>
+    </resources>
 </document>

@@ -19,6 +19,16 @@
     self.tvTxtContent.layer.cornerRadius=5.0;
     self.tvTxtContent.layer.borderWidth=1;
     self.tvTxtContent.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
+    
+    UITapGestureRecognizer *tapGestureImg=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action4DelSection)];
+    [self.ivDel addGestureRecognizer:tapGestureImg];
+}
+
+- (void)action4DelSection
+{
+    if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(textActionForDelSectionWithCellIndex:)]) {
+        [self.actionDelegate textActionForDelSectionWithCellIndex:self.cellIndex];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

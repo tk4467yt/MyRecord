@@ -11,12 +11,14 @@
 @protocol CreateSectionImageActionDelegate <NSObject>
 
 -(void)imageActionForAddImageWithCellIndex:(NSInteger)cellIdx andSourceView:(UIView *)sourceView;
+-(void)imageActionForDelSectionWithCellIndex:(NSInteger)cellIdx;
 
 @end
 
 @interface CreateSectionImgTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lblImgDesc;
 @property (weak, nonatomic) IBOutlet UICollectionView *cvImgs;
+@property (weak, nonatomic) IBOutlet UIImageView *ivDel;
 
 @property (nonatomic,strong) NSMutableArray *imgArr;
 @property (assign, nonatomic) NSInteger cellIndex;

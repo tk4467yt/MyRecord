@@ -32,6 +32,16 @@
     [self.cvImgs registerNib:[UINib nibWithNibName:@"ImageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:[CellIdInfo cellIdForImageCVCellId]];
     self.cvImgs.delegate=self;
     self.cvImgs.dataSource=self;
+    
+    UITapGestureRecognizer *tapGestureImg=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action4DelSection)];
+    [self.ivDel addGestureRecognizer:tapGestureImg];
+}
+
+- (void)action4DelSection
+{
+    if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(imageActionForDelSectionWithCellIndex:)]) {
+        [self.actionDelegate imageActionForDelSectionWithCellIndex:self.cellIndex];
+    }
 }
 
 -(void)layoutSubviews
