@@ -30,6 +30,8 @@ extern const NSInteger kDbIdCategoryTitleSize;
 +(NSArray *)getRecordInfoWithCategoryId:(NSString *)categoryId;
 +(UInt64)getAllRecordInfoCount;
 
++(void)storeRecordWithInfo:(RecordInfo *)info2store;
+
 +(NSString *)getStrSettingWithKey:(NSString *)key andDefValue:(NSString *)defStr;
 +(UInt64)getIntSettingWithKey:(NSString *)key andDefValue:(UInt64)defInt;
 @end

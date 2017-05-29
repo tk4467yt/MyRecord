@@ -168,7 +168,47 @@ static __strong FMDatabase *dbRecords;
     return count2ret;
 }
 
-+(NSArray *)getRecordSectionWithRecordId:(NSString *)recordId
++(void)storeRecordWithInfo:(RecordInfo *)info2store
+{
+    [dbRecords beginTransaction];
+    
+    //record info
+    [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `record_info` (`record_id`,`record_title`,`create_time`,`category_id`) VALUES (?,?,?,?)",
+     info2store.recordId,
+     info2store.recordTitle,
+     [NSString stringWithFormat:@"%lld",info2store.createTime],
+     info2store.categoryId];
+    
+    //record section
+//    [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_section`"
+//     @"(`record_id` char(128) NOT NULL,"
+//     @"`section_id` integer,"
+//     @"`section_type` char(16),"
+//     @"PRIMARY KEY (`record_id`,`section_id`))"];
+    for (RecordSection *aSection in info2store.sectionArr) {
+        [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `record_section` (`record_id`,`section_id`,`section_type`) VALUES (?,?,?)",
+         aSection.recordId,
+         [NSString stringWithFormat:@"%lld",aSection.sectionId],
+         aSection.sectionType];
+        
+        //record section item
+        for (RecordSectionItem *aSectionItem in aSection.sectionItemArr) {
+            [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `record_section_item` (`record_id`,`section_id`,`item_id`,`item_txt`,`item_img_thumb_id`,`item_img_id`) VALUES (?,?,?,?,?,?)",
+             aSectionItem.recordId,
+             [NSString stringWithFormat:@"%lld",aSectionItem.sectionId],
+             [NSString stringWithFormat:@"%lld",aSectionItem.itemId],
+             aSectionItem.itemTxt,
+             aSectionItem.imgThumbId,
+             aSectionItem.imgId];
+        }
+    }
+    
+    [dbRecords commit];
+    
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:@""];
+}
+
++(NSMutableArray *)getRecordSectionWithRecordId:(NSString *)recordId
 {
     NSMutableArray *arr2ret=[NSMutableArray new];
     
@@ -188,7 +228,7 @@ static __strong FMDatabase *dbRecords;
     return arr2ret;
 }
 
-+(NSArray *)getRecordSectionItemWithRecordId:(NSString *)recordId andSectionId:(UInt64)sectionId
++(NSMutableArray *)getRecordSectionItemWithRecordId:(NSString *)recordId andSectionId:(UInt64)sectionId
 {
     NSMutableArray *arr2ret=[NSMutableArray new];
     

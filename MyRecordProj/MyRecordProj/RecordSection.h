@@ -16,5 +16,5 @@
 @property (nonatomic,assign) UInt64 sectionId;
 @property (nonatomic,copy) NSString *sectionType;
 
-@property (nonatomic,strong) NSArray *sectionItemArr;
+@property (nonatomic,strong) NSMutableArray *sectionItemArr;
 @end

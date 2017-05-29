@@ -16,5 +16,5 @@
 @property (nonatomic,assign) UInt64 createTime;
 @property (nonatomic,copy) NSString *categoryId;
 
-@property (nonatomic,strong) NSArray *sectionArr;
+@property (nonatomic,strong) NSMutableArray *sectionArr;
 @end

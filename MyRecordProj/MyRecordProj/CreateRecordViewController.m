@@ -17,6 +17,8 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "PhotoSelectionContainerNavVC.h"
 #import "CagegorySelectViewController.h"
+#import "RecordSection.h"
+#import "RecordSectionItem.h"
 
 @interface CreateRecordViewController () <UITableViewDelegate,UITableViewDataSource,CreateSectionFooterViewActionDelegate,UITextViewDelegate,CreateSectionImageActionDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PhotoSelectionActionDelegate,CreateSectionHeaderViewActionDelegate,CategorySelectActionDelegate,CreateSectionTextActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbCreate;
@@ -88,7 +90,57 @@
         
         self.isRecordCreated=true;
         
+        RecordInfo *record2store=[RecordInfo new];
+        record2store.recordId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+        record2store.recordTitle=titleSection.txtContent;
+        record2store.createTime=[[NSDate date] timeIntervalSince1970];
+        record2store.categoryId=self.category4record.categoryId;
         
+        record2store.sectionArr=[NSMutableArray new];
+        for (int sectionIdx=1; sectionIdx<self.createSectionArr.count; ++sectionIdx) {
+            RecordCreateSectionInfo *sectionInfo=self.createSectionArr[sectionIdx];
+            if (SectionTypeTxt == sectionInfo.type) {
+                RecordSection *aSection=[RecordSection new];
+                aSection.recordId=record2store.recordId;
+                aSection.sectionId=sectionIdx;
+                aSection.sectionType=SECTION_TYPE_TXT;
+                
+                aSection.sectionItemArr=[NSMutableArray new];
+                RecordSectionItem *aItem=[RecordSectionItem new];
+                aItem.recordId=record2store.recordId;
+                aItem.sectionId=sectionIdx;
+                aItem.itemId=0;
+                aItem.itemTxt=sectionInfo.txtContent;
+                aItem.imgId=@"";
+                aItem.imgThumbId=@"";
+                
+                [aSection.sectionItemArr addObject:aItem];
+                
+                [record2store.sectionArr addObject:aSection];
+            } else if (SectionTypeImg == sectionInfo.type) {
+                RecordSection *aSection=[RecordSection new];
+                aSection.recordId=record2store.recordId;
+                aSection.sectionId=sectionIdx;
+                aSection.sectionType=SECTION_TYPE_IMAGE;
+                
+                aSection.sectionItemArr=[NSMutableArray new];
+                for (int itemIdx=0; itemIdx<sectionInfo.imgOrgArr.count; ++itemIdx) {
+                    RecordSectionItem *aItem=[RecordSectionItem new];
+                    aItem.recordId=record2store.recordId;
+                    aItem.sectionId=sectionIdx;
+                    aItem.itemId=itemIdx;
+                    aItem.itemTxt=@"";
+                    aItem.imgId=sectionInfo.imgOrgArr[itemIdx];
+                    aItem.imgThumbId=sectionInfo.imgThumbArr[itemIdx];
+                    
+                    [aSection.sectionItemArr addObject:aItem];
+                }
+                
+                [record2store.sectionArr addObject:aSection];
+            }
+        }
+        
+        [DbHandler storeRecordWithInfo:record2store];
     }
     
     
