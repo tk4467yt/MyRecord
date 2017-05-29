@@ -80,6 +80,8 @@
 -(void)navActionForCreate
 {
     self.isRecordCreated=true;
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
