@@ -575,7 +575,10 @@
 
 - (void)deleteLocalImageForCellWithCellId:(NSInteger)cellIdx
 {
-    RecordCreateSectionInfo *sectionInfo=self.createSectionArr[self.curAddingImageCellIdx];
+    if (cellIdx >= self.createSectionArr.count) {
+        return;
+    }
+    RecordCreateSectionInfo *sectionInfo=self.createSectionArr[cellIdx];
     if (SectionTypeImg == sectionInfo.type) {
         for (NSString *aOrgImgName in sectionInfo.imgOrgArr) {
             [MyUtility deleteFileWithName:aOrgImgName inDirectory:IMG_STORE_PATH_IN_DOC];
