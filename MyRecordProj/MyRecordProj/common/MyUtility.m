@@ -108,6 +108,9 @@
 
 +(NSString *)writeImage:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc
 {
+    if (nil == img2write || [MyUtility isStringNilOrZeroLength:dirInDoc]) {
+        return @"";
+    }
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docDir = [paths objectAtIndex:0];
     
@@ -128,6 +131,23 @@
 {
     UIImage *imgScaled=[MyUtility scaleImage:img2write toSize:CGSizeMake(200, 200)];
     return [MyUtility writeImage:imgScaled intoDirectory:dirInDoc];
+}
+
++(void)deleteFileWithName:(NSString *)fileName inDirectory:(NSString *)dirInDoc
+{
+    if ([MyUtility isStringNilOrZeroLength:fileName] || [MyUtility isStringNilOrZeroLength:dirInDoc]) {
+        return;
+    }
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex:0];
+    
+    NSString *dirPath=[docDir stringByAppendingPathComponent:dirInDoc];
+    NSString *filePath=[dirPath stringByAppendingPathComponent:fileName];
+    
+    NSFileManager *defManager=[NSFileManager defaultManager];
+    if ([defManager fileExistsAtPath:dirPath]) {
+        [defManager removeItemAtPath:filePath error:nil];
+    }
 }
 
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize

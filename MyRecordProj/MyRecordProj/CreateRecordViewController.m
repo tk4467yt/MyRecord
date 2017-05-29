@@ -29,6 +29,8 @@
 @property (assign, nonatomic) NSInteger curAddingImageCellIdx;
 
 @property (nonatomic, strong) CategoryInfo *category4record;
+
+@property (nonatomic, assign) BOOL isRecordCreated;
 @end
 
 @implementation CreateRecordViewController
@@ -52,6 +54,19 @@
     [self updateCreateSection];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if ([self isBeingDismissed] || [self isMovingFromParentViewController]) {
+        if (!self.isRecordCreated) {
+            for (int i=0; i<self.createSectionArr.count; ++i) {
+                [self deleteLocalImageForCellWithCellId:i];
+            }
+        }
+    }
+}
+
 -(void)updateCreateSection
 {
     self.createSectionArr=[NSMutableArray new];
@@ -64,7 +79,7 @@
 
 -(void)navActionForCreate
 {
-    
+    self.isRecordCreated=true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -474,6 +489,8 @@
     UIAlertAction *okAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", @"")
                                                      style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction *action){
+                                                       [self deleteLocalImageForCellWithCellId:cellIdx];
+                                                       
                                                        [self.createSectionArr removeObjectAtIndex:cellIdx];
                                                        
                                                        [self.tbCreate reloadData];
@@ -488,6 +505,19 @@
     [alertVC addAction:cancelAction];
     
     [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+- (void)deleteLocalImageForCellWithCellId:(NSInteger)cellIdx
+{
+    RecordCreateSectionInfo *sectionInfo=self.createSectionArr[self.curAddingImageCellIdx];
+    if (SectionTypeImg == sectionInfo.type) {
+        for (NSString *aOrgImgName in sectionInfo.imgOrgArr) {
+            [MyUtility deleteFileWithName:aOrgImgName inDirectory:IMG_STORE_PATH_IN_DOC];
+        }
+        for (NSString *aThumbImgName in sectionInfo.imgThumbArr) {
+            [MyUtility deleteFileWithName:aThumbImgName inDirectory:IMG_STORE_PATH_IN_DOC];
+        }
+    }
 }
 
 #pragma mark UINavigationControllerDelegate

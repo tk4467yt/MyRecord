@@ -38,6 +38,7 @@
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize;
 +(UIImage *)getImageWithName:(NSString *)imgName andDir:(NSString *)dirInDoc;
 +(CGSize)maxSizeOfImage2handle;
++(void)deleteFileWithName:(NSString *)fileName inDirectory:(NSString *)dirInDoc;
 
 +(CGFloat)getFontPointSizeForDynamicTypeTextWithOriginalSize:(CGFloat)originalPointSize;
 +(BOOL)appFollowSystemDynamicType;
