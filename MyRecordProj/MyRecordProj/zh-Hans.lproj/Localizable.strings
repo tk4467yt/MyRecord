@@ -28,3 +28,4 @@
 "handling"="处理中。。。";
 "title_for_category"="分组";
 "Are you sure to delete this section?"="确定删除这个条目?";
+"record_title_cannot_empty"="记录标题不能为空";

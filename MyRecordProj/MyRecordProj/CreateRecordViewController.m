@@ -79,7 +79,19 @@
 
 -(void)navActionForCreate
 {
-    self.isRecordCreated=true;
+    RecordCreateSectionInfo *titleSection=self.createSectionArr[0];
+    if (SectionTypeTitle == titleSection.type) {
+        if ([MyUtility isStringNilOrZeroLength:titleSection.txtContent]) {
+            [MyUtility prensentAlertVCFromSourceVC:self withAnim:YES andContent:NSLocalizedString(@"record_title_cannot_empty", @"")];
+            return;
+        }
+        
+        self.isRecordCreated=true;
+        
+        
+    }
+    
+    
     
     [self.navigationController popViewControllerAnimated:YES];
 }
