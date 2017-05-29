@@ -16,12 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glX-kK-kxJ">
-                    <rect key="frame" x="20" y="301" width="334" height="65"/>
+                    <rect key="frame" x="132.5" y="301" width="109" height="65"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-c2-gqI">
-                            <rect key="frame" x="8" y="16" width="318" height="33"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="24" y="16" width="61" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -29,15 +28,14 @@
                     <constraints>
                         <constraint firstItem="SLa-c2-gqI" firstAttribute="centerX" secondItem="glX-kK-kxJ" secondAttribute="centerX" id="DPz-RR-M5q"/>
                         <constraint firstItem="SLa-c2-gqI" firstAttribute="centerY" secondItem="glX-kK-kxJ" secondAttribute="centerY" id="Sms-l9-a2c"/>
-                        <constraint firstItem="SLa-c2-gqI" firstAttribute="leading" secondItem="glX-kK-kxJ" secondAttribute="leadingMargin" id="Vhf-qq-ETB"/>
+                        <constraint firstItem="SLa-c2-gqI" firstAttribute="leading" secondItem="glX-kK-kxJ" secondAttribute="leadingMargin" constant="16" id="Vhf-qq-ETB"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="Ywu-i1-Nek"/>
                         <constraint firstItem="SLa-c2-gqI" firstAttribute="top" secondItem="glX-kK-kxJ" secondAttribute="topMargin" constant="8" id="f9t-sJ-ur7"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="glX-kK-kxJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="AiL-Rn-b9M"/>
                 <constraint firstItem="glX-kK-kxJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I9f-Rq-m5p"/>
                 <constraint firstItem="glX-kK-kxJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XmO-1v-yan"/>
             </constraints>

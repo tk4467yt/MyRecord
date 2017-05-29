@@ -17,7 +17,8 @@ static __strong AppCoverView *retainedCoverView;
 {
     [super awakeFromNib];
     
-    self.backgroundColor= [UIColor lightGrayColor];
+    self.backgroundColor= [UIColor grayColor];
+    self.alpha=0.7;
     
     self.lblContent.text=@"";
     self.contentContainer.layer.masksToBounds=true;
@@ -41,10 +42,14 @@ static __strong AppCoverView *retainedCoverView;
     [parentView addSubview:self];
     
     self.lblContent.text=txt2show;
+    CGFloat fontSize=17.0;
+    if ([MyUtility isDeviceIpad]) {
+        fontSize=25;
+    }
     if ([MyUtility appFollowSystemDynamicType]) {
-        self.lblContent.font = [UIFont systemFontOfSize:[MyUtility getFontPointSizeForDynamicTypeTextWithOriginalSize:14]];
+        self.lblContent.font = [UIFont systemFontOfSize:[MyUtility getFontPointSizeForDynamicTypeTextWithOriginalSize:fontSize]];
     } else {
-        self.lblContent.font = [UIFont systemFontOfSize:14];
+        self.lblContent.font = [UIFont systemFontOfSize:fontSize];
     }
     
     self.frame=CGRectMake(0, 0, parentView.frame.size.width, parentView.frame.size.height);
