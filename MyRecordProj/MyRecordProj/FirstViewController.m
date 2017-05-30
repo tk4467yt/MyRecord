@@ -169,7 +169,7 @@
             }
         }
         
-        return 25+thumbHeight;
+        return 25+thumbHeight+50;
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

@@ -35,6 +35,9 @@
 {
     [super layoutSubviews];
     
+    [self.btnDetail setTitle:NSLocalizedString(@"Detail", @"") forState:UIControlStateNormal];
+    [self.btnDelete setTitle:NSLocalizedString(@"Delete", @"") forState:UIControlStateNormal];
+    
     [self.cvThumb reloadData];
 }
 

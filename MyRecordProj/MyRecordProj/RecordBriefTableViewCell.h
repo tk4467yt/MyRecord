@@ -12,5 +12,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UICollectionView *cvThumb;
 
+@property (weak, nonatomic) IBOutlet UIView *btnHolder;
+@property (weak, nonatomic) IBOutlet UIButton *btnDetail;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
+
 @property (nonatomic,strong) NSArray *recordSectionItemArr;
 @end
