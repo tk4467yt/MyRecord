@@ -48,18 +48,27 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnDetailTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="d74-Hb-y11"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJa-3h-zbO" userLabel="btnEdit">
                                 <rect key="frame" x="131" y="-0.5" width="103" height="40"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnEditTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2hw-oB-Wxc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-j5-Rdd" userLabel="btnDelete">
                                 <rect key="frame" x="254" y="0.0" width="103" height="40"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="0.061922798530000003" blue="0.082673858370000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnDeleteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NC8-ez-o9D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

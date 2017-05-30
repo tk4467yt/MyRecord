@@ -13,7 +13,7 @@
 #import "CreateCategoryViewController.h"
 #import "RecordBriefTableViewCell.h"
 
-@interface FirstViewController () <UITableViewDelegate,UITableViewDataSource,RecordTopCatInfoActionDelegate>
+@interface FirstViewController () <UITableViewDelegate,UITableViewDataSource,RecordTopCatInfoActionDelegate,RecordBriefActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmptyContent;
 
@@ -204,6 +204,7 @@
         NSArray *recordInfoArr=[self getRecordInfoArrForCategory:curCategory.categoryId];
         
         RecordBriefTableViewCell *recordBriefCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordBrief] forIndexPath:indexPath];
+        recordBriefCell.actionDelegate=self;
         
         NSInteger recordInfoIdx=indexPath.row-1;
         RecordInfo *recordInfo2use=nil;
@@ -214,9 +215,13 @@
             recordBriefCell.lblTitle.text=recordInfo2use.recordTitle;
             
             recordBriefCell.recordSectionItemArr=[recordInfo2use getAllImageSectionItem];
+            
+            recordBriefCell.recordInfoId=recordInfo2use.recordId;
         } else {
             recordBriefCell.lblTitle.text=@"";
             recordBriefCell.recordSectionItemArr=nil;
+            
+            recordBriefCell.recordInfoId=nil;
         }
         
         cell2ret=recordBriefCell;
@@ -270,5 +275,34 @@
 -(void)screenOrientationChangedHandle
 {
     [self.tbAllRecords reloadData];
+}
+
+#pragma mark RecordBriefActionDelegate
+-(void)recordBriefActionForViewDetail:(NSString *)recordInfoId
+{
+    
+}
+-(void)recordBriefActionForEdit:(NSString *)recordInfoId
+{
+    
+}
+-(void)recordBriefActionForDelete:(NSString *)recordInfoId
+{
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"Are you sure to delete this record?", @"") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", @"")
+                                                         style:UIAlertActionStyleDestructive
+                                                       handler:^(UIAlertAction *action){
+                                                           [DbHandler deleteRecordInfoWithId:[DbHandler getRecordInfoWithRecordId:recordInfoId]];
+                                                       }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    
+    [alertVC addAction:okAction];
+    [alertVC addAction:cancelAction];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 @end

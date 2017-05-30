@@ -58,6 +58,24 @@
     [self.cvThumb reloadData];
 }
 
+- (IBAction)btnDetailTapped:(UIButton *)sender {
+    if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(recordBriefActionForViewDetail:)]) {
+        [self.actionDelegate recordBriefActionForViewDetail:self.recordInfoId];
+    }
+}
+
+- (IBAction)btnEditTapped:(UIButton *)sender {
+    if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(recordBriefActionForEdit:)]) {
+        [self.actionDelegate recordBriefActionForEdit:self.recordInfoId];
+    }
+}
+
+- (IBAction)btnDeleteTapped:(UIButton *)sender {
+    if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(recordBriefActionForDelete:)]) {
+        [self.actionDelegate recordBriefActionForDelete:self.recordInfoId];
+    }
+}
+
 +(CGFloat)cellHeightWithRecordInfo:(RecordInfo *)recordInfo
 {
     CGFloat thumbHeight=0;

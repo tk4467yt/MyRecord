@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MyCommonHeaders.h"
 
+@protocol RecordBriefActionDelegate <NSObject>
+
+-(void)recordBriefActionForViewDetail:(NSString *)recordInfoId;
+-(void)recordBriefActionForEdit:(NSString *)recordInfoId;
+-(void)recordBriefActionForDelete:(NSString *)recordInfoId;
+
+@end
+
 @interface RecordBriefTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *ivBkgView;
 
@@ -21,6 +29,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 @property (nonatomic,strong) NSArray *recordSectionItemArr;
+@property (nonatomic,copy) NSString  *recordInfoId;
+@property (weak, nonatomic) id<RecordBriefActionDelegate> actionDelegate;
+
+- (IBAction)btnDetailTapped:(UIButton *)sender;
+- (IBAction)btnEditTapped:(UIButton *)sender;
+- (IBAction)btnDeleteTapped:(UIButton *)sender;
 
 +(CGFloat)cellHeightWithRecordInfo:(RecordInfo *)recordInfo;
 @end

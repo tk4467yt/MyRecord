@@ -159,6 +159,27 @@ static __strong FMDatabase *dbRecords;
     return arr2ret;
 }
 
++(RecordInfo *)getRecordInfoWithRecordId:(NSString *)recordId
+{
+    RecordInfo *record2ret=nil;
+    
+    if (![MyUtility isStringNilOrZeroLength:recordId]) {
+        FMResultSet *s = [dbRecords executeQuery:@"SELECT * FROM `record_info` WHERE `record_id` = ?",recordId];
+        if ([s next]) {
+            record2ret=[RecordInfo new];
+            
+            record2ret.recordId=[s stringForColumn:@"record_id"];
+            record2ret.recordTitle=[s stringForColumn:@"record_title"];
+            record2ret.createTime=[s longLongIntForColumn:@"create_time"];
+            record2ret.categoryId=[s stringForColumn:@"category_id"];
+            
+            record2ret.sectionArr=[DbHandler getRecordSectionWithRecordId:recordId];
+        }
+    }
+    
+    return record2ret;
+}
+
 +(UInt64)getAllRecordInfoCount
 {
     UInt64 count2ret=0;
@@ -184,16 +205,16 @@ static __strong FMDatabase *dbRecords;
     return count2ret;
 }
 
-+(void)storeRecordWithInfo:(RecordInfo *)info2store
++(void)storeRecordWithInfo:(RecordInfo *)record2store
 {
     [dbRecords beginTransaction];
     
     //record info
     [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `record_info` (`record_id`,`record_title`,`create_time`,`category_id`) VALUES (?,?,?,?)",
-     info2store.recordId,
-     info2store.recordTitle,
-     [NSString stringWithFormat:@"%lld",info2store.createTime],
-     info2store.categoryId];
+     record2store.recordId,
+     record2store.recordTitle,
+     [NSString stringWithFormat:@"%lld",record2store.createTime],
+     record2store.categoryId];
     
     //record section
 //    [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_section`"
@@ -201,7 +222,7 @@ static __strong FMDatabase *dbRecords;
 //     @"`section_id` integer,"
 //     @"`section_type` char(16),"
 //     @"PRIMARY KEY (`record_id`,`section_id`))"];
-    for (RecordSection *aSection in info2store.sectionArr) {
+    for (RecordSection *aSection in record2store.sectionArr) {
         [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `record_section` (`record_id`,`section_id`,`section_type`) VALUES (?,?,?)",
          aSection.recordId,
          [NSString stringWithFormat:@"%lld",aSection.sectionId],
@@ -221,7 +242,19 @@ static __strong FMDatabase *dbRecords;
     
     [dbRecords commit];
     
-    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:info2store.categoryId];
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2store.categoryId];
+}
+
++(void)deleteRecordInfoWithId:(RecordInfo *)record2del
+{
+    if ([MyUtility isStringNilOrZeroLength:record2del.recordId]) {
+        return;
+    }
+    [dbRecords executeUpdate:@"DELETE FROM `record_info` WHERE `record_id` = ?", record2del.recordId];
+    [dbRecords executeUpdate:@"DELETE FROM `record_section` WHERE `record_id` = ?", record2del.recordId];
+    [dbRecords executeUpdate:@"DELETE FROM `record_section_item` WHERE `record_id` = ?", record2del.recordId];
+    
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2del.categoryId];
 }
 
 +(NSMutableArray *)getRecordSectionWithRecordId:(NSString *)recordId
