@@ -198,10 +198,10 @@
     
     // this is actually the interesting part:
     
-    UIGraphicsBeginImageContext(targetSize);
+    UIGraphicsBeginImageContext(CGSizeMake(scaledWidth, scaledHeight));
     
     CGRect thumbnailRect = CGRectZero;
-    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.origin = CGPointZero;
     thumbnailRect.size.width  = scaledWidth;
     thumbnailRect.size.height = scaledHeight;
     
