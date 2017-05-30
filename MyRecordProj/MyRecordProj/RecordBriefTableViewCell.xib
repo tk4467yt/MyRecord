@@ -44,27 +44,37 @@
                         <rect key="frame" x="8" y="149.5" width="365" height="40"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfd-0H-6M6" userLabel="btnDetail">
-                                <rect key="frame" x="8" y="0.0" width="164.5" height="40"/>
+                                <rect key="frame" x="8" y="0.0" width="103" height="40"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJa-3h-zbO" userLabel="btnEdit">
+                                <rect key="frame" x="131" y="-0.5" width="103" height="40"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-j5-Rdd" userLabel="btnDelete">
-                                <rect key="frame" x="192.5" y="0.0" width="164.5" height="40"/>
+                                <rect key="frame" x="254" y="0.0" width="103" height="40"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="0.061922798530000003" blue="0.082673858370000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UJa-3h-zbO" firstAttribute="height" secondItem="usk-yk-tFG" secondAttribute="height" id="5Yg-XG-Ol2"/>
                             <constraint firstItem="O6s-j5-Rdd" firstAttribute="centerY" secondItem="usk-yk-tFG" secondAttribute="centerY" id="6Yf-x7-cvH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O6s-j5-Rdd" secondAttribute="trailing" id="6sb-Hk-OgH"/>
+                            <constraint firstItem="UJa-3h-zbO" firstAttribute="centerY" secondItem="usk-yk-tFG" secondAttribute="centerY" id="7FK-cw-DQM"/>
                             <constraint firstItem="O6s-j5-Rdd" firstAttribute="height" secondItem="usk-yk-tFG" secondAttribute="height" id="EWX-Qp-SQR"/>
                             <constraint firstAttribute="height" constant="40" id="Gjz-Yj-s5N"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="leading" secondItem="usk-yk-tFG" secondAttribute="leadingMargin" id="QXe-KQ-qNQ"/>
+                            <constraint firstItem="UJa-3h-zbO" firstAttribute="width" secondItem="O6s-j5-Rdd" secondAttribute="width" id="Xok-KZ-pPJ"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="width" secondItem="O6s-j5-Rdd" secondAttribute="width" id="Ybp-Kq-Ce8"/>
-                            <constraint firstItem="O6s-j5-Rdd" firstAttribute="leading" secondItem="jfd-0H-6M6" secondAttribute="trailing" constant="20" id="bo0-oR-8vr"/>
+                            <constraint firstItem="UJa-3h-zbO" firstAttribute="leading" secondItem="jfd-0H-6M6" secondAttribute="trailing" constant="20" id="c9h-wE-ErN"/>
+                            <constraint firstItem="O6s-j5-Rdd" firstAttribute="leading" secondItem="UJa-3h-zbO" secondAttribute="trailing" constant="20" id="mWK-0S-443"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="centerY" secondItem="usk-yk-tFG" secondAttribute="centerY" id="mb3-AU-864"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="height" secondItem="usk-yk-tFG" secondAttribute="height" id="rnY-6V-pP1"/>
                         </constraints>
@@ -89,6 +99,7 @@
             <connections>
                 <outlet property="btnDelete" destination="O6s-j5-Rdd" id="a4e-Fk-Mil"/>
                 <outlet property="btnDetail" destination="jfd-0H-6M6" id="dMy-4e-Ut1"/>
+                <outlet property="btnEdit" destination="UJa-3h-zbO" id="daD-je-V6P"/>
                 <outlet property="btnHolder" destination="usk-yk-tFG" id="fyY-cx-rwC"/>
                 <outlet property="cvThumb" destination="YyR-cL-q4S" id="cdx-ie-JC0"/>
                 <outlet property="ivBkgView" destination="U6Z-G3-i6w" id="Qxv-GM-tXc"/>

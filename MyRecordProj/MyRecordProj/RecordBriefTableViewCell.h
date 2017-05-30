@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *btnHolder;
 @property (weak, nonatomic) IBOutlet UIButton *btnDetail;
+@property (weak, nonatomic) IBOutlet UIButton *btnEdit;
 @property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 @property (nonatomic,strong) NSArray *recordSectionItemArr;

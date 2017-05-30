@@ -27,6 +27,11 @@
     self.btnDetail.layer.borderWidth=1;
     self.btnDetail.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
     
+    self.btnEdit.layer.masksToBounds=true;
+    self.btnEdit.layer.cornerRadius=3.0;
+    self.btnEdit.layer.borderWidth=1;
+    self.btnEdit.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
+    
     self.btnDelete.layer.masksToBounds=true;
     self.btnDelete.layer.cornerRadius=3.0;
     self.btnDelete.layer.borderWidth=1;
@@ -47,6 +52,7 @@
     [super layoutSubviews];
     
     [self.btnDetail setTitle:NSLocalizedString(@"Detail", @"") forState:UIControlStateNormal];
+    [self.btnEdit setTitle:NSLocalizedString(@"Edit", @"") forState:UIControlStateNormal];
     [self.btnDelete setTitle:NSLocalizedString(@"Delete", @"") forState:UIControlStateNormal];
     
     [self.cvThumb reloadData];
