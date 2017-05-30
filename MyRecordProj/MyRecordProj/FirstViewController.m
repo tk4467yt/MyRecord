@@ -129,6 +129,12 @@
     if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE]) {
         [self updateRecordsInfo];
     } else if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE]) {
+        NSString *categoryId=notificationDict[MyCustomNotificationContent_content];
+        if ([MyUtility isObjectAnString:categoryId] && ![MyUtility isStringNilOrZeroLength:categoryId]) {
+            [self.allRecordInfoDict removeObjectForKey:categoryId];
+        } else {
+            [self.allRecordInfoDict removeAllObjects];
+        }
         [self updateRecordsInfo];
     } else {
         [super didReceivecMyCustomNotification:notificationDict];

@@ -221,7 +221,7 @@ static __strong FMDatabase *dbRecords;
     
     [dbRecords commit];
     
-    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:@""];
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:info2store.categoryId];
 }
 
 +(NSMutableArray *)getRecordSectionWithRecordId:(NSString *)recordId
