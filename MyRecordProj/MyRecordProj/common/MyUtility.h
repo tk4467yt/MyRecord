@@ -13,7 +13,8 @@
 #define IS_IOS10 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 10.0)
 
 @interface MyUtility : NSObject
-+(UIImage *)makeMaskImageFroFrame:(UIImage *)img2use;
++(UIImage *)makeMaskImageForFrame:(UIImage *)img2use;
++(UIImage *)makeResizeableImage:(UIImage *)img2use withCapInset:(UIEdgeInsets)capInset;
 
 +(BOOL)isStringNilOrZeroLength:(NSString *)str2check;
 +(void)pushViewControllerFromNav:(UINavigationController *)navVC withTargetVC:(UIViewController *)targetVC animated:(BOOL)anim;

@@ -10,9 +10,13 @@
 
 @implementation MyUtility
 
-+(UIImage *)makeMaskImageFroFrame:(UIImage *)img2use
++(UIImage *)makeMaskImageForFrame:(UIImage *)img2use
 {
     return [img2use resizableImageWithCapInsets:UIEdgeInsetsMake(30, 30, 30, 30) resizingMode:UIImageResizingModeStretch];
+}
++(UIImage *)makeResizeableImage:(UIImage *)img2use withCapInset:(UIEdgeInsets)capInset
+{
+    return [img2use resizableImageWithCapInsets:capInset resizingMode:UIImageResizingModeStretch];
 }
 
 +(BOOL)isStringNilOrZeroLength:(NSString *)str2check

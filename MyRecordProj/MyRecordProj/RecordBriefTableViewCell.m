@@ -21,6 +21,8 @@
     [super awakeFromNib];
     // Initialization code
     
+    self.ivBkgView.image=[MyUtility makeResizeableImage:[UIImage imageNamed:@"timeline_card_bg2"] withCapInset:UIEdgeInsetsMake(10, 10, 10, 10)];
+    
     self.cvThumb.layer.masksToBounds=true;
     self.cvThumb.layer.cornerRadius=5.0;
     self.cvThumb.layer.borderWidth=1;
