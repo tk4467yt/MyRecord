@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RecordBriefTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UICollectionView *cvThumb;
 
 @end

@@ -184,9 +184,14 @@
         RecordBriefTableViewCell *recordBriefCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordBrief] forIndexPath:indexPath];
         
         NSInteger recordInfoIdx=indexPath.row-1;
+        RecordInfo *recordInfo2use=nil;
         if (recordInfoIdx < recordInfoArr.count) {
-            RecordInfo *recordInfo2use=recordInfoArr[recordInfoIdx];
-            
+            recordInfo2use=recordInfoArr[recordInfoIdx];
+        }
+        if (nil != recordInfo2use) {
+            recordBriefCell.lblTitle.text=recordInfo2use.recordTitle;
+        } else {
+            recordBriefCell.lblTitle.text=@"";
         }
         
         cell2ret=recordBriefCell;
