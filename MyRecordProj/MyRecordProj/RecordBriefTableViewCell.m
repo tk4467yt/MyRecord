@@ -7,7 +7,6 @@
 //
 
 #import "RecordBriefTableViewCell.h"
-#import "MyCommonHeaders.h"
 #import "ImageCollectionViewCell.h"
 #import "RecordSectionItem.h"
 
@@ -22,6 +21,16 @@
     // Initialization code
     
     self.ivBkgView.image=[MyUtility makeResizeableImage:[UIImage imageNamed:@"timeline_card_bg2"] withCapInset:UIEdgeInsetsMake(10, 10, 10, 10)];
+    
+    self.btnDetail.layer.masksToBounds=true;
+    self.btnDetail.layer.cornerRadius=3.0;
+    self.btnDetail.layer.borderWidth=1;
+    self.btnDetail.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
+    
+    self.btnDelete.layer.masksToBounds=true;
+    self.btnDelete.layer.cornerRadius=3.0;
+    self.btnDelete.layer.borderWidth=1;
+    self.btnDelete.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
     
     self.cvThumb.layer.masksToBounds=true;
     self.cvThumb.layer.cornerRadius=5.0;
@@ -41,6 +50,19 @@
     [self.btnDelete setTitle:NSLocalizedString(@"Delete", @"") forState:UIControlStateNormal];
     
     [self.cvThumb reloadData];
+}
+
++(CGFloat)cellHeightWithRecordInfo:(RecordInfo *)recordInfo
+{
+    CGFloat thumbHeight=0;
+    if (nil != recordInfo) {
+        NSArray *imgItemArr=[recordInfo getAllImageSectionItem];
+        if (imgItemArr.count > 0) {
+            thumbHeight=80;
+        }
+    }
+    
+    return 25+thumbHeight+10+40+30;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -80,7 +102,7 @@
 #pragma mark UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(60, 60);
+    return CGSizeMake(80, 80);
 }
 
 @end

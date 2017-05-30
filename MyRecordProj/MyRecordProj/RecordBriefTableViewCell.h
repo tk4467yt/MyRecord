@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCommonHeaders.h"
 
 @interface RecordBriefTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *ivBkgView;
@@ -19,4 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 @property (nonatomic,strong) NSArray *recordSectionItemArr;
+
++(CGFloat)cellHeightWithRecordInfo:(RecordInfo *)recordInfo;
 @end

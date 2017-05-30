@@ -161,15 +161,8 @@
         if (recordInfoIdx < recordInfoArr.count) {
             recordInfo2use=recordInfoArr[recordInfoIdx];
         }
-        CGFloat thumbHeight=0;
-        if (nil != recordInfo2use) {
-            NSArray *imgItemArr=[recordInfo2use getAllImageSectionItem];
-            if (imgItemArr.count > 0) {
-                thumbHeight=60;
-            }
-        }
         
-        return 25+thumbHeight+50+20;
+        return [RecordBriefTableViewCell cellHeightWithRecordInfo:recordInfo2use];
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

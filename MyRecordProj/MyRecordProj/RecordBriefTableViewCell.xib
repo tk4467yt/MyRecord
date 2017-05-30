@@ -15,11 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="381" height="220"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="381" height="219.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="381" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6Z-G3-i6w" userLabel="bkgImgView">
-                        <rect key="frame" x="0.0" y="0.0" width="381" height="204.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="381" height="194.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZH-p9-Wnd" userLabel="lblTitle">
                         <rect key="frame" x="8" y="0.0" width="42" height="25"/>
@@ -27,11 +27,11 @@
                             <constraint firstAttribute="height" constant="25" id="uht-Qm-dNx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YyR-cL-q4S" userLabel="cvThumb">
-                        <rect key="frame" x="8" y="25" width="365" height="124.5"/>
+                        <rect key="frame" x="8" y="25" width="365" height="114.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MZ7-gB-HLu">
                             <size key="itemSize" width="50" height="50"/>
@@ -41,31 +41,37 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usk-yk-tFG" userLabel="btnHolder">
-                        <rect key="frame" x="8" y="149.5" width="365" height="50"/>
+                        <rect key="frame" x="8" y="149.5" width="365" height="40"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfd-0H-6M6" userLabel="btnDetail">
-                                <rect key="frame" x="8" y="10" width="169.5" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="8" y="0.0" width="164.5" height="40"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6s-j5-Rdd" userLabel="btnDelete">
-                                <rect key="frame" x="187.5" y="10" width="169.5" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="192.5" y="0.0" width="164.5" height="40"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O6s-j5-Rdd" firstAttribute="centerY" secondItem="usk-yk-tFG" secondAttribute="centerY" id="6Yf-x7-cvH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O6s-j5-Rdd" secondAttribute="trailing" id="6sb-Hk-OgH"/>
-                            <constraint firstAttribute="height" constant="50" id="Gjz-Yj-s5N"/>
+                            <constraint firstItem="O6s-j5-Rdd" firstAttribute="height" secondItem="usk-yk-tFG" secondAttribute="height" id="EWX-Qp-SQR"/>
+                            <constraint firstAttribute="height" constant="40" id="Gjz-Yj-s5N"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="leading" secondItem="usk-yk-tFG" secondAttribute="leadingMargin" id="QXe-KQ-qNQ"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="width" secondItem="O6s-j5-Rdd" secondAttribute="width" id="Ybp-Kq-Ce8"/>
-                            <constraint firstItem="O6s-j5-Rdd" firstAttribute="leading" secondItem="jfd-0H-6M6" secondAttribute="trailing" constant="10" id="bo0-oR-8vr"/>
+                            <constraint firstItem="O6s-j5-Rdd" firstAttribute="leading" secondItem="jfd-0H-6M6" secondAttribute="trailing" constant="20" id="bo0-oR-8vr"/>
                             <constraint firstItem="jfd-0H-6M6" firstAttribute="centerY" secondItem="usk-yk-tFG" secondAttribute="centerY" id="mb3-AU-864"/>
+                            <constraint firstItem="jfd-0H-6M6" firstAttribute="height" secondItem="usk-yk-tFG" secondAttribute="height" id="rnY-6V-pP1"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="usk-yk-tFG" secondAttribute="bottom" constant="20" id="2wF-m1-eBW"/>
+                    <constraint firstAttribute="bottom" secondItem="usk-yk-tFG" secondAttribute="bottom" constant="30" id="2wF-m1-eBW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="usk-yk-tFG" secondAttribute="trailing" id="8zp-6U-whp"/>
                     <constraint firstItem="YyR-cL-q4S" firstAttribute="top" secondItem="ZZH-p9-Wnd" secondAttribute="bottom" id="AzO-aY-9y7"/>
                     <constraint firstItem="usk-yk-tFG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DxG-Fn-7iw"/>
@@ -74,9 +80,9 @@
                     <constraint firstAttribute="trailing" secondItem="U6Z-G3-i6w" secondAttribute="trailing" id="ef0-zh-oMP"/>
                     <constraint firstItem="ZZH-p9-Wnd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="hPw-ar-Y6b"/>
                     <constraint firstItem="ZZH-p9-Wnd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="l9O-9I-tOO"/>
-                    <constraint firstItem="usk-yk-tFG" firstAttribute="top" secondItem="YyR-cL-q4S" secondAttribute="bottom" id="nCJ-Hw-3bu"/>
+                    <constraint firstItem="usk-yk-tFG" firstAttribute="top" secondItem="YyR-cL-q4S" secondAttribute="bottom" constant="10" id="nCJ-Hw-3bu"/>
                     <constraint firstAttribute="trailingMargin" secondItem="YyR-cL-q4S" secondAttribute="trailing" id="pOb-V1-7BU"/>
-                    <constraint firstAttribute="bottom" secondItem="U6Z-G3-i6w" secondAttribute="bottom" constant="15" id="pRp-1j-Unw"/>
+                    <constraint firstAttribute="bottom" secondItem="U6Z-G3-i6w" secondAttribute="bottom" constant="25" id="pRp-1j-Unw"/>
                     <constraint firstItem="U6Z-G3-i6w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yeL-Im-IeP"/>
                 </constraints>
             </tableViewCellContentView>
