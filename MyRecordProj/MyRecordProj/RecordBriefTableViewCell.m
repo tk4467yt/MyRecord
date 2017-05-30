@@ -24,7 +24,7 @@
     self.cvThumb.layer.masksToBounds=true;
     self.cvThumb.layer.cornerRadius=5.0;
     self.cvThumb.layer.borderWidth=1;
-    self.cvThumb.layer.borderColor=[[UIColor lightGrayColor] CGColor];
+    self.cvThumb.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
     
     [self.cvThumb registerNib:[UINib nibWithNibName:@"ImageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:[CellIdInfo cellIdForImageCVCellId]];
     self.cvThumb.delegate=self;

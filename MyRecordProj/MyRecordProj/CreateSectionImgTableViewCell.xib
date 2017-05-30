@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t40-ZH-s7T">
@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-jJ-tZ1">
-                        <rect key="frame" x="8" y="29" width="285" height="83.5"/>
+                        <rect key="frame" x="8" y="29" width="277" height="83.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="yM8-xC-ASt">
                             <size key="itemSize" width="80" height="80"/>
@@ -35,7 +35,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_delete" translatesAutoresizingMaskIntoConstraints="NO" id="lzL-aw-c03">
-                        <rect key="frame" x="298" y="38" width="22" height="44"/>
+                        <rect key="frame" x="290" y="38" width="22" height="44"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="p7s-b6-Hdf"/>
                             <constraint firstAttribute="height" constant="44" id="vsX-ml-Tgd"/>
@@ -49,7 +49,7 @@
                     <constraint firstItem="ilZ-jJ-tZ1" firstAttribute="top" secondItem="t40-ZH-s7T" secondAttribute="bottom" id="dM9-Gx-IpM"/>
                     <constraint firstItem="lzL-aw-c03" firstAttribute="leading" secondItem="ilZ-jJ-tZ1" secondAttribute="trailing" constant="5" id="de9-Lk-8tj"/>
                     <constraint firstItem="t40-ZH-s7T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lwE-Hv-X8t"/>
-                    <constraint firstAttribute="trailing" secondItem="lzL-aw-c03" secondAttribute="trailing" id="slE-UB-0xC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lzL-aw-c03" secondAttribute="trailing" id="slE-UB-0xC"/>
                     <constraint firstItem="t40-ZH-s7T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="x5i-KF-ATi"/>
                 </constraints>
             </tableViewCellContentView>
