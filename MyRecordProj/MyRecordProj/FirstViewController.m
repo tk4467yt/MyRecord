@@ -11,12 +11,14 @@
 #import "DbHandler.h"
 #import "RecordsTopCategoryInfoTableViewCell.h"
 #import "CreateCategoryViewController.h"
+#import "RecordBriefTableViewCell.h"
 
 @interface FirstViewController () <UITableViewDelegate,UITableViewDataSource,RecordTopCatInfoActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmptyContent;
 
 @property (strong, nonatomic) NSMutableArray *categoryArr;
+@property (strong, nonatomic) NSMutableDictionary *allRecordInfoDict;
 @end
 
 @implementation FirstViewController
@@ -27,8 +29,11 @@
     
     self.navigationItem.title=NSLocalizedString(@"nav_title_records", @"");
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(action2create)];
-    
+
     [self.tbAllRecords registerNib:[UINib nibWithNibName:@"RecordsTopCategoryInfoTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordTopCategoryInfo]];
+    [self.tbAllRecords registerNib:[UINib nibWithNibName:@"RecordBriefTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordBrief]];
+    
+    self.allRecordInfoDict=[NSMutableDictionary new];
     
     [self updateRecordsInfo];
     
@@ -130,8 +135,9 @@
 {
     if (0 == indexPath.row) {
         return 50;
+    } else {
+        return 80;
     }
-    return 0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -145,7 +151,8 @@
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    CategoryInfo *curCategory=self.categoryArr[section];
+    return (NSInteger)(1+curCategory.recordCount);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -167,6 +174,22 @@
         }
         
         cell2ret=topCatInfoCell;
+    } else {
+        NSArray *recordInfoArr=self.allRecordInfoDict[curCategory.categoryId];
+        if (nil == recordInfoArr) {
+            recordInfoArr=[DbHandler getRecordInfoWithCategoryId:curCategory.categoryId];
+            self.allRecordInfoDict[curCategory.categoryId]=recordInfoArr;
+        }
+        
+        RecordBriefTableViewCell *recordBriefCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordBrief] forIndexPath:indexPath];
+        
+        NSInteger recordInfoIdx=indexPath.row-1;
+        if (recordInfoIdx < recordInfoArr.count) {
+            RecordInfo *recordInfo2use=recordInfoArr[recordInfoIdx];
+            
+        }
+        
+        cell2ret=recordBriefCell;
     }
     
     [cell2ret setNeedsLayout];

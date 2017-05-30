@@ -30,4 +30,8 @@
 {
     return @"image_cell_id";
 }
++(NSString *)cellIdForRecordBrief
+{
+    return @"record_brief_cell_id";
+}
 @end
