@@ -17,4 +17,6 @@
 @property (nonatomic,copy) NSString *categoryId;
 
 @property (nonatomic,strong) NSMutableArray *sectionArr;
+
+- (NSArray *)getAllImageSectionItem;
 @end

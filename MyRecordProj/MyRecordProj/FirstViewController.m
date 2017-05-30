@@ -108,6 +108,17 @@
     return nil;
 }
 
+-(NSArray *)getRecordInfoArrForCategory:(NSString *)categoryId
+{
+    NSArray *recordInfoArr=self.allRecordInfoDict[categoryId];
+    if (nil == recordInfoArr) {
+        recordInfoArr=[DbHandler getRecordInfoWithCategoryId:categoryId];
+        self.allRecordInfoDict[categoryId]=recordInfoArr;
+    }
+    
+    return recordInfoArr;
+}
+
 #pragma mark MyCustomNotificationActionDelegate
 -(void)didReceivecMyCustomNotification:(NSDictionary *)notificationDict
 {
@@ -136,7 +147,23 @@
     if (0 == indexPath.row) {
         return 50;
     } else {
-        return 80;
+        CategoryInfo *curCategory=self.categoryArr[indexPath.section];
+        NSArray *recordInfoArr=[self getRecordInfoArrForCategory:curCategory.categoryId];
+        
+        NSInteger recordInfoIdx=indexPath.row-1;
+        RecordInfo *recordInfo2use=nil;
+        if (recordInfoIdx < recordInfoArr.count) {
+            recordInfo2use=recordInfoArr[recordInfoIdx];
+        }
+        CGFloat thumbHeight=0;
+        if (nil != recordInfo2use) {
+            NSArray *imgItemArr=[recordInfo2use getAllImageSectionItem];
+            if (imgItemArr.count > 0) {
+                thumbHeight=60;
+            }
+        }
+        
+        return 25+thumbHeight;
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -175,11 +202,7 @@
         
         cell2ret=topCatInfoCell;
     } else {
-        NSArray *recordInfoArr=self.allRecordInfoDict[curCategory.categoryId];
-        if (nil == recordInfoArr) {
-            recordInfoArr=[DbHandler getRecordInfoWithCategoryId:curCategory.categoryId];
-            self.allRecordInfoDict[curCategory.categoryId]=recordInfoArr;
-        }
+        NSArray *recordInfoArr=[self getRecordInfoArrForCategory:curCategory.categoryId];
         
         RecordBriefTableViewCell *recordBriefCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordBrief] forIndexPath:indexPath];
         
@@ -190,8 +213,11 @@
         }
         if (nil != recordInfo2use) {
             recordBriefCell.lblTitle.text=recordInfo2use.recordTitle;
+            
+            recordBriefCell.recordSectionItemArr=[recordInfo2use getAllImageSectionItem];
         } else {
             recordBriefCell.lblTitle.text=@"";
+            recordBriefCell.recordSectionItemArr=nil;
         }
         
         cell2ret=recordBriefCell;

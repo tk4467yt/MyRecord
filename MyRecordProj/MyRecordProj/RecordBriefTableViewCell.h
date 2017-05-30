@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UICollectionView *cvThumb;
 
+@property (nonatomic,strong) NSArray *recordSectionItemArr;
 @end
