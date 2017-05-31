@@ -93,6 +93,7 @@
         topCatInfoCell.lblCategoryName.text=curCategory.categoryTitle;
         topCatInfoCell.categoryId=curCategory.categoryId;
         topCatInfoCell.actionDelegate=nil;
+        topCatInfoCell.lblCount.text=[NSString stringWithFormat:@"%lld",curCategory.recordCount];
         
         topCatInfoCell.isDefaultCategory=true;//hide all ivInd
         topCatInfoCell.lblCategoryName.userInteractionEnabled=false;
