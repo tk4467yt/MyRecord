@@ -85,7 +85,7 @@
     self.categoryArr=[DbHandler getAllCategoryInfo];
     UInt64 recordCount=[DbHandler getAllRecordInfoCount];
     
-    [self.categoryArr insertObject:[CategoryInfo getDefaultCategoryInfo] atIndex:0];
+    [self.categoryArr addObject:[CategoryInfo getDefaultCategoryInfo]];
     
     self.lblEmptyContent.text=NSLocalizedString(@"record_empty_desc", @"");
     if (self.categoryArr.count > 1 || recordCount > 0) {
