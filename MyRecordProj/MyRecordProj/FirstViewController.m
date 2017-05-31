@@ -133,7 +133,9 @@
         NSString *recordId=notificationDict[MyCustomNotificationContent_content];
         if ([MyUtility isObjectAnString:recordId] && ![MyUtility isStringNilOrZeroLength:recordId]) {
             RecordInfo *record=[DbHandler getRecordInfoWithRecordId:recordId];
-            [self.allRecordInfoDict removeObjectForKey:record.categoryId];
+            if (nil != record) {
+                [self.allRecordInfoDict removeObjectForKey:record.categoryId];
+            }
         } else {
             [self.allRecordInfoDict removeAllObjects];
         }
@@ -255,7 +257,7 @@
     UIAlertAction *deleteAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"delete", @"")
                                                                  style:UIAlertActionStyleDestructive
                                                                handler:^(UIAlertAction *action){
-                                                                   [DbHandler deleteCategoryWithId:catId];
+                                                                   [self alert2deleteCategory:catId];
                                                                }];
     UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
                                                          style:UIAlertActionStyleCancel
@@ -269,6 +271,26 @@
     
     alertVC.popoverPresentationController.sourceView=sourceView;
     alertVC.popoverPresentationController.sourceRect=sourceView.bounds;
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+-(void)alert2deleteCategory:(NSString *)categoryId
+{
+    UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"Are you sure to delete this category?", @"") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", @"")
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction *action){
+                                                       [DbHandler deleteCategoryWithId:categoryId];
+                                                   }];
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action){
+                                                           
+                                                       }];
+    
+    [alertVC addAction:okAction];
+    [alertVC addAction:cancelAction];
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }

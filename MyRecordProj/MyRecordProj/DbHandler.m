@@ -153,6 +153,11 @@ static __strong FMDatabase *dbRecords;
     [dbRecords executeUpdate:@"DELETE FROM `record_category` WHERE `category_id` = ?",
      categoryId];
     
+    NSArray *recordInfoArr=[DbHandler getRecordInfoWithCategoryId:categoryId];
+    for (RecordInfo *aRecord in recordInfoArr) {
+        [DbHandler deleteRecordInfoWithId:aRecord];
+    }
+    
     [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE andContent:@""];
 }
 
