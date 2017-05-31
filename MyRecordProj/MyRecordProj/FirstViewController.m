@@ -135,6 +135,8 @@
             RecordInfo *record=[DbHandler getRecordInfoWithRecordId:recordId];
             if (nil != record) {
                 [self.allRecordInfoDict removeObjectForKey:record.categoryId];
+            } else {
+                [self.allRecordInfoDict removeAllObjects];
             }
         } else {
             [self.allRecordInfoDict removeAllObjects];
