@@ -256,6 +256,14 @@
                                                                      [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createCategoryVC animated:YES];
                                                                  }
                                                              }];
+    UIAlertAction *addAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"title_create_record", @"")
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction *action){
+                                                               UIViewController *createRecordVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
+                                                               if (nil != createRecordVC) {
+                                                                   [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createRecordVC animated:YES];
+                                                               }
+                                                           }];
     UIAlertAction *deleteAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"delete", @"")
                                                                  style:UIAlertActionStyleDestructive
                                                                handler:^(UIAlertAction *action){
@@ -268,6 +276,7 @@
                                                        }];
     
     [alertVC addAction:changeNameAction];
+    [alertVC addAction:addAction];
     [alertVC addAction:deleteAction];
     [alertVC addAction:cancelAction];
     
