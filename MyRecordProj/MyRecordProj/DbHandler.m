@@ -260,7 +260,7 @@ static __strong FMDatabase *dbRecords;
     
     [dbRecords commit];
     
-    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2store.categoryId];
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2store.recordId];
 }
 
 +(void)deleteRecordInfoWithId:(RecordInfo *)record2del
@@ -272,7 +272,7 @@ static __strong FMDatabase *dbRecords;
     [dbRecords executeUpdate:@"DELETE FROM `record_section` WHERE `record_id` = ?", record2del.recordId];
     [dbRecords executeUpdate:@"DELETE FROM `record_section_item` WHERE `record_id` = ?", record2del.recordId];
     
-    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2del.categoryId];
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2del.recordId];
 }
 
 +(NSMutableArray *)getRecordSectionWithRecordId:(NSString *)recordId

@@ -130,9 +130,10 @@
     if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE]) {
         [self updateRecordsInfo];
     } else if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE]) {
-        NSString *categoryId=notificationDict[MyCustomNotificationContent_content];
-        if ([MyUtility isObjectAnString:categoryId] && ![MyUtility isStringNilOrZeroLength:categoryId]) {
-            [self.allRecordInfoDict removeObjectForKey:categoryId];
+        NSString *recordId=notificationDict[MyCustomNotificationContent_content];
+        if ([MyUtility isObjectAnString:recordId] && ![MyUtility isStringNilOrZeroLength:recordId]) {
+            RecordInfo *record=[DbHandler getRecordInfoWithRecordId:recordId];
+            [self.allRecordInfoDict removeObjectForKey:record.categoryId];
         } else {
             [self.allRecordInfoDict removeAllObjects];
         }
