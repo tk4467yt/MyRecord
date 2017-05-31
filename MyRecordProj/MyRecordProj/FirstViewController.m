@@ -12,6 +12,7 @@
 #import "RecordsTopCategoryInfoTableViewCell.h"
 #import "CreateCategoryViewController.h"
 #import "RecordBriefTableViewCell.h"
+#import "CreateRecordViewController.h"
 
 @interface FirstViewController () <UITableViewDelegate,UITableViewDataSource,RecordTopCatInfoActionDelegate,RecordBriefActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
@@ -193,7 +194,7 @@
         topCatInfoCell.lblCount.text=[NSString stringWithFormat:@"%lld",curCategory.recordCount];
         topCatInfoCell.actionDelegate=self;
         
-        if ([curCategory.categoryId isEqualToString:kDefaultCategoryId]) {
+        if ([curCategory isDefaultCategory]) {
             topCatInfoCell.isDefaultCategory=true;
         } else {
             topCatInfoCell.isDefaultCategory=false;
@@ -284,7 +285,12 @@
 }
 -(void)recordBriefActionForEdit:(NSString *)recordInfoId
 {
-    
+    UIViewController *initVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
+    if (nil != initVC) {
+        CreateRecordViewController *recordVC=(CreateRecordViewController *)initVC;
+        recordVC.editingRecordInfo=[DbHandler getRecordInfoWithRecordId:recordInfoId];
+        [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:recordVC animated:YES];
+    }
 }
 -(void)recordBriefActionForDelete:(NSString *)recordInfoId
 {

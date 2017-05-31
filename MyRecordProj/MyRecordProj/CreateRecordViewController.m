@@ -41,8 +41,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.category4record=[CategoryInfo getDefaultCategoryInfo];
-    
     self.navigationItem.title=NSLocalizedString(@"title_create_record", @"");
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(navActionForCreate)];
     
@@ -53,7 +51,7 @@
     [self.tbCreate registerNib:[UINib nibWithNibName:@"CreateSectionImgTableViewCell" bundle:[NSBundle mainBundle]]
         forCellReuseIdentifier:[CellIdInfo cellIdForCreateSectionImg]];
     
-    [self updateCreateSection];
+    [self initCreateSection];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -69,12 +67,53 @@
     }
 }
 
--(void)updateCreateSection
+-(void)initCreateSection
 {
     self.createSectionArr=[NSMutableArray new];
-    [self.createSectionArr addObject:[RecordCreateSectionInfo infoForTitle]];
-    [self.createSectionArr addObject:[RecordCreateSectionInfo infoForText]];
-    [self.createSectionArr addObject:[RecordCreateSectionInfo infoForImage]];
+    if (nil == self.editingRecordInfo) {
+        [self.createSectionArr addObject:[RecordCreateSectionInfo infoForTitle]];
+        [self.createSectionArr addObject:[RecordCreateSectionInfo infoForText]];
+        [self.createSectionArr addObject:[RecordCreateSectionInfo infoForImage]];
+        
+        //category
+        self.category4record=[CategoryInfo getDefaultCategoryInfo];
+    } else {
+        //title
+        RecordCreateSectionInfo *titleSection=[RecordCreateSectionInfo infoForTitle];
+        titleSection.txtContent=self.editingRecordInfo.recordTitle;
+        [self.createSectionArr addObject:titleSection];
+        
+        //sections
+        for (int sectionIdx=0; sectionIdx<self.editingRecordInfo.sectionArr.count; ++sectionIdx) {
+            RecordSection *aSection=self.editingRecordInfo.sectionArr[sectionIdx];
+            if ([SECTION_TYPE_TXT isEqualToString:aSection.sectionType]) {
+                if (1 == aSection.sectionItemArr.count) {
+                    RecordSectionItem *txtItem=aSection.sectionItemArr[0];
+                    RecordCreateSectionInfo *txtSection=[RecordCreateSectionInfo infoForText];
+                    txtSection.txtContent=txtItem.itemTxt;
+                    
+                    [self.createSectionArr addObject:txtSection];
+                }
+            } else if ([SECTION_TYPE_IMAGE isEqualToString:aSection.sectionType]) {
+                if (aSection.sectionItemArr.count >= 1) {
+                    RecordCreateSectionInfo *imgSection=[RecordCreateSectionInfo infoForImage];
+                    for (RecordSectionItem *aImgItem in aSection.sectionItemArr) {
+                        [imgSection.imgThumbArr addObject:aImgItem.imgThumbId];
+                        [imgSection.imgOrgArr addObject:aImgItem.imgId];
+                    }
+                    
+                    [self.createSectionArr addObject:imgSection];
+                }
+            }
+        }
+        
+        //category
+        if ([self.editingRecordInfo.categoryId isEqualToString:kDefaultCategoryId]) {
+            self.category4record=[CategoryInfo getDefaultCategoryInfo];
+        } else {
+            self.category4record=[DbHandler getCategoryInfoWithId:self.editingRecordInfo.categoryId];
+        }
+    }
     
     [self.tbCreate reloadData];
 }
@@ -91,15 +130,29 @@
         self.isRecordCreated=true;
         
         RecordInfo *record2store=[RecordInfo new];
-        record2store.recordId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+        if (nil == self.editingRecordInfo) {
+            record2store.recordId=[MyUtility makeUniqueIdWithMaxLength:kDbIdDefaultSize];
+        } else {
+            record2store.recordId=self.editingRecordInfo.recordId;
+        }
+        
         record2store.recordTitle=titleSection.txtContent;
-        record2store.createTime=[[NSDate date] timeIntervalSince1970];
+        
+        if (nil == self.editingRecordInfo) {
+            record2store.createTime=[[NSDate date] timeIntervalSince1970];
+        } else {
+            record2store.createTime=self.editingRecordInfo.createTime;
+        }
+        
         record2store.categoryId=self.category4record.categoryId;
         
         record2store.sectionArr=[NSMutableArray new];
         for (int sectionIdx=1; sectionIdx<self.createSectionArr.count; ++sectionIdx) {
             RecordCreateSectionInfo *sectionInfo=self.createSectionArr[sectionIdx];
             if (SectionTypeTxt == sectionInfo.type) {
+                if ([MyUtility isStringNilOrZeroLength:sectionInfo.txtContent]) {
+                    continue;
+                }
                 RecordSection *aSection=[RecordSection new];
                 aSection.recordId=record2store.recordId;
                 aSection.sectionId=sectionIdx;
@@ -118,6 +171,10 @@
                 
                 [record2store.sectionArr addObject:aSection];
             } else if (SectionTypeImg == sectionInfo.type) {
+                if (sectionInfo.imgOrgArr.count <= 0 ||
+                    sectionInfo.imgThumbArr.count <= 0) {
+                    continue;
+                }
                 RecordSection *aSection=[RecordSection new];
                 aSection.recordId=record2store.recordId;
                 aSection.sectionId=sectionIdx;
@@ -140,6 +197,7 @@
             }
         }
         
+        [DbHandler deleteRecordInfoWithId:self.editingRecordInfo];
         [DbHandler storeRecordWithInfo:record2store];
     }
     
@@ -575,7 +633,7 @@
 
 - (void)deleteLocalImageForCellWithCellId:(NSInteger)cellIdx
 {
-    if (cellIdx >= self.createSectionArr.count) {
+    if (cellIdx >= self.createSectionArr.count || nil != self.editingRecordInfo) {
         return;
     }
     RecordCreateSectionInfo *sectionInfo=self.createSectionArr[cellIdx];

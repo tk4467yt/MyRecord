@@ -19,4 +19,5 @@ extern NSString *kDefaultCategoryId;
 @property (nonatomic,assign) UInt64 recordCount;
 
 +(CategoryInfo *)getDefaultCategoryInfo;
+-(BOOL)isDefaultCategory;
 @end

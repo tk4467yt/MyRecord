@@ -23,6 +23,7 @@ extern const NSInteger kDbIdCategoryTitleSize;
 +(void)closeLocalDatabase;
 
 +(NSMutableArray *)getAllCategoryInfo;
++(CategoryInfo *)getCategoryInfoWithId:(NSString *)categoryId;
 +(void)addOrUpdateCategoryInfo:(CategoryInfo *)info;
 +(void)deleteCategoryWithId:(NSString *)categoryId;
 

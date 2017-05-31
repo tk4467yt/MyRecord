@@ -23,4 +23,8 @@ NSString *kDefaultCategoryId=@"def_category_id";
     
     return info2ret;
 }
+-(BOOL)isDefaultCategory
+{
+    return [self.categoryId isEqualToString:kDefaultCategoryId];
+}
 @end

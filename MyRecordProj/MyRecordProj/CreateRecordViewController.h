@@ -11,5 +11,5 @@
 #import "RecordInfo.h"
 
 @interface CreateRecordViewController : MyRootViewController
-
+@property (nonatomic,strong) RecordInfo *editingRecordInfo;
 @end

@@ -113,6 +113,24 @@ static __strong FMDatabase *dbRecords;
     return arr2ret;
 }
 
++(CategoryInfo *)getCategoryInfoWithId:(NSString *)categoryId
+{
+    FMResultSet *s = [dbRecords executeQuery:@"SELECT * FROM `record_category` WHERE `category_id` = ?",categoryId];
+    if ([s next]) {
+        CategoryInfo *aCategory=[CategoryInfo new];
+        
+        aCategory.categoryId=[s stringForColumn:@"category_id"];
+        aCategory.categoryTitle=[s stringForColumn:@"category_title"];
+        aCategory.createTime=[s longLongIntForColumn:@"create_time"];
+        
+        aCategory.recordCount=[DbHandler getRecordInfoCountForCategory:aCategory.categoryId];
+        
+        return aCategory;
+    }
+    
+    return nil;
+}
+
 +(void)addOrUpdateCategoryInfo:(CategoryInfo *)info
 {
     if ([MyUtility isStringNilOrZeroLength:info.categoryId] ||
