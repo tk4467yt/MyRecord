@@ -15,6 +15,7 @@
 @end
 
 @interface CreateSectionHeaderView : UIView
+@property (weak, nonatomic) IBOutlet UIView *bkgView;
 @property (weak, nonatomic) IBOutlet UILabel *lblDesc;
 @property (weak, nonatomic) IBOutlet UIButton *btnCategory;
 - (IBAction)btnCategoryTapped:(id)sender;

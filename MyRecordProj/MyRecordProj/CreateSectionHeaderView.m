@@ -17,10 +17,10 @@
     
     self.btnCategory.lineBreakMode=NSLineBreakByTruncatingTail;
     
-    self.layer.masksToBounds=true;
-    self.layer.cornerRadius=5.0;
-    self.layer.borderWidth=1;
-    self.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
+    self.bkgView.layer.masksToBounds=true;
+    self.bkgView.layer.cornerRadius=5.0;
+    self.bkgView.layer.borderWidth=1;
+    self.bkgView.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
 }
 
 - (IBAction)btnCategoryTapped:(id)sender {

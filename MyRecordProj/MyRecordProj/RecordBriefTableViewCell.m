@@ -37,10 +37,11 @@
     self.btnDelete.layer.borderWidth=1;
     self.btnDelete.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
     
-    self.cvThumb.layer.masksToBounds=true;
-    self.cvThumb.layer.cornerRadius=5.0;
-    self.cvThumb.layer.borderWidth=1;
-    self.cvThumb.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
+    self.cvThumb.backgroundColor=[MyColor defBackgroundColor];
+//    self.cvThumb.layer.masksToBounds=true;
+//    self.cvThumb.layer.cornerRadius=5.0;
+//    self.cvThumb.layer.borderWidth=1;
+//    self.cvThumb.layer.borderColor=[[MyColor defBackgroundColor] CGColor];
     
     [self.cvThumb registerNib:[UINib nibWithNibName:@"ImageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:[CellIdInfo cellIdForImageCVCellId]];
     self.cvThumb.delegate=self;
@@ -86,7 +87,7 @@
         }
     }
     
-    return 25+thumbHeight+10+40+30;
+    return 42+5+thumbHeight+10+40+30;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -15,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSq-Zg-lb2" userLabel="bkgView">
+                    <rect key="frame" x="3" y="3" width="369" height="661"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNY-qG-fjn">
                     <rect key="frame" x="8" y="323" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -33,14 +37,19 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qNY-qG-fjn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="CTn-Nr-tGw"/>
+                <constraint firstItem="wSq-Zg-lb2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="DQN-Ij-MUe"/>
                 <constraint firstItem="OUM-29-tke" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IBn-Jr-U1l"/>
                 <constraint firstItem="OUM-29-tke" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OQY-dY-gjo"/>
+                <constraint firstAttribute="trailing" secondItem="wSq-Zg-lb2" secondAttribute="trailing" constant="3" id="P99-8I-r9L"/>
+                <constraint firstItem="wSq-Zg-lb2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="XsV-JK-2Ka"/>
                 <constraint firstItem="OUM-29-tke" firstAttribute="leading" secondItem="qNY-qG-fjn" secondAttribute="trailing" constant="5" id="b89-n7-VXu"/>
                 <constraint firstAttribute="bottom" secondItem="OUM-29-tke" secondAttribute="bottom" id="cbB-zx-8qE"/>
                 <constraint firstItem="qNY-qG-fjn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iGU-bg-YrI"/>
+                <constraint firstAttribute="bottom" secondItem="wSq-Zg-lb2" secondAttribute="bottom" constant="3" id="nJK-aH-DW9"/>
                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="OUM-29-tke" secondAttribute="trailing" id="wyD-gt-3Sv"/>
             </constraints>
             <connections>
+                <outlet property="bkgView" destination="wSq-Zg-lb2" id="ovf-pF-KPT"/>
                 <outlet property="btnCategory" destination="OUM-29-tke" id="QSH-qf-lOR"/>
                 <outlet property="lblDesc" destination="qNY-qG-fjn" id="W0b-xp-Pcx"/>
             </connections>
