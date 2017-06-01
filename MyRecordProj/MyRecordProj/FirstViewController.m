@@ -13,6 +13,7 @@
 #import "CreateCategoryViewController.h"
 #import "RecordBriefTableViewCell.h"
 #import "CreateRecordViewController.h"
+#import "RecordDetailViewController.h"
 
 @interface FirstViewController () <UITableViewDelegate,UITableViewDataSource,RecordTopCatInfoActionDelegate,RecordBriefActionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tbAllRecords;
@@ -341,7 +342,12 @@
 #pragma mark RecordBriefActionDelegate
 -(void)recordBriefActionForViewDetail:(NSString *)recordInfoId
 {
-    
+    UIViewController *initVC=[MyUtility getInitViewControllerFromSB:@"RecordDetail" withBundle:nil];
+    if (nil != initVC) {
+        RecordDetailViewController *recordVC=(RecordDetailViewController *)initVC;
+        recordVC.recordInfo=[DbHandler getRecordInfoWithRecordId:recordInfoId];
+        [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:recordVC animated:YES];
+    }
 }
 -(void)recordBriefActionForEdit:(NSString *)recordInfoId
 {
