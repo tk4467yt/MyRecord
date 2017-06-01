@@ -31,7 +31,7 @@
 -(void)updateRecordsInfo
 {
     self.categoryArr=[DbHandler getAllCategoryInfo];
-    [self.categoryArr insertObject:[CategoryInfo getDefaultCategoryInfo] atIndex:0];
+    [self.categoryArr addObject:[CategoryInfo getDefaultCategoryInfo]];
     
     [self.tbCategory reloadData];
 }

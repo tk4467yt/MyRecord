@@ -132,11 +132,28 @@
     } else if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE]) {
         NSString *recordId=notificationDict[MyCustomNotificationContent_content];
         if ([MyUtility isObjectAnString:recordId] && ![MyUtility isStringNilOrZeroLength:recordId]) {
+            //update exist recordInfoDict
+            NSString *existCategoryId=nil;
+            for (NSString *categoryId in self.allRecordInfoDict.allKeys) {
+                NSArray *recordInfoArr=self.allRecordInfoDict[categoryId];
+                for (RecordInfo *aInfo in recordInfoArr) {
+                    if ([aInfo.recordId isEqualToString:recordId]) {
+                        existCategoryId=categoryId;
+                        break;
+                    }
+                }
+                if (nil != existCategoryId) {
+                    break;
+                }
+            }
+            if (nil != existCategoryId) {
+                [self.allRecordInfoDict removeObjectForKey:existCategoryId];
+            }
+            
+            //update new
             RecordInfo *record=[DbHandler getRecordInfoWithRecordId:recordId];
             if (nil != record) {
                 [self.allRecordInfoDict removeObjectForKey:record.categoryId];
-            } else {
-                [self.allRecordInfoDict removeAllObjects];
             }
         } else {
             [self.allRecordInfoDict removeAllObjects];
