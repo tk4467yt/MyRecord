@@ -276,9 +276,11 @@
     UIAlertAction *addAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"title_create_record", @"")
                                                              style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction *action){
-                                                               UIViewController *createRecordVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
-                                                               if (nil != createRecordVC) {
-                                                                   [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:createRecordVC animated:YES];
+                                                               UIViewController *initVC=[MyUtility getInitViewControllerFromSB:@"CreateRecord" withBundle:nil];
+                                                               if (nil != initVC) {
+                                                                   CreateRecordViewController *recordVC=(CreateRecordViewController *)initVC;
+                                                                   recordVC.targetCategoryId=catId;
+                                                                   [MyUtility pushViewControllerFromNav:self.navigationController withTargetVC:recordVC animated:YES];
                                                                }
                                                            }];
     UIAlertAction *deleteAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"delete", @"")

@@ -12,4 +12,5 @@
 
 @interface CreateRecordViewController : MyRootViewController
 @property (nonatomic,strong) RecordInfo *editingRecordInfo;
+@property (nonatomic,copy) NSString *targetCategoryId;
 @end

@@ -76,7 +76,12 @@
         [self.createSectionArr addObject:[RecordCreateSectionInfo infoForImage]];
         
         //category
-        self.category4record=[CategoryInfo getDefaultCategoryInfo];
+        if ([MyUtility isStringNilOrZeroLength:self.targetCategoryId] ||
+            [self.targetCategoryId isEqualToString:kDefaultCategoryId]) {
+            self.category4record=[CategoryInfo getDefaultCategoryInfo];
+        } else {
+            self.category4record=[DbHandler getCategoryInfoWithId:self.targetCategoryId];
+        }
     } else {
         //title
         RecordCreateSectionInfo *titleSection=[RecordCreateSectionInfo infoForTitle];
