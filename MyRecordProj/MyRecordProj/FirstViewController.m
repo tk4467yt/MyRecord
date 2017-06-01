@@ -192,6 +192,13 @@
 {
     return 10;
 }
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view2ret=[UIView new];
+    view2ret.backgroundColor=self.tbAllRecords.backgroundColor;
+    
+    return view2ret;
+}
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return NO;
