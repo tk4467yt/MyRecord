@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WJ-jb-c42">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <rect key="frame" x="8" y="0.0" width="304" height="43.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,8 +27,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="8WJ-jb-c42" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AWk-ZP-skF"/>
-                    <constraint firstItem="8WJ-jb-c42" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XZ8-y0-doO"/>
-                    <constraint firstAttribute="trailing" secondItem="8WJ-jb-c42" secondAttribute="trailing" id="afQ-yu-YFW"/>
+                    <constraint firstItem="8WJ-jb-c42" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XZ8-y0-doO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8WJ-jb-c42" secondAttribute="trailing" id="afQ-yu-YFW"/>
                     <constraint firstAttribute="bottom" secondItem="8WJ-jb-c42" secondAttribute="bottom" id="ute-ox-zbD"/>
                 </constraints>
             </tableViewCellContentView>
