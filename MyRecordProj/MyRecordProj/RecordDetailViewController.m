@@ -84,7 +84,18 @@
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    CGFloat height=0;
+    
+    RecordCreateSectionInfo *createSectionInfo=self.recordDetailSectionArr[indexPath.row];
+    if (SectionTypeTitle == createSectionInfo.type ||
+        SectionTypeTxt == createSectionInfo.type) {
+        height = [MyUtility getLabelHeightByWidth:[MyUtility screenWidth]-16 title:createSectionInfo.txtContent font:[UIFont systemFontOfSize:17]];
+        height += 20;
+    } else if (SectionTypeImg == createSectionInfo.type) {
+        height = [CellSizeInfo sizeForImageCVItem].height;
+    }
+    
+    return height;
 }
 
 #pragma mark UITableViewDataSource
