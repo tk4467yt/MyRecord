@@ -45,6 +45,7 @@
 		2510ED901EDD203600F5A2C7 /* RecordBriefTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510ED8E1EDD203600F5A2C7 /* RecordBriefTableViewCell.xib */; };
 		2510ED931EE0627600F5A2C7 /* RecordDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2510ED921EE0627600F5A2C7 /* RecordDetail.storyboard */; };
 		2510ED961EE0628C00F5A2C7 /* RecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510ED951EE0628C00F5A2C7 /* RecordDetailViewController.m */; };
+		2510ED991EE1B04200F5A2C7 /* CellSizeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510ED981EE1B04200F5A2C7 /* CellSizeInfo.m */; };
 		2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */; };
 		2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */; };
 		255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */; };
@@ -164,6 +165,8 @@
 		2510ED921EE0627600F5A2C7 /* RecordDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecordDetail.storyboard; sourceTree = "<group>"; };
 		2510ED941EE0628C00F5A2C7 /* RecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailViewController.h; sourceTree = "<group>"; };
 		2510ED951EE0628C00F5A2C7 /* RecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailViewController.m; sourceTree = "<group>"; };
+		2510ED971EE1B04200F5A2C7 /* CellSizeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellSizeInfo.h; sourceTree = "<group>"; };
+		2510ED981EE1B04200F5A2C7 /* CellSizeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellSizeInfo.m; sourceTree = "<group>"; };
 		255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNotificationObserver.h; sourceTree = "<group>"; };
 		255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomNotificationObserver.m; sourceTree = "<group>"; };
 		2553972B1ED07DF300F6EC45 /* RecordCreateSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateSectionInfo.h; sourceTree = "<group>"; };
@@ -454,6 +457,8 @@
 				2510ED8C1EDD203600F5A2C7 /* RecordBriefTableViewCell.h */,
 				2510ED8D1EDD203600F5A2C7 /* RecordBriefTableViewCell.m */,
 				2510ED8E1EDD203600F5A2C7 /* RecordBriefTableViewCell.xib */,
+				2510ED971EE1B04200F5A2C7 /* CellSizeInfo.h */,
+				2510ED981EE1B04200F5A2C7 /* CellSizeInfo.m */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
 				255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */,
+				2510ED991EE1B04200F5A2C7 /* CellSizeInfo.m in Sources */,
 				2501416F1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m in Sources */,
 				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,

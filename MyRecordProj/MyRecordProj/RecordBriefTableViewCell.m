@@ -9,6 +9,7 @@
 #import "RecordBriefTableViewCell.h"
 #import "ImageCollectionViewCell.h"
 #import "RecordSectionItem.h"
+#import "MyCommonHeaders.h"
 
 @interface RecordBriefTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -83,7 +84,7 @@
     if (nil != recordInfo) {
         NSArray *imgItemArr=[recordInfo getAllImageSectionItem];
         if (imgItemArr.count > 0) {
-            thumbHeight=80;
+            thumbHeight=[CellSizeInfo sizeForImageCVItem].height;
         }
     }
     
@@ -127,7 +128,7 @@
 #pragma mark UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(80, 80);
+    return [CellSizeInfo sizeForImageCVItem];
 }
 
 @end
