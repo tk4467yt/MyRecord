@@ -87,9 +87,11 @@
     CGFloat height=0;
     
     RecordCreateSectionInfo *createSectionInfo=self.recordDetailSectionArr[indexPath.row];
-    if (SectionTypeTitle == createSectionInfo.type ||
-        SectionTypeTxt == createSectionInfo.type) {
+    if (SectionTypeTitle == createSectionInfo.type) {
         height = [MyUtility getLabelHeightByWidth:[MyUtility screenWidth]-16 title:createSectionInfo.txtContent font:[UIFont systemFontOfSize:17]];
+        height += 20;
+    } else if (SectionTypeTxt == createSectionInfo.type ) {
+        height = [MyUtility getLabelHeightByWidth:[MyUtility screenWidth]-16 title:createSectionInfo.txtContent font:[UIFont systemFontOfSize:15]];
         height += 20;
     } else if (SectionTypeImg == createSectionInfo.type) {
         height = [CellSizeInfo sizeForImageCVItem].height;
