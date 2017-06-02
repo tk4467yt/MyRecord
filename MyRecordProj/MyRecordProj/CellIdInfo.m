@@ -34,4 +34,17 @@
 {
     return @"record_brief_cell_id";
 }
+
++(NSString *)cellIdForRecordDetailTitle
+{
+    return @"record_detail_title_cell_id";
+}
++(NSString *)cellIdForRecordDetailTxt
+{
+    return @"record_detail_txt_cell_id";
+}
++(NSString *)cellIdForRecordDetailImage
+{
+    return @"record_detail_img_cell_id";
+}
 @end

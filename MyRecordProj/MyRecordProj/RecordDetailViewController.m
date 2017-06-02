@@ -7,10 +7,15 @@
 //
 
 #import "RecordDetailViewController.h"
+#import "RecordDetailTitleTableViewCell.h"
+#import "RecordDetailTxtTableViewCell.h"
+#import "RecordDetailImageTableViewCell.h"
+#import "RecordCreateSectionInfo.h"
 
 @interface RecordDetailViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbRecordDetail;
 
+@property (strong, nonatomic) NSMutableArray *recordDetailSectionArr;
 @end
 
 @implementation RecordDetailViewController
@@ -20,6 +25,17 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title=NSLocalizedString(@"Detail", @"");
+    
+    [self.tbRecordDetail registerNib:[UINib nibWithNibName:@"RecordDetailTitleTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordDetailTitle]];
+    [self.tbRecordDetail registerNib:[UINib nibWithNibName:@"RecordDetailTxtTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordDetailTxt]];
+    [self.tbRecordDetail registerNib:[UINib nibWithNibName:@"RecordDetailImageTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[CellIdInfo cellIdForRecordDetailImage]];
+    
+    [self updateRecordSections];
+}
+
+- (void)updateRecordSections
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

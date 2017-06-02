@@ -16,4 +16,8 @@
 +(NSString *)cellIdForCreateSectionImg;
 +(NSString *)cellIdForImageCVCellId;
 +(NSString *)cellIdForRecordBrief;
+
++(NSString *)cellIdForRecordDetailTitle;
++(NSString *)cellIdForRecordDetailTxt;
++(NSString *)cellIdForRecordDetailImage;
 @end

@@ -46,6 +46,12 @@
 		2510ED931EE0627600F5A2C7 /* RecordDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2510ED921EE0627600F5A2C7 /* RecordDetail.storyboard */; };
 		2510ED961EE0628C00F5A2C7 /* RecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510ED951EE0628C00F5A2C7 /* RecordDetailViewController.m */; };
 		2510ED991EE1B04200F5A2C7 /* CellSizeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510ED981EE1B04200F5A2C7 /* CellSizeInfo.m */; };
+		2510ED9D1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510ED9B1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.m */; };
+		2510ED9E1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510ED9C1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.xib */; };
+		2510EDA21EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDA01EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.m */; };
+		2510EDA31EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDA11EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib */; };
+		2510EDA71EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDA51EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m */; };
+		2510EDA81EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDA61EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib */; };
 		2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */; };
 		2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */; };
 		255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */; };
@@ -167,6 +173,15 @@
 		2510ED951EE0628C00F5A2C7 /* RecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailViewController.m; sourceTree = "<group>"; };
 		2510ED971EE1B04200F5A2C7 /* CellSizeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellSizeInfo.h; sourceTree = "<group>"; };
 		2510ED981EE1B04200F5A2C7 /* CellSizeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellSizeInfo.m; sourceTree = "<group>"; };
+		2510ED9A1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailTitleTableViewCell.h; sourceTree = "<group>"; };
+		2510ED9B1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailTitleTableViewCell.m; sourceTree = "<group>"; };
+		2510ED9C1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDetailTitleTableViewCell.xib; sourceTree = "<group>"; };
+		2510ED9F1EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailTxtTableViewCell.h; sourceTree = "<group>"; };
+		2510EDA01EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailTxtTableViewCell.m; sourceTree = "<group>"; };
+		2510EDA11EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDetailTxtTableViewCell.xib; sourceTree = "<group>"; };
+		2510EDA41EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailImageTableViewCell.h; sourceTree = "<group>"; };
+		2510EDA51EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailImageTableViewCell.m; sourceTree = "<group>"; };
+		2510EDA61EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNotificationObserver.h; sourceTree = "<group>"; };
 		255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomNotificationObserver.m; sourceTree = "<group>"; };
 		2553972B1ED07DF300F6EC45 /* RecordCreateSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateSectionInfo.h; sourceTree = "<group>"; };
@@ -459,6 +474,15 @@
 				2510ED8E1EDD203600F5A2C7 /* RecordBriefTableViewCell.xib */,
 				2510ED971EE1B04200F5A2C7 /* CellSizeInfo.h */,
 				2510ED981EE1B04200F5A2C7 /* CellSizeInfo.m */,
+				2510ED9A1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.h */,
+				2510ED9B1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.m */,
+				2510ED9C1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.xib */,
+				2510ED9F1EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.h */,
+				2510EDA01EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.m */,
+				2510EDA11EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib */,
+				2510EDA41EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.h */,
+				2510EDA51EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m */,
+				2510EDA61EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -634,6 +658,7 @@
 				25925D971EDAC215000F6B06 /* CagegorySelect.storyboard in Resources */,
 				2510E8DD1EC0B4B400EC59E7 /* Assets.xcassets in Resources */,
 				2510ED901EDD203600F5A2C7 /* RecordBriefTableViewCell.xib in Resources */,
+				2510ED9E1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.xib in Resources */,
 				25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */,
 				255397371ED081BD00F6EC45 /* CreateSectionTxtTableViewCell.xib in Resources */,
 				2510E8DB1EC0B4B400EC59E7 /* Main.storyboard in Resources */,
@@ -642,9 +667,11 @@
 				2501415D1ED8709200C813B5 /* AppCoverView.xib in Resources */,
 				255397321ED081A800F6EC45 /* CreateSectionTitleTableViewCell.xib in Resources */,
 				2501416B1EDA759700C813B5 /* PhotoSelectionAlbumDetailViewController.xib in Resources */,
+				2510EDA81EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib in Resources */,
 				2553973E1ED13C3500F6EC45 /* CreateSectionFooterView.xib in Resources */,
 				250141701EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib in Resources */,
 				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
+				2510EDA31EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib in Resources */,
 				25925D921EDAB958000F6B06 /* CreateSectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,9 +702,11 @@
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
 				2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */,
 				25D960701ECF3B90006E067E /* FMDatabase.m in Sources */,
+				2510EDA71EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m in Sources */,
 				2510E9351ECB477C00EC59E7 /* RecordSection.m in Sources */,
 				2510E8D21EC0B4B300EC59E7 /* AppDelegate.m in Sources */,
 				25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */,
+				2510ED9D1EE1B44500F5A2C7 /* RecordDetailTitleTableViewCell.m in Sources */,
 				25D960741ECF3B90006E067E /* FMDBMigrationManager.m in Sources */,
 				25925D951EDAB973000F6B06 /* CreateSectionHeaderView.m in Sources */,
 				25D9607D1ECFEA04006E067E /* CellIdInfo.m in Sources */,
@@ -689,6 +718,7 @@
 				2510E8D51EC0B4B300EC59E7 /* FirstViewController.m in Sources */,
 				2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */,
 				25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */,
+				2510EDA21EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.m in Sources */,
 				255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */,
 				2510ED991EE1B04200F5A2C7 /* CellSizeInfo.m in Sources */,
 				2501416F1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m in Sources */,
