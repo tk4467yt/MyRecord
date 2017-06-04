@@ -7,12 +7,15 @@
 //
 
 #import "RecordDetailTitleTableViewCell.h"
+#import "MyCommonHeaders.h"
 
 @implementation RecordDetailTitleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.contentView.backgroundColor=[MyColor defBackgroundColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
