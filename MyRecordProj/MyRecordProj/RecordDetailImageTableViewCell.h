@@ -11,4 +11,5 @@
 @interface RecordDetailImageTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UICollectionView *cvImage;
 
+@property (nonatomic,strong) NSArray *recordSectionItemArr;
 @end

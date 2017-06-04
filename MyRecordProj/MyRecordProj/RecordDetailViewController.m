@@ -123,6 +123,7 @@
         cell2ret=txtCell;
     } else if (SectionTypeImg == createSectionInfo.type) {
         RecordDetailImageTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordDetailImage] forIndexPath:indexPath];
+        imgCell.recordSectionItemArr=[self.recordInfo getAllImageSectionItem];
         
         cell2ret=imgCell;
     } else {
