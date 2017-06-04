@@ -38,8 +38,10 @@
 +(NSString *)writeImageThumb:(UIImage *)img2write intoDirectory:(NSString *)dirInDoc;
 +(UIImage *)scaleImage:(UIImage *)img2scale toSize:(CGSize)targetSize;
 +(UIImage *)getImageWithName:(NSString *)imgName andDir:(NSString *)dirInDoc;
++(BOOL)isFileExistAtPath:(NSString *)filePath;
 +(CGSize)maxSizeOfImage2handle;
 +(void)deleteFileWithName:(NSString *)fileName inDirectory:(NSString *)dirInDoc;
++(NSString *)getFilePathWithName:(NSString *)fileName inDirectory:(NSString *)dirInDoc;
 
 +(CGFloat)getFontPointSizeForDynamicTypeTextWithOriginalSize:(CGFloat)originalPointSize;
 +(BOOL)appFollowSystemDynamicType;

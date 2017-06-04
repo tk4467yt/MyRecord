@@ -233,6 +233,28 @@
     return [UIImage imageWithContentsOfFile:imgFullName];
 }
 
++(NSString *)getFilePathWithName:(NSString *)fileName inDirectory:(NSString *)dirInDoc
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex:0];
+    
+    NSString *dirPath=[docDir stringByAppendingPathComponent:dirInDoc];
+    
+    NSString *imgFullName=[dirPath stringByAppendingPathComponent:fileName];
+    
+    return imgFullName;
+}
+
++(BOOL)isFileExistAtPath:(NSString *)filePath
+{
+    NSFileManager *defManager=[NSFileManager defaultManager];
+    if (![defManager fileExistsAtPath:filePath]) {
+        return false;
+    }
+    
+    return true;
+}
+
 +(CGSize)maxSizeOfImage2handle
 {
     return CGSizeMake(1024, 1024);

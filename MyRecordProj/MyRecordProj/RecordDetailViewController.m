@@ -124,6 +124,7 @@
     } else if (SectionTypeImg == createSectionInfo.type) {
         RecordDetailImageTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordDetailImage] forIndexPath:indexPath];
         imgCell.recordSectionItemArr=[self.recordInfo getAllImageSectionItem];
+        imgCell.parentVC=self;
         
         cell2ret=imgCell;
     } else {

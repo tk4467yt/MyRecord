@@ -20,5 +20,7 @@
 #import "DbHandler.h"
 #import "AppCoverView.h"
 #import "CellSizeInfo.h"
+#import "MyGalleryViewController.h"
+#import "GalleryImageInfo.h"
 
 #endif /* MyCommonHeaders_h */

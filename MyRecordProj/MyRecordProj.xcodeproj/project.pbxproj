@@ -52,6 +52,10 @@
 		2510EDA31EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDA11EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib */; };
 		2510EDA71EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDA51EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m */; };
 		2510EDA81EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDA61EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib */; };
+		2510EDB21EE450C100F5A2C7 /* GalleryImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDAC1EE450C100F5A2C7 /* GalleryImageInfo.m */; };
+		2510EDB31EE450C100F5A2C7 /* MyGalleryItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDAE1EE450C100F5A2C7 /* MyGalleryItemView.m */; };
+		2510EDB41EE450C100F5A2C7 /* MyGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDB01EE450C100F5A2C7 /* MyGalleryViewController.m */; };
+		2510EDB51EE450C100F5A2C7 /* MyGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDB11EE450C100F5A2C7 /* MyGalleryViewController.xib */; };
 		2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */; };
 		2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */; };
 		255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */; };
@@ -182,6 +186,13 @@
 		2510EDA41EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordDetailImageTableViewCell.h; sourceTree = "<group>"; };
 		2510EDA51EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordDetailImageTableViewCell.m; sourceTree = "<group>"; };
 		2510EDA61EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordDetailImageTableViewCell.xib; sourceTree = "<group>"; };
+		2510EDAB1EE450C100F5A2C7 /* GalleryImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryImageInfo.h; sourceTree = "<group>"; };
+		2510EDAC1EE450C100F5A2C7 /* GalleryImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryImageInfo.m; sourceTree = "<group>"; };
+		2510EDAD1EE450C100F5A2C7 /* MyGalleryItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGalleryItemView.h; sourceTree = "<group>"; };
+		2510EDAE1EE450C100F5A2C7 /* MyGalleryItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGalleryItemView.m; sourceTree = "<group>"; };
+		2510EDAF1EE450C100F5A2C7 /* MyGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGalleryViewController.h; sourceTree = "<group>"; };
+		2510EDB01EE450C100F5A2C7 /* MyGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGalleryViewController.m; sourceTree = "<group>"; };
+		2510EDB11EE450C100F5A2C7 /* MyGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGalleryViewController.xib; sourceTree = "<group>"; };
 		255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNotificationObserver.h; sourceTree = "<group>"; };
 		255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomNotificationObserver.m; sourceTree = "<group>"; };
 		2553972B1ED07DF300F6EC45 /* RecordCreateSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateSectionInfo.h; sourceTree = "<group>"; };
@@ -434,6 +445,20 @@
 			name = models;
 			sourceTree = "<group>";
 		};
+		2510EDAA1EE450C100F5A2C7 /* gallery */ = {
+			isa = PBXGroup;
+			children = (
+				2510EDAB1EE450C100F5A2C7 /* GalleryImageInfo.h */,
+				2510EDAC1EE450C100F5A2C7 /* GalleryImageInfo.m */,
+				2510EDAD1EE450C100F5A2C7 /* MyGalleryItemView.h */,
+				2510EDAE1EE450C100F5A2C7 /* MyGalleryItemView.m */,
+				2510EDAF1EE450C100F5A2C7 /* MyGalleryViewController.h */,
+				2510EDB01EE450C100F5A2C7 /* MyGalleryViewController.m */,
+				2510EDB11EE450C100F5A2C7 /* MyGalleryViewController.xib */,
+			);
+			path = gallery;
+			sourceTree = "<group>";
+		};
 		25D9603E1ECC8D59006E067E /* db_upgrade */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +515,7 @@
 		25D960521ECF3B6D006E067E /* common */ = {
 			isa = PBXGroup;
 			children = (
+				2510EDAA1EE450C100F5A2C7 /* gallery */,
 				25D960531ECF3B6D006E067E /* MyColor.h */,
 				25D960541ECF3B6D006E067E /* MyColor.m */,
 				25D960551ECF3B6D006E067E /* MyRootViewController.h */,
@@ -671,6 +697,7 @@
 				2553973E1ED13C3500F6EC45 /* CreateSectionFooterView.xib in Resources */,
 				250141701EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.xib in Resources */,
 				25D9607A1ECFE8DF006E067E /* RecordsTopCategoryInfoTableViewCell.xib in Resources */,
+				2510EDB51EE450C100F5A2C7 /* MyGalleryViewController.xib in Resources */,
 				2510EDA31EE1B45D00F5A2C7 /* RecordDetailTxtTableViewCell.xib in Resources */,
 				25925D921EDAB958000F6B06 /* CreateSectionHeaderView.xib in Resources */,
 			);
@@ -723,9 +750,12 @@
 				2510ED991EE1B04200F5A2C7 /* CellSizeInfo.m in Sources */,
 				2501416F1EDA7C2D00C813B5 /* PhotoSelectionItemCollectionViewCell.m in Sources */,
 				2510E9321ECB3BAB00EC59E7 /* RecordInfo.m in Sources */,
+				2510EDB31EE450C100F5A2C7 /* MyGalleryItemView.m in Sources */,
 				2510E8CF1EC0B4B300EC59E7 /* main.m in Sources */,
 				2553973B1ED081CF00F6EC45 /* CreateSectionImgTableViewCell.m in Sources */,
+				2510EDB21EE450C100F5A2C7 /* GalleryImageInfo.m in Sources */,
 				2510E9381ECB478A00EC59E7 /* RecordSectionItem.m in Sources */,
+				2510EDB41EE450C100F5A2C7 /* MyGalleryViewController.m in Sources */,
 				255397411ED13C4F00F6EC45 /* CreateSectionFooterView.m in Sources */,
 				25D9605C1ECF3B6D006E067E /* MyColor.m in Sources */,
 				25D9605F1ECF3B6D006E067E /* TextContentCollectionReusableView.m in Sources */,

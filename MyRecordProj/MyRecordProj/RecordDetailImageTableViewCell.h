@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *cvImage;
 
 @property (nonatomic,strong) NSArray *recordSectionItemArr;
+@property (nonatomic,weak) UIViewController *parentVC;
 @end
