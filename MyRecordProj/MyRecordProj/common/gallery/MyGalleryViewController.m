@@ -181,7 +181,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)deviceOrientationDidChangeHandle
+-(void)screenOrientationChangedHandle
 {
     [self updateScrollviewContent:true];
 }

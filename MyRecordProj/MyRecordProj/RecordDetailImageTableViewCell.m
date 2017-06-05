@@ -49,7 +49,8 @@
         galleryVC.curPhotoIdx=indexPath.row;
         galleryVC.imageInfoArr=[GalleryImageInfo makeImageInfoFromRecordSectionItems:self.recordSectionItemArr];
         
-        [self.parentVC presentViewController:galleryVC animated:YES completion:nil];
+        UINavigationController *navVC=[[UINavigationController alloc] initWithRootViewController:galleryVC];
+        [self.parentVC presentViewController:navVC animated:YES completion:nil];
     }
 }
 
