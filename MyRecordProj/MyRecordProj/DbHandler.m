@@ -34,7 +34,7 @@ static __strong FMDatabase *dbRecords;
         //record info
         [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_info`"
          @"(`record_id` char(128) PRIMARY KEY NOT NULL,"
-         @"`record_title` varchar(1024) NOT NULL,"
+         @"`record_title` TEXT NOT NULL,"
          @"`create_time` integer,"
          @"`category_id` char(128))"];
         //record sections
@@ -48,19 +48,19 @@ static __strong FMDatabase *dbRecords;
          @"(`record_id` char(128) NOT NULL,"
          @"`section_id` integer,"
          @"`item_id` integer,"
-         @"`item_txt` varchar(2048),"
+         @"`item_txt` TEXT,"
          @"`item_img_thumb_id` char(128),"
          @"`item_img_id` char(128),"
          @"PRIMARY KEY (`record_id`,`section_id`,`item_id`))"];
         //record category
         [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `record_category`"
          @"(`category_id` char(128) PRIMARY KEY NOT NULL,"
-         @"`category_title` varchar(256) NOT NULL,"
+         @"`category_title` TEXT NOT NULL,"
          @"`create_time` integer)"];
         //setting
         [dbRecords executeUpdate:@"CREATE TABLE IF NOT EXISTS `settings`"
          @"(`setting_id` char(128) PRIMARY KEY NOT NULL,"
-         @"`setting_value` varchar(1024) NOT NULL)"];
+         @"`setting_value` TEXT NOT NULL)"];
     }
     
     [DbHandler migrateDb];
