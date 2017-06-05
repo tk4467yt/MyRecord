@@ -9,6 +9,7 @@
 #import "CreateSectionImgTableViewCell.h"
 #import "MyCommonHeaders.h"
 #import "ImageCollectionViewCell.h"
+#import "RecordSectionItem.h"
 
 @interface CreateSectionImgTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -27,7 +28,8 @@
     
     self.lblImgDesc.textColor=[MyColor orangeColor];
     
-    self.imgArr=[NSMutableArray new];
+    self.thumbImgArr=[NSMutableArray new];
+    self.orgImgArr=[NSMutableArray new];
     
     [self.cvImgs registerNib:[UINib nibWithNibName:@"ImageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:[CellIdInfo cellIdForImageCVCellId]];
     self.cvImgs.delegate=self;
@@ -57,32 +59,56 @@
     // Configure the view for the selected state
 }
 
+- (NSArray *)makeRecordSectionItemsArr
+{
+    NSMutableArray *arr2ret=[NSMutableArray new];
+    
+    for (int itemIdx=0; itemIdx<self.thumbImgArr.count; ++itemIdx) {
+        RecordSectionItem *aItem=[RecordSectionItem new];
+        aItem.recordId=0;
+        aItem.sectionId=0;
+        aItem.itemId=itemIdx;
+        aItem.itemTxt=@"";
+        aItem.imgId=self.orgImgArr[itemIdx];
+        aItem.imgThumbId=self.thumbImgArr[itemIdx];
+        
+        [arr2ret addObject:aItem];
+    }
+    
+    return arr2ret;
+}
+
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.item >= self.imgArr.count) {
+    if (indexPath.item >= self.thumbImgArr.count) {
         ImageCollectionViewCell *imgCell=(ImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
         if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(imageActionForAddImageWithCellIndex:andSourceView:)]) {
             [self.actionDelegate imageActionForAddImageWithCellIndex:self.cellIndex andSourceView:imgCell.ivImage];
         }
     } else {
+        MyGalleryViewController *galleryVC=[MyGalleryViewController new];
+        galleryVC.curPhotoIdx=indexPath.row;
+        galleryVC.imageInfoArr=[GalleryImageInfo makeImageInfoFromRecordSectionItems:[self makeRecordSectionItemsArr]];
         
+        UINavigationController *navVC=[[UINavigationController alloc] initWithRootViewController:galleryVC];
+        [self.actionDelegate presentViewController:navVC animated:YES completion:nil];
     }
 }
 
 #pragma mark UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.imgArr.count+1;
+    return self.thumbImgArr.count+1;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ImageCollectionViewCell *imgCell=[collectionView dequeueReusableCellWithReuseIdentifier:[CellIdInfo cellIdForImageCVCellId] forIndexPath:indexPath];
-    if (indexPath.item >= self.imgArr.count) {
+    if (indexPath.item >= self.thumbImgArr.count) {
         imgCell.ivImage.image=[UIImage imageNamed:@"timeline_new_pic_add"];
     } else {
-        NSString *imgName=self.imgArr[indexPath.row];
+        NSString *imgName=self.thumbImgArr[indexPath.row];
         imgCell.ivImage.image=[MyUtility getImageWithName:imgName andDir:IMG_STORE_PATH_IN_DOC];
     }
     return imgCell;

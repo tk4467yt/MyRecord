@@ -20,7 +20,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *cvImgs;
 @property (weak, nonatomic) IBOutlet UIImageView *ivDel;
 
-@property (nonatomic,strong) NSMutableArray *imgArr;
+@property (nonatomic,strong) NSMutableArray *thumbImgArr;
+@property (nonatomic,strong) NSMutableArray *orgImgArr;
 @property (assign, nonatomic) NSInteger cellIndex;
-@property (weak, nonatomic) id<CreateSectionImageActionDelegate> actionDelegate;
+@property (weak, nonatomic) UIViewController<CreateSectionImageActionDelegate> *actionDelegate;
 @end

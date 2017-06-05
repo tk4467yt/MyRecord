@@ -100,13 +100,13 @@
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.item >= self.recordSectionItemArr.count) {
-//        ImageCollectionViewCell *imgCell=(ImageCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//        if (nil != self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(imageActionForAddImageWithCellIndex:andSourceView:)]) {
-//            [self.actionDelegate imageActionForAddImageWithCellIndex:self.cellIndex andSourceView:imgCell.ivImage];
-//        }
-    } else {
+    if (indexPath.item < self.recordSectionItemArr.count) {
+        MyGalleryViewController *galleryVC=[MyGalleryViewController new];
+        galleryVC.curPhotoIdx=indexPath.row;
+        galleryVC.imageInfoArr=[GalleryImageInfo makeImageInfoFromRecordSectionItems:self.recordSectionItemArr];
         
+        UINavigationController *navVC=[[UINavigationController alloc] initWithRootViewController:galleryVC];
+        [self.actionDelegate presentViewController:navVC animated:YES completion:nil];
     }
 }
 

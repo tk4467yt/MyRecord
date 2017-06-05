@@ -485,7 +485,8 @@
                                                                                    forIndexPath:indexPath];
         imgCell.lblImgDesc.text=NSLocalizedString(@"create_record_img_desc", @"");
         imgCell.cellIndex=indexPath.row;
-        imgCell.imgArr=sectionInfo.imgThumbArr;
+        imgCell.thumbImgArr=sectionInfo.imgThumbArr;
+        imgCell.orgImgArr=sectionInfo.imgOrgArr;
         imgCell.actionDelegate=self;
         
         cell2ret=imgCell;

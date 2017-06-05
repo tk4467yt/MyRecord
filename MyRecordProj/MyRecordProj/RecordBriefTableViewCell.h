@@ -30,7 +30,7 @@
 
 @property (nonatomic,strong) NSArray *recordSectionItemArr;
 @property (nonatomic,copy) NSString  *recordInfoId;
-@property (weak, nonatomic) id<RecordBriefActionDelegate> actionDelegate;
+@property (weak, nonatomic) UIViewController<RecordBriefActionDelegate> *actionDelegate;
 
 - (IBAction)btnDetailTapped:(UIButton *)sender;
 - (IBAction)btnEditTapped:(UIButton *)sender;
