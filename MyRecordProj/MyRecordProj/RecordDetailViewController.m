@@ -86,7 +86,7 @@
 {
     CGFloat height=0;
     
-    RecordCreateSectionInfo *createSectionInfo=self.recordDetailSectionArr[indexPath.row];
+    RecordCreateSectionInfo *createSectionInfo=self.recordDetailSectionArr[indexPath.section];
     if (SectionTypeTitle == createSectionInfo.type) {
         height = [MyUtility getLabelHeightByWidth:[MyUtility screenWidth]-16 title:createSectionInfo.txtContent font:[UIFont systemFontOfSize:17]];
         height += 20;
@@ -100,17 +100,30 @@
     return height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view2ret=[UIView new];
+    view2ret.backgroundColor=self.tbRecordDetail.backgroundColor;
+    
+    return view2ret;
+}
+
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.recordDetailSectionArr.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell2ret=nil;
     
-    RecordCreateSectionInfo *createSectionInfo=self.recordDetailSectionArr[indexPath.row];
+    RecordCreateSectionInfo *createSectionInfo=self.recordDetailSectionArr[indexPath.section];
     if (SectionTypeTitle == createSectionInfo.type) {
         RecordDetailTitleTableViewCell *titleCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordDetailTitle] forIndexPath:indexPath];
         titleCell.lblTitle.text=createSectionInfo.txtContent;
@@ -135,6 +148,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.recordDetailSectionArr.count;
 }
 @end
