@@ -136,7 +136,8 @@
         cell2ret=txtCell;
     } else if (SectionTypeImg == createSectionInfo.type) {
         RecordDetailImageTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForRecordDetailImage] forIndexPath:indexPath];
-        imgCell.recordSectionItemArr=[self.recordInfo getAllImageSectionItem];
+        RecordSection *curSection=self.recordInfo.sectionArr[indexPath.section-1];
+        imgCell.recordSectionItemArr=curSection.sectionItemArr;
         imgCell.parentVC=self;
         
         cell2ret=imgCell;
