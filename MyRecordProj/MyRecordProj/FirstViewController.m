@@ -46,6 +46,7 @@
 {
     [[MyCustomNotificationObserver sharedObserver] addCustomOvserverWithDelegate:self andKey:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE];
     [[MyCustomNotificationObserver sharedObserver] addCustomOvserverWithDelegate:self andKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE];
+    [[MyCustomNotificationObserver sharedObserver] addCustomOvserverWithDelegate:self andKey:CUSTOM_NOTIFICATION_FOR_SETTING_VALUE_DID_CHANGE];
 }
 
 -(void)action2create
@@ -160,6 +161,8 @@
             [self.allRecordInfoDict removeAllObjects];
         }
         [self updateRecordsInfo];
+    } else if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_SETTING_VALUE_DID_CHANGE]) {
+        [self.tbAllRecords reloadData];
     } else {
         [super didReceivecMyCustomNotification:notificationDict];
     }

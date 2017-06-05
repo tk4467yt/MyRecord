@@ -403,7 +403,7 @@
             return 120;
             break;
         case SectionTypeImg:
-            return 160;
+            return [CellSizeInfo sizeForImageCVItem].height;
             break;
         default:
             break;
