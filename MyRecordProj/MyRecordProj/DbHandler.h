@@ -17,6 +17,9 @@ extern const NSInteger kDbIdCategoryTitleSize;
 
 #define CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE @"custom_notification_for_db_category_info_update"
 #define CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE @"custom_notification_for_db_record_info_update"
+#define CUSTOM_NOTIFICATION_FOR_SETTING_VALUE_DID_CHANGE @"custom_notification_for_setting_value_did_change"
+
+#define SETTING_KEY_4_THUMB_WITH_LARGE_SIZE @"setting_key_4_thumb_with_large_size"
 
 @interface DbHandler : NSObject
 +(void)initLocalDatabase;
@@ -38,4 +41,5 @@ extern const NSInteger kDbIdCategoryTitleSize;
 
 +(NSString *)getStrSettingWithKey:(NSString *)key andDefValue:(NSString *)defStr;
 +(UInt64)getIntSettingWithKey:(NSString *)key andDefValue:(UInt64)defInt;
++(void)setSettingWithKey:(NSString *)key withValue:(NSString *)value;
 @end

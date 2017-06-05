@@ -345,4 +345,17 @@ static __strong FMDatabase *dbRecords;
     
     return int2ret;
 }
++(void)setSettingWithKey:(NSString *)key withValue:(NSString *)value
+{
+    if ([MyUtility isStringNilOrZeroLength:key] ||
+        [MyUtility isStringNilOrZeroLength:value]) {
+        return;
+    }
+    
+    [dbRecords executeUpdate:@"INSERT OR REPLACE INTO `settings` (`setting_id`,`setting_value`) VALUES (?,?)",
+     key,
+     value];
+    
+    [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_SETTING_VALUE_DID_CHANGE andContent:key];
+}
 @end

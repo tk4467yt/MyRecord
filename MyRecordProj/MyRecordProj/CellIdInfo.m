@@ -47,4 +47,8 @@
 {
     return @"record_detail_img_cell_id";
 }
++(NSString *)cellIdForSettingSwitch
+{
+    return @"setting_switch_cell_id";
+}
 @end

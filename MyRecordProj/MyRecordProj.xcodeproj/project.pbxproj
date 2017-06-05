@@ -56,6 +56,8 @@
 		2510EDB31EE450C100F5A2C7 /* MyGalleryItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDAE1EE450C100F5A2C7 /* MyGalleryItemView.m */; };
 		2510EDB41EE450C100F5A2C7 /* MyGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDB01EE450C100F5A2C7 /* MyGalleryViewController.m */; };
 		2510EDB51EE450C100F5A2C7 /* MyGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDB11EE450C100F5A2C7 /* MyGalleryViewController.xib */; };
+		2510EDBA1EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2510EDB81EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.m */; };
+		2510EDBB1EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2510EDB91EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.xib */; };
 		2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */; };
 		2553972D1ED07DF300F6EC45 /* RecordCreateSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972C1ED07DF300F6EC45 /* RecordCreateSectionInfo.m */; };
 		255397311ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2553972F1ED081A800F6EC45 /* CreateSectionTitleTableViewCell.m */; };
@@ -193,6 +195,9 @@
 		2510EDAF1EE450C100F5A2C7 /* MyGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGalleryViewController.h; sourceTree = "<group>"; };
 		2510EDB01EE450C100F5A2C7 /* MyGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGalleryViewController.m; sourceTree = "<group>"; };
 		2510EDB11EE450C100F5A2C7 /* MyGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGalleryViewController.xib; sourceTree = "<group>"; };
+		2510EDB71EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSwitchTableViewCell.h; sourceTree = "<group>"; };
+		2510EDB81EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSwitchTableViewCell.m; sourceTree = "<group>"; };
+		2510EDB91EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsSwitchTableViewCell.xib; sourceTree = "<group>"; };
 		255397281ED0434E00F6EC45 /* MyCustomNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomNotificationObserver.h; sourceTree = "<group>"; };
 		255397291ED0434E00F6EC45 /* MyCustomNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomNotificationObserver.m; sourceTree = "<group>"; };
 		2553972B1ED07DF300F6EC45 /* RecordCreateSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCreateSectionInfo.h; sourceTree = "<group>"; };
@@ -508,6 +513,9 @@
 				2510EDA41EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.h */,
 				2510EDA51EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m */,
 				2510EDA61EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.xib */,
+				2510EDB71EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.h */,
+				2510EDB81EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.m */,
+				2510EDB91EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.xib */,
 			);
 			name = cell_prototype;
 			sourceTree = "<group>";
@@ -673,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D960601ECF3B6D006E067E /* TextContentCollectionReusableView.xib in Resources */,
+				2510EDBB1EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.xib in Resources */,
 				250141751EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib in Resources */,
 				250141661EDA70BF00C813B5 /* PhotoSelectionAlbumTableViewCell.xib in Resources */,
 				2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */,
@@ -727,6 +736,7 @@
 				25D9605E1ECF3B6D006E067E /* MyUtility.m in Sources */,
 				2510E9181EC5FF9000EC59E7 /* MyCustomTabbarViewController.m in Sources */,
 				2510E8D81EC0B4B400EC59E7 /* SecondViewController.m in Sources */,
+				2510EDBA1EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.m in Sources */,
 				2553972A1ED0434E00F6EC45 /* MyCustomNotificationObserver.m in Sources */,
 				25D960701ECF3B90006E067E /* FMDatabase.m in Sources */,
 				2510EDA71EE1B46D00F5A2C7 /* RecordDetailImageTableViewCell.m in Sources */,

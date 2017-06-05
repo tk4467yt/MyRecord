@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "SettingsSwitchTableViewCell.h"
 
 @interface SecondViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbSettings;
@@ -20,6 +21,16 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.navigationItem.title=NSLocalizedString(@"nav_title_settings", @"");
+    
+    [self.tbSettings registerNib:[UINib nibWithNibName:@"SettingsSwitchTableViewCell" bundle:[NSBundle mainBundle]]
+          forCellReuseIdentifier:[CellIdInfo cellIdForSettingSwitch]];
+    
+    [self addObserverInfo];
+}
+
+-(void)addObserverInfo
+{
+    [[MyCustomNotificationObserver sharedObserver] addCustomOvserverWithDelegate:self andKey:CUSTOM_NOTIFICATION_FOR_SETTING_VALUE_DID_CHANGE];
 }
 
 #pragma mark override
@@ -31,6 +42,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark MyCustomNotificationActionDelegate
+-(void)didReceivecMyCustomNotification:(NSDictionary *)notificationDict
+{
+    if (nil == notificationDict) {
+        return;
+    }
+    NSString *key2check=notificationDict[MyCustomNotificationContent_key];
+    if ([key2check isEqualToString:CUSTOM_NOTIFICATION_FOR_SETTING_VALUE_DID_CHANGE]) {
+        [self.tbSettings reloadData];
+    } else {
+        [super didReceivecMyCustomNotification:notificationDict];
+    }
 }
 
 #pragma mark UITableViewDelegate
@@ -68,14 +93,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell2ret=nil;
     
-    
+    if (0 == indexPath.section) {
+        if (0 == indexPath.row) {
+            SettingsSwitchTableViewCell *topCatInfoCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForSettingSwitch] forIndexPath:indexPath];
+            topCatInfoCell.lblSettingDesc.text=NSLocalizedString(@"view_thumb_with_large_size", @"");
+            topCatInfoCell.settingKey=SETTING_KEY_4_THUMB_WITH_LARGE_SIZE;
+            
+            BOOL isOn=[DbHandler getIntSettingWithKey:topCatInfoCell.settingKey andDefValue:0];
+            topCatInfoCell.settingSwitch.on=isOn;
+            
+            cell2ret=topCatInfoCell;
+        }
+    }
     
     [cell2ret setNeedsLayout];
     return cell2ret;

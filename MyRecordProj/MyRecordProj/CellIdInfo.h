@@ -20,4 +20,5 @@
 +(NSString *)cellIdForRecordDetailTitle;
 +(NSString *)cellIdForRecordDetailTxt;
 +(NSString *)cellIdForRecordDetailImage;
++(NSString *)cellIdForSettingSwitch;
 @end
