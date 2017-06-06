@@ -277,6 +277,15 @@ static __strong FMDatabase *dbRecords;
     [dbRecords executeUpdate:@"DELETE FROM `record_section` WHERE `record_id` = ?", record2del.recordId];
     [dbRecords executeUpdate:@"DELETE FROM `record_section_item` WHERE `record_id` = ?", record2del.recordId];
     
+    for (RecordSection *aSection in record2del.sectionArr) {
+        if ([aSection.sectionType isEqualToString:SECTION_TYPE_IMAGE]) {
+            for (RecordSectionItem *aItem in aSection.sectionItemArr) {
+                [MyUtility deleteFileWithName:aItem.imgId inDirectory:IMG_STORE_PATH_IN_DOC];
+                [MyUtility deleteFileWithName:aItem.imgThumbId inDirectory:IMG_STORE_PATH_IN_DOC];
+            }
+        }
+    }
+    
     [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2del.recordId];
 }
 
