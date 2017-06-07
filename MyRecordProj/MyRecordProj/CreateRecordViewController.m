@@ -334,10 +334,10 @@
     
     sectionInfo.txtContent=txt2use;
     
-    [self updateTxtInfoForCell:[self.tbCreate cellForRowAtIndexPath:[NSIndexPath indexPathForRow:tvIdx inSection:0]] andSectionInfo:sectionInfo];
+    [self updateTxtInfoForCell:[self.tbCreate cellForRowAtIndexPath:[NSIndexPath indexPathForRow:tvIdx inSection:0]] andSectionInfo:sectionInfo withContentUpdate:NO];
 }
 
--(void)updateTxtInfoForCell:(UITableViewCell *)cell2update andSectionInfo:(RecordCreateSectionInfo *)sectionInfo
+-(void)updateTxtInfoForCell:(UITableViewCell *)cell2update andSectionInfo:(RecordCreateSectionInfo *)sectionInfo withContentUpdate:(BOOL)updateContent
 {
     if (nil == cell2update || nil == sectionInfo) {
         return;
@@ -347,7 +347,10 @@
         {
             CreateSectionTitleTableViewCell *titleCell=(CreateSectionTitleTableViewCell *)cell2update;
             if ([titleCell isKindOfClass:CreateSectionTitleTableViewCell.class]) {
-//                titleCell.tvTitle.text=sectionInfo.txtContent;
+                if (updateContent) {
+                    titleCell.tvTitle.text=sectionInfo.txtContent;
+                }
+                
                 titleCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordTitleSize];
             }
             break;
@@ -356,7 +359,10 @@
         {
             CreateSectionTxtTableViewCell *txtCell=(CreateSectionTxtTableViewCell *)cell2update;
             if ([txtCell isKindOfClass:CreateSectionTxtTableViewCell.class]) {
-//                txtCell.tvTxtContent.text=sectionInfo.txtContent;
+                if (updateContent) {
+                    txtCell.tvTxtContent.text=sectionInfo.txtContent;
+                }
+                
                 txtCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordItemTxtSize];
             }
             break;
@@ -466,7 +472,7 @@
         titleCell.tvTitle.delegate=self;
         titleCell.tvTitle.tag=indexPath.row;
         
-        [self updateTxtInfoForCell:titleCell andSectionInfo:sectionInfo];
+        [self updateTxtInfoForCell:titleCell andSectionInfo:sectionInfo withContentUpdate:YES];
         cell2ret=titleCell;
     } else if (SectionTypeTxt == sectionInfo.type) {
         CreateSectionTxtTableViewCell *txtCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionTxt]
@@ -478,7 +484,7 @@
         txtCell.cellIndex=indexPath.row;
         txtCell.actionDelegate=self;
         
-        [self updateTxtInfoForCell:txtCell andSectionInfo:sectionInfo];
+        [self updateTxtInfoForCell:txtCell andSectionInfo:sectionInfo withContentUpdate:YES];
         cell2ret=txtCell;
     } else if (SectionTypeImg == sectionInfo.type) {
         CreateSectionImgTableViewCell *imgCell=[tableView dequeueReusableCellWithIdentifier:[CellIdInfo cellIdForCreateSectionImg]
