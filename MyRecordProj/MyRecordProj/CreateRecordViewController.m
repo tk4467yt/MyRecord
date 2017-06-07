@@ -347,7 +347,7 @@
         {
             CreateSectionTitleTableViewCell *titleCell=(CreateSectionTitleTableViewCell *)cell2update;
             if ([titleCell isKindOfClass:CreateSectionTitleTableViewCell.class]) {
-                titleCell.tvTitle.text=sectionInfo.txtContent;
+//                titleCell.tvTitle.text=sectionInfo.txtContent;
                 titleCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordTitleSize];
             }
             break;
@@ -356,7 +356,7 @@
         {
             CreateSectionTxtTableViewCell *txtCell=(CreateSectionTxtTableViewCell *)cell2update;
             if ([txtCell isKindOfClass:CreateSectionTxtTableViewCell.class]) {
-                txtCell.tvTxtContent.text=sectionInfo.txtContent;
+//                txtCell.tvTxtContent.text=sectionInfo.txtContent;
                 txtCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordItemTxtSize];
             }
             break;
