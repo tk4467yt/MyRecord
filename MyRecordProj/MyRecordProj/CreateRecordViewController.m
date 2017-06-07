@@ -354,10 +354,10 @@
         }
         case SectionTypeTxt:
         {
-            CreateSectionTxtTableViewCell *titleCell=(CreateSectionTxtTableViewCell *)cell2update;
-            if ([titleCell isKindOfClass:CreateSectionTxtTableViewCell.class]) {
-                titleCell.tvTxtContent.text=sectionInfo.txtContent;
-                titleCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordItemTxtSize];
+            CreateSectionTxtTableViewCell *txtCell=(CreateSectionTxtTableViewCell *)cell2update;
+            if ([txtCell isKindOfClass:CreateSectionTxtTableViewCell.class]) {
+                txtCell.tvTxtContent.text=sectionInfo.txtContent;
+                txtCell.lblLimit.text=[NSString stringWithFormat:@"%d/%d",(int)sectionInfo.txtContent.length,(int)kDbIdRecordItemTxtSize];
             }
             break;
         }
