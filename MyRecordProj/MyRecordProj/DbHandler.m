@@ -155,7 +155,7 @@ static __strong FMDatabase *dbRecords;
     
     NSArray *recordInfoArr=[DbHandler getRecordInfoWithCategoryId:categoryId];
     for (RecordInfo *aRecord in recordInfoArr) {
-        [DbHandler deleteRecordInfoWithId:aRecord];
+        [DbHandler deleteRecordInfoWithId:aRecord andAutoDelMedia:YES];
     }
     
     [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_CATEGORY_INFO_UPDATE andContent:@""];
@@ -268,7 +268,7 @@ static __strong FMDatabase *dbRecords;
     [[MyCustomNotificationObserver sharedObserver] reportCustomNotificationWithKey:CUSTOM_NOTIFICATION_FOR_DB_RECORD_INFO_UPDATE andContent:record2store.recordId];
 }
 
-+(void)deleteRecordInfoWithId:(RecordInfo *)record2del
++(void)deleteRecordInfoWithId:(RecordInfo *)record2del  andAutoDelMedia:(BOOL)autoDelMedia
 {
     if ([MyUtility isStringNilOrZeroLength:record2del.recordId]) {
         return;
@@ -277,11 +277,13 @@ static __strong FMDatabase *dbRecords;
     [dbRecords executeUpdate:@"DELETE FROM `record_section` WHERE `record_id` = ?", record2del.recordId];
     [dbRecords executeUpdate:@"DELETE FROM `record_section_item` WHERE `record_id` = ?", record2del.recordId];
     
-    for (RecordSection *aSection in record2del.sectionArr) {
-        if ([aSection.sectionType isEqualToString:SECTION_TYPE_IMAGE]) {
-            for (RecordSectionItem *aItem in aSection.sectionItemArr) {
-                [MyUtility deleteFileWithName:aItem.imgId inDirectory:IMG_STORE_PATH_IN_DOC];
-                [MyUtility deleteFileWithName:aItem.imgThumbId inDirectory:IMG_STORE_PATH_IN_DOC];
+    if (autoDelMedia) {
+        for (RecordSection *aSection in record2del.sectionArr) {
+            if ([aSection.sectionType isEqualToString:SECTION_TYPE_IMAGE]) {
+                for (RecordSectionItem *aItem in aSection.sectionItemArr) {
+                    [MyUtility deleteFileWithName:aItem.imgId inDirectory:IMG_STORE_PATH_IN_DOC];
+                    [MyUtility deleteFileWithName:aItem.imgThumbId inDirectory:IMG_STORE_PATH_IN_DOC];
+                }
             }
         }
     }

@@ -15,4 +15,6 @@
 @property (nonatomic,copy) NSString *itemTxt;
 @property (nonatomic,copy) NSString *imgThumbId;
 @property (nonatomic,copy) NSString *imgId;
+
+@property (nonatomic,assign) BOOL isLastItem;
 @end

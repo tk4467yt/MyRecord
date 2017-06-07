@@ -122,6 +122,12 @@
     RecordSectionItem *aItem=self.recordSectionItemArr[indexPath.row];
     imgCell.ivImage.image=[MyUtility getImageWithName:aItem.imgThumbId andDir:IMG_STORE_PATH_IN_DOC];
     
+    if (aItem.isLastItem && indexPath.row != self.recordSectionItemArr.count-1) {
+        imgCell.ivLastInd.hidden=false;
+    } else {
+        imgCell.ivLastInd.hidden=true;
+    }
+    
     return imgCell;
 }
 

@@ -10,5 +10,6 @@
 
 @interface ImageCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *ivImage;
+@property (weak, nonatomic) IBOutlet UIImageView *ivLastInd;
 
 @end

@@ -202,7 +202,7 @@
             }
         }
         
-        [DbHandler deleteRecordInfoWithId:self.editingRecordInfo];
+        [DbHandler deleteRecordInfoWithId:self.editingRecordInfo andAutoDelMedia:NO];
         [DbHandler storeRecordWithInfo:record2store];
     }
     

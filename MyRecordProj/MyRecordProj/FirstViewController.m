@@ -367,7 +367,7 @@
     UIAlertAction *okAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", @"")
                                                          style:UIAlertActionStyleDestructive
                                                        handler:^(UIAlertAction *action){
-                                                           [DbHandler deleteRecordInfoWithId:[DbHandler getRecordInfoWithRecordId:recordInfoId]];
+                                                           [DbHandler deleteRecordInfoWithId:[DbHandler getRecordInfoWithRecordId:recordInfoId] andAutoDelMedia:YES];
                                                        }];
     UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel", @"")
                                                          style:UIAlertActionStyleCancel

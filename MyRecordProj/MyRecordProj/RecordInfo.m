@@ -17,7 +17,13 @@
     
     for (RecordSection *aSection in self.sectionArr) {
         if ([SECTION_TYPE_IMAGE isEqualToString:aSection.sectionType]) {
-            if (nil != aSection.sectionItemArr) {
+            if (nil != aSection.sectionItemArr && aSection.sectionItemArr.count > 0) {
+                for (RecordSectionItem *aItem in aSection.sectionItemArr) {
+                    aItem.isLastItem=false;
+                }
+                RecordSectionItem *lastItem=aSection.sectionItemArr.lastObject;
+                lastItem.isLastItem=true;
+                
                 [imgArr2ret addObjectsFromArray:aSection.sectionItemArr];
             }
         }
