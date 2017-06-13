@@ -30,8 +30,9 @@
 "Are you sure to delete this section?"="Are you sure to delete this section?";
 "record_title_cannot_empty"="Record title cannot be empty";
 "Detail"="Detail";
-"Delete"="Delete";
 "Edit"="Edit";
 "Are you sure to delete this record?"="Are you sure to delete this record?";
 "Are you sure to delete this category?"="Are you sure to delete this category and its records?";
 "view_thumb_with_large_size"="Thumb with large size";
+"save photo to local"="Save to album";
+"remind to delete photo"="Are you sure to delete this photo?";

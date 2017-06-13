@@ -11,7 +11,7 @@
 #import "ImageCollectionViewCell.h"
 #import "RecordSectionItem.h"
 
-@interface CreateSectionImgTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface CreateSectionImgTableViewCell () <UICollectionViewDelegate,UICollectionViewDataSource,MyGalleryActionDelegate>
 
 @end
 
@@ -90,6 +90,9 @@
         MyGalleryViewController *galleryVC=[MyGalleryViewController new];
         galleryVC.curPhotoIdx=indexPath.row;
         galleryVC.imageInfoArr=[GalleryImageInfo makeImageInfoFromRecordSectionItems:[self makeRecordSectionItemsArr]];
+        galleryVC.withDeleteAction=true;
+        galleryVC.withDownloadAction=true;
+        galleryVC.galleryActionDelegate=self;
         
         UINavigationController *navVC=[[UINavigationController alloc] initWithRootViewController:galleryVC];
         [self.actionDelegate presentViewController:navVC animated:YES completion:nil];
@@ -118,5 +121,34 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return [CellSizeInfo sizeForImageCVItem];
+}
+
+#pragma mark MyGalleryActionDelegate
+-(void)imageNotExistWithInfo:(GalleryImageInfo *)info
+{
+    
+}
+-(BOOL)isImageDeletableFromGallery
+{
+    return true;
+}
+
+-(void)imageDeleteWithInfo:(GalleryImageInfo *)info
+{
+    NSInteger item2delIdx=-1;
+    for (int itemIdx=0; itemIdx<self.thumbImgArr.count; ++itemIdx) {
+        RecordSectionItem *orgItem=(RecordSectionItem *)info.orgModelForMediaInfo;
+        if ([orgItem.imgId isEqualToString:self.orgImgArr[itemIdx]] ||
+            [orgItem.imgThumbId isEqualToString:self.thumbImgArr[itemIdx]]) {
+            item2delIdx=itemIdx;
+            break;
+        }
+    }
+    
+    if (item2delIdx >= 0) {
+        [self.thumbImgArr removeObjectAtIndex:item2delIdx];
+        
+        [self.cvImgs reloadData];
+    }
 }
 @end

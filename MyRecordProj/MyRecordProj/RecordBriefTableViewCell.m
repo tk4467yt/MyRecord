@@ -55,7 +55,7 @@
     
     [self.btnDetail setTitle:NSLocalizedString(@"Detail", @"") forState:UIControlStateNormal];
     [self.btnEdit setTitle:NSLocalizedString(@"Edit", @"") forState:UIControlStateNormal];
-    [self.btnDelete setTitle:NSLocalizedString(@"Delete", @"") forState:UIControlStateNormal];
+    [self.btnDelete setTitle:NSLocalizedString(@"delete", @"") forState:UIControlStateNormal];
     
     [self.cvThumb reloadData];
 }
@@ -104,6 +104,7 @@
         MyGalleryViewController *galleryVC=[MyGalleryViewController new];
         galleryVC.curPhotoIdx=indexPath.row;
         galleryVC.imageInfoArr=[GalleryImageInfo makeImageInfoFromRecordSectionItems:self.recordSectionItemArr];
+        galleryVC.withDownloadAction=true;
         
         UINavigationController *navVC=[[UINavigationController alloc] initWithRootViewController:galleryVC];
         [self.actionDelegate presentViewController:navVC animated:YES completion:nil];

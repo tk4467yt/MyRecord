@@ -49,7 +49,7 @@
     
     UIAlertAction *actionForDelete=nil;
     if (self.withDeleteAction) {
-        actionForDelete=[UIAlertAction actionWithTitle:NSLocalizedString(@"Delete",nil)
+        actionForDelete=[UIAlertAction actionWithTitle:NSLocalizedString(@"delete",nil)
                                                                 style:UIAlertActionStyleDestructive
                                                               handler:^(UIAlertAction *action) {
                                                                   [self deleteCurrentPhoto];
@@ -65,7 +65,7 @@
                                                                 }];
     }
     
-    UIAlertAction *actionForCancel=[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",nil)
+    UIAlertAction *actionForCancel=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel",nil)
                                                             style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction *action) {
                                                               
@@ -138,7 +138,7 @@
             UIAlertController *alertVC=[UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"remind to delete photo",nil)
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction *actionForOk=[UIAlertAction actionWithTitle:NSLocalizedString(@"OK",nil)
+            UIAlertAction *actionForOk=[UIAlertAction actionWithTitle:NSLocalizedString(@"ok",nil)
                                                                 style:UIAlertActionStyleDestructive
                                                               handler:^(UIAlertAction *action) {
                                                                   if (self.imageInfoArr.count <= 1) {
@@ -157,7 +157,7 @@
                                                                   [self.galleryActionDelegate imageDeleteWithInfo:imageInfo];
                                                               }];
             
-            UIAlertAction *actionForCancel=[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",nil)
+            UIAlertAction *actionForCancel=[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel",nil)
                                                                     style:UIAlertActionStyleCancel
                                                                   handler:^(UIAlertAction *action) {
                                                                       
