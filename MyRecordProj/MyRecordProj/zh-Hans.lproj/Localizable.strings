@@ -36,3 +36,5 @@
 "view_thumb_with_large_size"="使用大尺寸预览图片";
 "save photo to local"="保存到相册";
 "remind to delete photo"="确定删除这张图片?";
+"save photo to album fail"="保存图片到相册失败";
+"save photo to album success"="保存图片到相册完成";

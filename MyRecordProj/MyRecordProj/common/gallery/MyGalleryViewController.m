@@ -117,11 +117,11 @@
 -(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     self.navigationItem.rightBarButtonItem.enabled=true;
-//    if (nil != error) {
-//        [[WarningView viewWithString:NSLocalizedString(@"save photo to album fail",nil )] showAlert:nil];
-//    } else {
-//        [[WarningView viewWithString:NSLocalizedString(@"save photo to album success",nil)] showAlert:nil];
-//    }
+    if (nil != error) {
+        [MyUtility showWarningInfo:NSLocalizedString(@"save photo to album fail",nil ) withInView:self.view];
+    } else {
+        [MyUtility showWarningInfo:NSLocalizedString(@"save photo to album success",nil ) withInView:self.view];
+    }
 }
 
 -(void)deleteCurrentPhoto

@@ -7,6 +7,7 @@
 //
 
 #import "MyUtility.h"
+#import "MBProgressHUD.h"
 
 @implementation MyUtility
 
@@ -377,6 +378,17 @@
 +(BOOL)isDeviceIpad
 {
     return UIUserInterfaceIdiomPad == [UIDevice currentDevice].userInterfaceIdiom;
+}
+
++(void)showWarningInfo:(NSString *)info2show withInView:(UIView *)parentView
+{
+    if (nil != parentView && ![MyUtility isStringNilOrZeroLength:info2show]) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
+        hud.mode=MBProgressHUDModeText;
+        hud.label.text = info2show;
+        
+        [hud hideAnimated:YES afterDelay:1.0];
+    }
 }
 
 @end

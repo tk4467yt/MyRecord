@@ -36,3 +36,5 @@
 "view_thumb_with_large_size"="Thumb with large size";
 "save photo to local"="Save to album";
 "remind to delete photo"="Are you sure to delete this photo?";
+"save photo to album fail"="save photo to album fail";
+"save photo to album success"="save photo to album success";

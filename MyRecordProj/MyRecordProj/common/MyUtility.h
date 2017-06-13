@@ -51,4 +51,6 @@
 
 + (NSString *)getTimeDescFromSeconds:(int)seconds;
 +(BOOL)isDeviceIpad;
+
++(void)showWarningInfo:(NSString *)info2show withInView:(UIView *)parentView;
 @end
