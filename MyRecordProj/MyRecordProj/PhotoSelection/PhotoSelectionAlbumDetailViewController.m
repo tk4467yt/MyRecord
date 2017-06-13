@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSMutableArray *assetsImgArr2use;
 
 @property (nonatomic,strong) NSMutableArray *selectedImageIndexpathArr;
+@property (nonatomic,assign) BOOL shoudScrollBottom;
 @end
 
 @implementation PhotoSelectionAlbumDetailViewController
@@ -23,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.shoudScrollBottom=true;
     
     [self.cvAlbumItems registerNib:[UINib nibWithNibName:@"PhotoSelectionItemCollectionViewCell" bundle:nil]
          forCellWithReuseIdentifier:@"photo_selection_album_detail_cv_cell_id"];
@@ -109,6 +112,17 @@
         self.navigationItem.rightBarButtonItem.enabled=true;
     } else {
         self.navigationItem.rightBarButtonItem.enabled=false;
+    }
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    if (self.shoudScrollBottom && self.assetsImgArr2use.count > 0) {
+        self.shoudScrollBottom=false;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(self.assetsImgArr2use.count - 1) inSection:0];
+        [self.cvAlbumItems scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
     }
 }
 
