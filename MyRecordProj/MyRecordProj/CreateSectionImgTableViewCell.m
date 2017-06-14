@@ -147,6 +147,7 @@
     
     if (item2delIdx >= 0) {
         [self.thumbImgArr removeObjectAtIndex:item2delIdx];
+        [self.orgImgArr removeObjectAtIndex:item2delIdx];
         
         [self.cvImgs reloadData];
     }
