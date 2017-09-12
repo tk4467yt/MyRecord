@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "DbHandler.h"
 
+#import <InMobiSDK/IMSdk.h>
+#import <InMobiSDK/IMCommonConstants.h>
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [DbHandler initLocalDatabase];
     
+    [IMSdk initWithAccountID:@"96efb6fea8fc47a884d8b8c190acb456"];
+    [IMSdk setLogLevel:kIMSDKLogLevelDebug];
     return YES;
 }
 

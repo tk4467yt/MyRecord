@@ -8,3 +8,4 @@
 CFBundleDisplayName ="My Record";
 NSPhotoLibraryUsageDescription="Select photo to record";
 NSCameraUsageDescription="Capture image with camera to record";
+NSLocationWhenInUseUsageDescription="Location is used";

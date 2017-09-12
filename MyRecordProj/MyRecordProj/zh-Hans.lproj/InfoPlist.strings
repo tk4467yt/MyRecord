@@ -8,3 +8,4 @@
 CFBundleDisplayName ="我的记录";
 NSPhotoLibraryUsageDescription="添加图片到记录";
 NSCameraUsageDescription="拍摄照片到记录";
+NSLocationWhenInUseUsageDescription="需要使用位置信息";

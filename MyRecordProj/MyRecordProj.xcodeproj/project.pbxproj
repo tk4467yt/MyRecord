@@ -78,6 +78,9 @@
 		25925D951EDAB973000F6B06 /* CreateSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25925D941EDAB973000F6B06 /* CreateSectionHeaderView.m */; };
 		25925D971EDAC215000F6B06 /* CagegorySelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25925D961EDAC215000F6B06 /* CagegorySelect.storyboard */; };
 		25925D9A1EDAC23F000F6B06 /* CagegorySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25925D991EDAC23F000F6B06 /* CagegorySelectViewController.m */; };
+		25CD74F51F67ED79001163B9 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CD74F41F67ED79001163B9 /* InMobiSDK.framework */; };
+		25CD75131F67EE7D001163B9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CD75121F67EE7D001163B9 /* libz.tbd */; };
+		25CD75151F67F747001163B9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CD75141F67F747001163B9 /* WebKit.framework */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -232,6 +235,23 @@
 		25925D961EDAC215000F6B06 /* CagegorySelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CagegorySelect.storyboard; sourceTree = "<group>"; };
 		25925D981EDAC23F000F6B06 /* CagegorySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CagegorySelectViewController.h; sourceTree = "<group>"; };
 		25925D991EDAC23F000F6B06 /* CagegorySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CagegorySelectViewController.m; sourceTree = "<group>"; };
+		25CD74F41F67ED79001163B9 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InMobiSDK.framework; sourceTree = "<group>"; };
+		25CD74F61F67EDAD001163B9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		25CD74F81F67EDC2001163B9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		25CD74FA1F67EDD1001163B9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		25CD74FC1F67EDDF001163B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		25CD74FE1F67EDF6001163B9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		25CD75001F67EE04001163B9 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		25CD75021F67EE0F001163B9 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		25CD75041F67EE1C001163B9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		25CD75061F67EE2A001163B9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		25CD75081F67EE36001163B9 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		25CD750A1F67EE42001163B9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		25CD750C1F67EE4F001163B9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		25CD750E1F67EE5C001163B9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		25CD75101F67EE69001163B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		25CD75121F67EE7D001163B9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		25CD75141F67F747001163B9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -272,11 +292,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CD75151F67F747001163B9 /* WebKit.framework in Frameworks */,
+				25CD75131F67EE7D001163B9 /* libz.tbd in Frameworks */,
 				2552EFF51EF033E900B21F21 /* UIKit.framework in Frameworks */,
 				2552EFF31EF033D600B21F21 /* CoreGraphics.framework in Frameworks */,
 				2552EFF11EF033CE00B21F21 /* Foundation.framework in Frameworks */,
 				2501415B1ED86EDE00C813B5 /* Photos.framework in Frameworks */,
 				2510E92C1EC8617F00EC59E7 /* libsqlite3.tbd in Frameworks */,
+				25CD74F51F67ED79001163B9 /* InMobiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +459,22 @@
 		2510E91B1EC7491D00EC59E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25CD75141F67F747001163B9 /* WebKit.framework */,
+				25CD75121F67EE7D001163B9 /* libz.tbd */,
+				25CD75101F67EE69001163B9 /* SystemConfiguration.framework */,
+				25CD750E1F67EE5C001163B9 /* StoreKit.framework */,
+				25CD750C1F67EE4F001163B9 /* Social.framework */,
+				25CD750A1F67EE42001163B9 /* Security.framework */,
+				25CD75081F67EE36001163B9 /* SafariServices.framework */,
+				25CD75061F67EE2A001163B9 /* MessageUI.framework */,
+				25CD75041F67EE1C001163B9 /* MediaPlayer.framework */,
+				25CD75021F67EE0F001163B9 /* EventKitUI.framework */,
+				25CD75001F67EE04001163B9 /* EventKit.framework */,
+				25CD74FE1F67EDF6001163B9 /* CoreTelephony.framework */,
+				25CD74FC1F67EDDF001163B9 /* CoreLocation.framework */,
+				25CD74FA1F67EDD1001163B9 /* AVFoundation.framework */,
+				25CD74F81F67EDC2001163B9 /* AudioToolbox.framework */,
+				25CD74F61F67EDAD001163B9 /* AdSupport.framework */,
 				2552EFF41EF033E900B21F21 /* UIKit.framework */,
 				2552EFF21EF033D600B21F21 /* CoreGraphics.framework */,
 				2552EFF01EF033CE00B21F21 /* Foundation.framework */,
@@ -486,6 +525,14 @@
 				2552EFF81EF0345000B21F21 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		25CD74F31F67ED56001163B9 /* inmobi */ = {
+			isa = PBXGroup;
+			children = (
+				25CD74F41F67ED79001163B9 /* InMobiSDK.framework */,
+			);
+			name = inmobi;
 			sourceTree = "<group>";
 		};
 		25D9603E1ECC8D59006E067E /* db_upgrade */ = {
@@ -569,6 +616,7 @@
 		25D960611ECF3B90006E067E /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				25CD74F31F67ED56001163B9 /* inmobi */,
 				2552EFF61EF0345000B21F21 /* MBProgressHUD */,
 				25D960621ECF3B90006E067E /* fmdb */,
 			);
@@ -985,13 +1033,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyRecordProj/**",
+					"$(PROJECT_DIR)/MyRecordProj/3rd",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MyRecordProj/**";
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazilybird.app.MyRecordProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1006,12 +1055,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyRecordProj/**",
+					"$(PROJECT_DIR)/MyRecordProj/3rd",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MyRecordProj/**";
 				INFOPLIST_FILE = MyRecordProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazilybird.app.MyRecordProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
