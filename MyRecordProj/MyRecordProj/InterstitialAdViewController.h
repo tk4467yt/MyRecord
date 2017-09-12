@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface InterstitialAdViewController : UIViewController
--(void)showAdIfLoaded;
+-(void)showAdWithViewController:(UIViewController *)baseVC;
 @end
