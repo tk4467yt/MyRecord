@@ -12,8 +12,10 @@
 #import <InMobiSDK/IMSdk.h>
 #import <InMobiSDK/IMCommonConstants.h>
 
-@interface AppDelegate ()
+#import "InterstitialAdViewController.h"
 
+@interface AppDelegate ()
+@property (nonatomic,strong) InterstitialAdViewController *interstitialAdVC;
 @end
 
 @implementation AppDelegate
@@ -24,6 +26,10 @@
     
     [IMSdk initWithAccountID:@"96efb6fea8fc47a884d8b8c190acb456"];
     [IMSdk setLogLevel:kIMSDKLogLevelDebug];
+    
+    self.interstitialAdVC=[[InterstitialAdViewController alloc] init];
+    [self.interstitialAdVC.view setNeedsLayout];
+    
     return YES;
 }
 
@@ -47,6 +53,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [self.interstitialAdVC showAdIfLoaded];
 }
 
 

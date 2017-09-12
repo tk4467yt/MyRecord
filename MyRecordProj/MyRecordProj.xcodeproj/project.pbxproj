@@ -81,6 +81,8 @@
 		25CD74F51F67ED79001163B9 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CD74F41F67ED79001163B9 /* InMobiSDK.framework */; };
 		25CD75131F67EE7D001163B9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CD75121F67EE7D001163B9 /* libz.tbd */; };
 		25CD75151F67F747001163B9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CD75141F67F747001163B9 /* WebKit.framework */; };
+		25CD75191F680FFD001163B9 /* InterstitialAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CD75171F680FFD001163B9 /* InterstitialAdViewController.m */; };
+		25CD751A1F680FFD001163B9 /* InterstitialAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25CD75181F680FFD001163B9 /* InterstitialAdViewController.xib */; };
 		25D960401ECC947C006E067E /* CreateCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D9603F1ECC947C006E067E /* CreateCategory.storyboard */; };
 		25D960431ECC949F006E067E /* CreateCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960421ECC949F006E067E /* CreateCategoryViewController.m */; };
 		25D960471ECC99D0006E067E /* CategoryCreateTFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D960461ECC99D0006E067E /* CategoryCreateTFTableViewCell.m */; };
@@ -252,6 +254,9 @@
 		25CD75101F67EE69001163B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		25CD75121F67EE7D001163B9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		25CD75141F67F747001163B9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		25CD75161F680FFD001163B9 /* InterstitialAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialAdViewController.h; sourceTree = "<group>"; };
+		25CD75171F680FFD001163B9 /* InterstitialAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialAdViewController.m; sourceTree = "<group>"; };
+		25CD75181F680FFD001163B9 /* InterstitialAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterstitialAdViewController.xib; sourceTree = "<group>"; };
 		25D9603F1ECC947C006E067E /* CreateCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCategory.storyboard; sourceTree = "<group>"; };
 		25D960411ECC949F006E067E /* CreateCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCategoryViewController.h; sourceTree = "<group>"; };
 		25D960421ECC949F006E067E /* CreateCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCategoryViewController.m; sourceTree = "<group>"; };
@@ -452,6 +457,9 @@
 				2510ED921EE0627600F5A2C7 /* RecordDetail.storyboard */,
 				2510ED941EE0628C00F5A2C7 /* RecordDetailViewController.h */,
 				2510ED951EE0628C00F5A2C7 /* RecordDetailViewController.m */,
+				25CD75161F680FFD001163B9 /* InterstitialAdViewController.h */,
+				25CD75171F680FFD001163B9 /* InterstitialAdViewController.m */,
+				25CD75181F680FFD001163B9 /* InterstitialAdViewController.xib */,
 			);
 			name = vcs;
 			sourceTree = "<group>";
@@ -757,6 +765,7 @@
 				2510EDBB1EE59E0700F5A2C7 /* SettingsSwitchTableViewCell.xib in Resources */,
 				250141751EDA7C7D00C813B5 /* PhotoSelectionItemFooterReusableView.xib in Resources */,
 				250141661EDA70BF00C813B5 /* PhotoSelectionAlbumTableViewCell.xib in Resources */,
+				25CD751A1F680FFD001163B9 /* InterstitialAdViewController.xib in Resources */,
 				2510E90E1EC0B7BB00EC59E7 /* Localizable.strings in Resources */,
 				2510E9231EC8545A00EC59E7 /* CreateRecord.storyboard in Resources */,
 				2510E8E01EC0B4B400EC59E7 /* LaunchScreen.storyboard in Resources */,
@@ -857,6 +866,7 @@
 				2510ED8F1EDD203600F5A2C7 /* RecordBriefTableViewCell.m in Sources */,
 				250141581ED7251000C813B5 /* PhotoSelectionRootViewController.m in Sources */,
 				25D9605D1ECF3B6D006E067E /* MyRootViewController.m in Sources */,
+				25CD75191F680FFD001163B9 /* InterstitialAdViewController.m in Sources */,
 				2510ED961EE0628C00F5A2C7 /* RecordDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
