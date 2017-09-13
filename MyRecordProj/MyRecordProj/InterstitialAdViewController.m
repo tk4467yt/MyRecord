@@ -7,10 +7,15 @@
 //
 
 #import "InterstitialAdViewController.h"
+#import "MyCommonHeaders.h"
 #import <InMobiSDK/InMobiSDK.h>
+
+#define SETTING_ID_4_LAST_AD_SHOWN_TIME @"last_ad_shown_time"
+#define K_MAX_TIME_INTERVAL_2_SHOW_AD 3*60*60
 
 @interface InterstitialAdViewController () <IMInterstitialDelegate>
 @property (nonatomic, strong) IMInterstitial *interstitial;
+@property (nonatomic, weak) UIViewController *adBaseVC;
 @end
 
 @implementation InterstitialAdViewController
@@ -18,10 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor=[UIColor clearColor];
     
     self. interstitial = [[IMInterstitial alloc] initWithPlacementId:1507175804315];
     self. interstitial.delegate = self;
     [self.interstitial load];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.interstitial.isReady) {
+        [self.interstitial showFromViewController:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,10 +44,19 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)showAdIfLoaded
+-(void)showAdWithViewController:(UIViewController *)baseVC
 {
-    if (self.interstitial.isReady) {
-        [self.interstitial showFromViewController:self];
+    UInt64 lastShowTime=[DbHandler getIntSettingWithKey:SETTING_ID_4_LAST_AD_SHOWN_TIME andDefValue:0];
+    UInt64 curTIme=[[NSDate date] timeIntervalSince1970];
+    if (curTIme - lastShowTime >= K_MAX_TIME_INTERVAL_2_SHOW_AD) {
+        if (self.interstitial.isReady && nil != baseVC) {
+            self.adBaseVC=baseVC;
+            [baseVC presentViewController:self animated:YES completion:nil];
+        }
+        
+        [DbHandler setSettingWithKey:SETTING_ID_4_LAST_AD_SHOWN_TIME withValue:[NSString stringWithFormat:@"%lld",curTIme]];
+    } else {
+        NSLog(@"too small interval from last ad shown");
     }
 }
 
@@ -104,6 +128,9 @@
 -(void)interstitialDidDismiss:(IMInterstitial*)interstitial
 {
     NSLog(@"interstitialDidDismiss");
+    
+    [self.adBaseVC dismissViewControllerAnimated:NO completion:nil];
+    self.adBaseVC=nil;
     
     [self.interstitial load];
 }
