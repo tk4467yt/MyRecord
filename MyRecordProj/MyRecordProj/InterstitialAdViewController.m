@@ -12,6 +12,7 @@
 
 #define SETTING_ID_4_LAST_AD_SHOWN_TIME @"last_ad_shown_time"
 #define K_MAX_TIME_INTERVAL_2_SHOW_AD 3*60*60
+#define K_MAX_TIME_INTERVAL_2_LOAD_AD 10*60
 
 @interface InterstitialAdViewController () <IMInterstitialDelegate>
 @property (nonatomic, strong) IMInterstitial *interstitial;
@@ -57,6 +58,9 @@
         [DbHandler setSettingWithKey:SETTING_ID_4_LAST_AD_SHOWN_TIME withValue:[NSString stringWithFormat:@"%lld",curTIme]];
     } else {
         NSLog(@"too small interval from last ad shown");
+        if (!self.interstitial.isReady && curTIme - lastShowTime > K_MAX_TIME_INTERVAL_2_LOAD_AD) {
+            [self.interstitial load];
+        }
     }
 }
 
@@ -131,8 +135,6 @@
     
     [self.adBaseVC dismissViewControllerAnimated:NO completion:nil];
     self.adBaseVC=nil;
-    
-    [self.interstitial load];
 }
 /**
  * Notifies the delegate that the interstitial has been interacted with.
